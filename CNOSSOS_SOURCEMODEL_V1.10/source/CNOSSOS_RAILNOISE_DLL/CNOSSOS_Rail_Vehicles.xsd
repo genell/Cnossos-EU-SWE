@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+	<xs:element name="RailParameters">
+		<xs:complexType>
+			<xs:all>
+				<xs:element name="Date" type="xs:date">
+					<xs:annotation><xs:documentation>Catalogue date (informative)</xs:documentation></xs:annotation>
+				</xs:element>
+				<xs:element name="r0" type="xs:decimal">
+					<xs:annotation><xs:documentation>Reference value for roughness in µm</xs:documentation></xs:annotation>
+				</xs:element>
+				<xs:element name="h1" type="xs:decimal">
+					<xs:annotation><xs:documentation>First source height in m</xs:documentation></xs:annotation>
+				</xs:element>
+				<xs:element name="h2" type="xs:decimal">
+					<xs:annotation><xs:documentation>Second source height in m</xs:documentation></xs:annotation>
+				</xs:element>
+				<xs:element ref="VehicleDefinition"/>
+				<xs:element ref="VehicleTransfer"/>
+				<xs:element ref="WheelRoughness"/>
+				<xs:element ref="ContactFilter"/>
+				<xs:element ref="TractionNoise"/>
+				<xs:element ref="AerodynamicNoise"/>
+			</xs:all>
+			<xs:attribute name="version" use="required" type="xs:string">
+				<xs:annotation><xs:documentation>Version of this file format.</xs:documentation></xs:annotation>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="VehicleDefinition">
+		<xs:annotation><xs:documentation>
+			This section contains the definitions of the supported train vehicles. 
+			If a vehicle is not defined in this section, it is not calculated.
+		</xs:documentation></xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Vehicle" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:attribute name="ID" type="xs:string" use="required">
+							<xs:annotation><xs:documentation>unique identification of the vehicle</xs:documentation></xs:annotation>
+						</xs:attribute>
+						<xs:attribute name="Code" use="optional" type="xs:string">
+							<xs:annotation><xs:documentation>Vehicle Code short description (informative)</xs:documentation></xs:annotation>
+						</xs:attribute>
+						<xs:attribute name="Description" use="optional" type="xs:string">
+							<xs:annotation><xs:documentation>Vehicle Type long description (informative)</xs:documentation></xs:annotation>
+						</xs:attribute>
+						<xs:attribute name="P_mech" type="xs:integer" use="optional">
+							<xs:annotation><xs:documentation>Power in kW (informative)</xs:documentation></xs:annotation>
+						</xs:attribute>
+						<xs:attribute name="V_max" type="xs:integer" use="optional">
+							<xs:annotation><xs:documentation>Max speed in km/h (informative)</xs:documentation></xs:annotation>
+						</xs:attribute>
+						<xs:attribute name="Weight" type="xs:decimal" use="optional">
+							<xs:annotation><xs:documentation>in metric tonnes</xs:documentation></xs:annotation>
+						</xs:attribute>
+						<xs:attribute name="Length" type="xs:decimal" use="optional">
+							<xs:annotation><xs:documentation>in metres</xs:documentation></xs:annotation>
+						</xs:attribute>
+						<xs:attribute name="Axles" type="xs:integer" use="required">
+							<xs:annotation><xs:documentation>number of axles</xs:documentation></xs:annotation>
+						</xs:attribute>
+						<xs:attributeGroup ref="wheel-diameter-attributes" />
+						<xs:attribute name="WheelMeasure" use="optional">
+							<xs:annotation><xs:documentation>Wheel measures (informative)</xs:documentation></xs:annotation>
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:enumeration value="wheelDampers"/>
+									<xs:enumeration value="other" />
+									<xs:enumeration value="screens" />
+									<xs:enumeration value="none" />
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+						<xs:attribute name="BrakeCode" use="optional">
+							<xs:annotation><xs:documentation>Brake type (informative)</xs:documentation></xs:annotation>
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:enumeration value="castIronBlock"/>
+									<xs:enumeration value="compositeBlock"/>
+									<xs:enumeration value="disk"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+						<xs:attribute name="Load" use="optional" type="optional-integer">
+							<xs:annotation><xs:documentation>load in kN (informative)</xs:documentation></xs:annotation>
+						</xs:attribute>
+						<xs:attribute name="RefTransfer" use="required" type="xs:string">
+							<xs:annotation><xs:documentation>Reference to "VehicleTransfer"</xs:documentation></xs:annotation>
+						</xs:attribute>
+						<xs:attribute name="RefContact" use="required" type="xs:string">
+							<xs:annotation><xs:documentation>Reference to "ContactFilter"</xs:documentation></xs:annotation>
+						</xs:attribute>
+						<xs:attribute name="RefRoughness" use="required" type="xs:string">
+							<xs:annotation><xs:documentation>Reference to "WheelRoughness"</xs:documentation></xs:annotation>
+						</xs:attribute>
+						<xs:attribute name="RefTraction" use="required" type="xs:string">
+							<xs:annotation><xs:documentation>Reference to "TractionNoise"</xs:documentation></xs:annotation>
+						</xs:attribute>
+						<xs:attribute name="RefAerodynamic" use="required" type="xs:string">
+							<xs:annotation><xs:documentation>Reference to "AerodynamicNoise"</xs:documentation></xs:annotation>
+						</xs:attribute>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="VehicleTransfer">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Transfer" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:attributeGroup ref="base-vehicle-attributes"/>
+						<xs:attributeGroup ref="wheel-diameter-attributes"/>
+						<xs:attribute name="Values" use="required" type="list-of-decimals">
+							<xs:annotation><xs:documentation>Values are given per 1/3 octave band  (50 Hz .. 10 kHz)</xs:documentation></xs:annotation>
+						</xs:attribute>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="ContactFilter">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Contact" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:attributeGroup ref="base-vehicle-attributes"/>
+						<xs:attribute name="Load" use="optional" type="optional-integer">
+							<xs:annotation><xs:documentation>Load in kN (informative)</xs:documentation></xs:annotation>
+						</xs:attribute>
+						<xs:attributeGroup ref="wheel-diameter-attributes"/>
+						<xs:attribute name="Values" use="required" type="list-of-decimals">
+							<xs:annotation><xs:documentation>Values are given per 1/3 octave band  (50 Hz .. 10 kHz)</xs:documentation></xs:annotation>
+						</xs:attribute>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="WheelRoughness">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Roughness" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:attributeGroup ref="base-vehicle-attributes"/>
+						<xs:attribute name="Values" use="required" type="list-of-decimals">
+							<xs:annotation><xs:documentation>Values are given per wave length (100cm .. 0.04cm)</xs:documentation></xs:annotation>
+						</xs:attribute>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="TractionNoise">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Traction" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="Source" maxOccurs="unbounded">
+							  <xs:annotation><xs:documentation xml:space="preserve">
+								  Values are given per 1/3 octave band  (50 Hz .. 10 kHz).
+								  NOTE 1: Values should be Sound Power Level per vehicle for use directly in Equ IV-8,
+								  NOTE 2: Values were converted from SPL to SWL using method in IMAGINE.
+								</xs:documentation></xs:annotation>
+							  <xs:complexType>
+									<xs:attribute name="Type" use="required">
+										<xs:annotation><xs:documentation>source (height) to which these values apply</xs:documentation></xs:annotation>
+										<xs:simpleType>
+											<xs:restriction base="xs:string">
+												<xs:enumeration value="A">
+													<xs:annotation><xs:documentation>source at 0.5 m</xs:documentation></xs:annotation>
+												</xs:enumeration>
+												<xs:enumeration value="B">
+													<xs:annotation><xs:documentation>source at 4.0 m</xs:documentation></xs:annotation>
+												</xs:enumeration>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:attribute>
+									<xs:attribute name="Constant" use="required" type="list-of-decimals"/>
+									<xs:attribute name="Accelerating" use="required" type="list-of-decimals"/>
+									<xs:attribute name="Decelerating" use="required" type="list-of-decimals"/>
+									<xs:attribute name="Idling" use="required" type="list-of-decimals"/>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+						<xs:attributeGroup ref="base-vehicle-attributes"/>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="AerodynamicNoise">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Aerodynamic" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="Source" maxOccurs="unbounded">
+								<xs:complexType>
+									<xs:attribute name="Type" use="required">
+										<xs:annotation><xs:documentation>source (height) to which these values apply</xs:documentation></xs:annotation>
+										<xs:simpleType>
+											<xs:restriction base="xs:string">
+												<xs:enumeration value="A">
+													<xs:annotation><xs:documentation>source at 0.5 m</xs:documentation></xs:annotation>
+												</xs:enumeration>
+												<xs:enumeration value="B">
+													<xs:annotation><xs:documentation>source at 4.0 m</xs:documentation></xs:annotation>
+												</xs:enumeration>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:attribute>
+									<xs:attribute name="V0" use="required" type="xs:decimal">
+										<xs:annotation><xs:documentation>Speed at which aerodynamic noise is dominant [km/h]</xs:documentation></xs:annotation>
+									</xs:attribute>
+									<xs:attribute name="Values" use="required" type="list-of-decimals">
+										<xs:annotation><xs:documentation>Lw0(v0) = source power for rolling noise at speed v0. Values are given per 1/3 octave band  (50 Hz .. 10 kHz)</xs:documentation></xs:annotation>
+									</xs:attribute>
+									<xs:attribute name="Alpha" use="required" type="xs:decimal">
+										<xs:annotation><xs:documentation>Coefficient for aerodynamic noise</xs:documentation></xs:annotation>
+									</xs:attribute>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+						<xs:attributeGroup ref="base-vehicle-attributes"/>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:attributeGroup name="base-vehicle-attributes">
+		<xs:attribute name="ID" type="xs:string" use="required">
+			<xs:annotation><xs:documentation>unique identification</xs:documentation></xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="Default" type="xs:boolean" use="optional">
+			<xs:annotation><xs:documentation>(informative)</xs:documentation></xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="Reference" type="xs:string" use="optional">
+			<xs:annotation><xs:documentation>(informative); examples: IMAGINE, European Commission, Member State, Local User, CNOSSOS</xs:documentation></xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="Description" type="xs:string" use="optional">
+			<xs:annotation><xs:documentation>(informative)</xs:documentation></xs:annotation>
+		</xs:attribute>
+	</xs:attributeGroup>
+
+	<xs:attributeGroup name="wheel-diameter-attributes">
+		<xs:attribute name="WheelDiameter" use="optional" type="optional-integer">
+			<xs:annotation><xs:documentation>in mm (informative)</xs:documentation></xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="WheelDiameterCode" use="optional">
+			<xs:annotation><xs:documentation>(informative)</xs:documentation></xs:annotation>
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value=""/>
+					<xs:enumeration value="large">
+						<xs:annotation><xs:documentation>&gt;800mm</xs:documentation></xs:annotation>
+					</xs:enumeration>
+					<xs:enumeration value="medium">
+						<xs:annotation><xs:documentation>500 to 800mm</xs:documentation></xs:annotation>
+					</xs:enumeration>
+					<xs:enumeration value="small">
+						<xs:annotation><xs:documentation>&lt;500mm</xs:documentation></xs:annotation>
+					</xs:enumeration>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:attributeGroup>
+
+	<xs:simpleType name="list-of-decimals">
+		<xs:annotation><xs:documentation>list of decimals</xs:documentation></xs:annotation>
+		<xs:list itemType="xs:decimal"/>
+	</xs:simpleType>
+
+	<xs:simpleType name="optional-integer">
+		<xs:annotation><xs:documentation>integer (or empty)</xs:documentation></xs:annotation>
+		<xs:union memberTypes="xs:integer">
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value=""/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:union>
+	</xs:simpleType>
+
+</xs:schema>

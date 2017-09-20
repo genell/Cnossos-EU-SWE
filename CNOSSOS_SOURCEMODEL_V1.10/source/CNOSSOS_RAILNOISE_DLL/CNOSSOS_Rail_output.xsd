@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+	<xs:element name="CNOSSOS_SourcePower">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="source" minOccurs="1" maxOccurs="unbounded"/>
+			</xs:sequence>
+			<xs:attribute name="version" use="required" type="xs:string"/>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="source">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="h" type="xs:decimal">
+					<xs:annotation><xs:documentation>Source height in m</xs:documentation></xs:annotation>
+				</xs:element>
+				<xs:element name="Lw">
+					<xs:annotation><xs:documentation>Sound power definitions</xs:documentation></xs:annotation>
+					<xs:complexType>
+						<xs:simpleContent>
+							<xs:extension base="list-of-decimals">
+								<xs:attribute name="frequencyWeighting" use="required">
+									<xs:simpleType>
+										<xs:restriction base="xs:string">
+											<xs:enumeration value="LIN"/>
+											<xs:enumeration value="dBA"/>
+										</xs:restriction>
+									</xs:simpleType>
+								</xs:attribute>
+								<xs:attribute name="measurementType" use="required">
+									<xs:simpleType>
+										<xs:restriction base="xs:string">
+											<xs:enumeration value="Unknown"/>
+											<xs:enumeration value="FreeField"/>
+											<xs:enumeration value="HemiSpherical"/>
+										</xs:restriction>
+									</xs:simpleType>
+								</xs:attribute>
+								<xs:attribute name="sourceType" use="required">
+									<xs:simpleType>
+										<xs:restriction base="xs:string">
+											<xs:enumeration value="PointSource"/>
+											<xs:enumeration value="LineSource"/>
+											<xs:enumeration value="AreaSource"/>
+										</xs:restriction>
+									</xs:simpleType>
+								</xs:attribute>
+							</xs:extension>
+						</xs:simpleContent>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:simpleType name="list-of-decimals">
+		<xs:annotation><xs:documentation>list of decimals</xs:documentation></xs:annotation>
+		<xs:list itemType="xs:decimal"/>
+	</xs:simpleType>
+</xs:schema>

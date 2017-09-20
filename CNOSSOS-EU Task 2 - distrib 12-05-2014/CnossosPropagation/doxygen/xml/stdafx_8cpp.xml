@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.4">
+  <compounddef id="stdafx_8cpp" kind="file">
+    <compoundname>stdafx.cpp</compoundname>
+    <includes refid="stdafx_8h" local="yes">stdafx.h</includes>
+    <incdepgraph>
+      <node id="24">
+        <label>windows.h</label>
+      </node>
+      <node id="23">
+        <label>SDKDDKVer.h</label>
+      </node>
+      <node id="22">
+        <label>targetver.h</label>
+        <link refid="targetver_8h"/>
+        <childnode refid="23" relation="include">
+        </childnode>
+      </node>
+      <node id="20">
+        <label>stdafx.cpp</label>
+        <link refid="stdafx.cpp"/>
+        <childnode refid="21" relation="include">
+        </childnode>
+      </node>
+      <node id="21">
+        <label>stdafx.h</label>
+        <link refid="stdafx_8h"/>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">//<sp/>stdafx.cpp :<sp/>fichier<sp/>source<sp/>incluant<sp/>simplement<sp/>les<sp/>fichiers<sp/>Include<sp/>standard</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">//<sp/>CnossosPropagation.pch<sp/>représente<sp/>l&apos;en-tête<sp/>précompilé</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">//<sp/>stdafx.obj<sp/>contient<sp/>les<sp/>informations<sp/>de<sp/>type<sp/>précompilées</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="stdafx_8h" kindref="compound">stdafx.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="comment">//<sp/>TODO:<sp/>faites<sp/>référence<sp/>aux<sp/>en-têtes<sp/>supplémentaires<sp/>nécessaires<sp/>dans<sp/>STDAFX.H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="comment">//<sp/>absents<sp/>de<sp/>ce<sp/>fichier</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="C:/Users/dvm/Projets/CNOSSOS-EU/dev/CnossosPropagation/stdafx.cpp"/>
+  </compounddef>
+</doxygen>

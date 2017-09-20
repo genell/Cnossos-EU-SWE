@@ -1,0 +1,1572 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.4">
+  <compounddef id="_cnossos_propagation_8h" kind="file">
+    <compoundname>CnossosPropagation.h</compoundname>
+    <includedby refid="_cnossos_propagation_8cpp" local="yes">CnossosPropagation.cpp</includedby>
+    <invincdepgraph>
+      <node id="10">
+        <label>CnossosPropagation.h</label>
+        <link refid="CnossosPropagation.h"/>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>CnossosPropagation.cpp</label>
+        <link refid="_cnossos_propagation_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="struct_c_n_o_s_s_o_s___p2_p___m_e_t_e_o" prot="public">CNOSSOS_P2P_METEO</innerclass>
+    <innerclass refid="struct_c_n_o_s_s_o_s___p2_p___o_p_t_i_o_n_s" prot="public">CNOSSOS_P2P_OPTIONS</innerclass>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="_cnossos_propagation_8h_1ab177c44aad4888f0564efd48c92aa2ff" prot="public" static="no">
+        <name>_CNOSSOS_DLL_DECL_</name>
+        <initializer>extern &quot;C&quot; __declspec(dllimport)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/dvm/Projets/CNOSSOS-EU/dev/CnossosPropagation/CnossosPropagation.h" line="66" bodyfile="C:/Users/dvm/Projets/CNOSSOS-EU/dev/CnossosPropagation/CnossosPropagation.h" bodystart="66" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_cnossos_propagation_8h_1a0246ca1f6b132d426220ba4a49f3fb2f" prot="public" static="no">
+        <name>CNOSSOS_P2P_VERSION_API</name>
+        <initializer>&quot;1.001&quot;</initializer>
+        <briefdescription>
+<para>current version associated with this API </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/dvm/Projets/CNOSSOS-EU/dev/CnossosPropagation/CnossosPropagation.h" line="71" bodyfile="C:/Users/dvm/Projets/CNOSSOS-EU/dev/CnossosPropagation/CnossosPropagation.h" bodystart="71" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="enum">
+      <memberdef kind="enum" id="_cnossos_propagation_8h_1a4731b6d7565c3be5eb2e35a502c5afca" prot="public" static="no">
+        <name>CNOSSOS_P2P_SPECTRUM_WEIGHTING</name>
+        <enumvalue id="_cnossos_propagation_8h_1a4731b6d7565c3be5eb2e35a502c5afcaa8205813b0cebd642f73da5bc3227119b" prot="public">
+          <name>CNOSSOS_P2P_SPECTRUM_LIN</name>
+          <initializer> 0</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Spectrum is unweighted </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_cnossos_propagation_8h_1a4731b6d7565c3be5eb2e35a502c5afcaa9424f0b25b4f58e192592b7774d8bebc" prot="public">
+          <name>CNOSSOS_P2P_SPECTRUM_dBA</name>
+          <initializer> 1</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Spectrum is A-weighted </para>          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Sound power frequency weighting. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/dvm/Projets/CNOSSOS-EU/dev/CnossosPropagation/CnossosPropagation.h" line="110" bodyfile="C:/Users/dvm/Projets/CNOSSOS-EU/dev/CnossosPropagation/CnossosPropagation.h" bodystart="109" bodyend="113"/>
+      </memberdef>
+      <memberdef kind="enum" id="_cnossos_propagation_8h_1a2329eadb2cdfeb3f97cdf8749e5127ba" prot="public" static="no">
+        <name>CNOSSOS_P2P_LW_MEASUREMENT_TYPE</name>
+        <enumvalue id="_cnossos_propagation_8h_1a2329eadb2cdfeb3f97cdf8749e5127baa7f1ae37ac1362e5ecd7ac9980a2d09ca" prot="public">
+          <name>CNOSSOS_P2P_LW_UNDEFINED</name>
+          <initializer> 0</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Measurement conditions undefined </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_cnossos_propagation_8h_1a2329eadb2cdfeb3f97cdf8749e5127baa9fba810998b812c98474e9286f6c587d" prot="public">
+          <name>CNOSSOS_P2P_LW_FREEFIELD</name>
+          <initializer> 1</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Sound power measured under free field conditions </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_cnossos_propagation_8h_1a2329eadb2cdfeb3f97cdf8749e5127baad463c1e095c9a16792654014ef3dd5c6" prot="public">
+          <name>CNOSSOS_P2P_LW_HEMISPHERICAL</name>
+          <initializer> 2</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Sound power measured under hemispherical conditions </para>          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Sound power measurement conditions. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/dvm/Projets/CNOSSOS-EU/dev/CnossosPropagation/CnossosPropagation.h" line="118" bodyfile="C:/Users/dvm/Projets/CNOSSOS-EU/dev/CnossosPropagation/CnossosPropagation.h" bodystart="117" bodyend="122"/>
+      </memberdef>
+      <memberdef kind="enum" id="_cnossos_propagation_8h_1a147f484d037a625eeeb261c4de7cc40a" prot="public" static="no">
+        <name>CNOSSOS_P2P_METEO_MODEL</name>
+        <enumvalue id="_cnossos_propagation_8h_1a147f484d037a625eeeb261c4de7cc40aa1dbb0d72c1312e1d8a268f2cb7b3894e" prot="public">
+          <name>CNOSSOS_P2P_METEO_DEFAULT</name>
+          <initializer> 0</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Use default model corresponding to the selected calculation method </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_cnossos_propagation_8h_1a147f484d037a625eeeb261c4de7cc40aa875015c049d3aa4c01162e4de87d40e2" prot="public">
+          <name>CNOSSOS_P2P_METEO_ISO9613</name>
+          <initializer> 1</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Use the C0 correction as defined in the ISO 9613-2 standard </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_cnossos_propagation_8h_1a147f484d037a625eeeb261c4de7cc40aa4f62553a64be2260ca473c0bb05334fd" prot="public">
+          <name>CNOSSOS_P2P_METEO_JRC2012</name>
+          <initializer> 2</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Use the frequency of occurence of favorable propagation conditions </para>          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Choice of meteorological averaging. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/dvm/Projets/CNOSSOS-EU/dev/CnossosPropagation/CnossosPropagation.h" line="127" bodyfile="C:/Users/dvm/Projets/CNOSSOS-EU/dev/CnossosPropagation/CnossosPropagation.h" bodystart="126" bodyend="131"/>
+      </memberdef>
+      <memberdef kind="enum" id="_cnossos_propagation_8h_1ac341179e16875a28421482d05198230d" prot="public" static="no">
+        <name>CNOSSOS_P2P_RESULT</name>
+        <enumvalue id="_cnossos_propagation_8h_1ac341179e16875a28421482d05198230dac8cd6900fde3e4de9396fd9a552fc126" prot="public">
+          <name>CNOSSOS_P2P_RESULT_LP_AVG_dBA</name>
+          <initializer> -1</initializer>
+          <briefdescription>
+<para>global, dB(A) weighted, long term averaged noise level </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_cnossos_propagation_8h_1ac341179e16875a28421482d05198230daec637eb81914210e0ebaf2d5ded6822a" prot="public">
+          <name>CNOSSOS_P2P_RESULT_LP_FAV_dBA</name>
+          <initializer> -2</initializer>
+          <briefdescription>
+<para>global, dB(A) weighted, noise level under favorable propagation conditions </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_cnossos_propagation_8h_1ac341179e16875a28421482d05198230da6eedee5d58bfe23ddea34f4e6d2ab87d" prot="public">
+          <name>CNOSSOS_P2P_RESULT_LP_HOM_dBA</name>
+          <initializer> -3</initializer>
+          <briefdescription>
+<para>global, dB(A) weighted, noise level under homogeneous propagation conditions </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_cnossos_propagation_8h_1ac341179e16875a28421482d05198230da6c9bf40eba14f90e763629e8b985b5d3" prot="public">
+          <name>CNOSSOS_P2P_RESULT_LP_AVG</name>
+          <initializer> 0</initializer>
+          <briefdescription>
+<para>long-time averaged noise level spectrum </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_cnossos_propagation_8h_1ac341179e16875a28421482d05198230dac831cf2d6e1b7e942d3924dad4ae2365" prot="public">
+          <name>CNOSSOS_P2P_RESULT_LP_FAV</name>
+          <initializer> 1</initializer>
+          <briefdescription>
+<para>noise level spectrum under favorable propagation conditions </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_cnossos_propagation_8h_1ac341179e16875a28421482d05198230dacd73081382286fc04a43944124c77126" prot="public">
+          <name>CNOSSOS_P2P_RESULT_LP_HOM</name>
+          <initializer> 2</initializer>
+          <briefdescription>
+<para>noise level spectrum under homogeneous propagation conditions </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_cnossos_propagation_8h_1ac341179e16875a28421482d05198230daecfaa26414a83d9bdcd2bcb652738bea" prot="public">
+          <name>CNOSSOS_P2P_RESULT_ATT_FAV</name>
+          <initializer> 3</initializer>
+          <briefdescription>
+<para>excess attenuation spectrum under favorable propagation conditions </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_cnossos_propagation_8h_1ac341179e16875a28421482d05198230daab612c4beffa46c41520d5206715f07c" prot="public">
+          <name>CNOSSOS_P2P_RESULT_ATT_HOM</name>
+          <initializer> 4</initializer>
+          <briefdescription>
+<para>excess attenuation spectrum under homogeneous propagation conditions </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_cnossos_propagation_8h_1ac341179e16875a28421482d05198230da5f9a28df8a9516358d28424538245a56" prot="public">
+          <name>CNOSSOS_P2P_RESULT_LW_SOURCE</name>
+          <initializer> 5</initializer>
+          <briefdescription>
+<para>sound power spectrum </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_cnossos_propagation_8h_1ac341179e16875a28421482d05198230daa31c4d722a3050fd7f3fd94469c80cd9" prot="public">
+          <name>CNOSSOS_P2P_RESULT_DELTA_LW</name>
+          <initializer> 6</initializer>
+          <briefdescription>
+<para>sound power conversion, free field versus hemispherical radiation conditions </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_cnossos_propagation_8h_1ac341179e16875a28421482d05198230da057f15add7c9532f7ebd088713f91a5c" prot="public">
+          <name>CNOSSOS_P2P_RESULT_ATT_GEO</name>
+          <initializer> 7</initializer>
+          <briefdescription>
+<para>attenuation due to geometrical spreading </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_cnossos_propagation_8h_1ac341179e16875a28421482d05198230da5ceb429d916f4bf56998ce5836720196" prot="public">
+          <name>CNOSSOS_P2P_RESULT_ATT_ATM</name>
+          <initializer> 8</initializer>
+          <briefdescription>
+<para>attenuation due to atmospheric absorption </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_cnossos_propagation_8h_1ac341179e16875a28421482d05198230da1fd5bfd4088af7d295366c562529cb44" prot="public">
+          <name>CNOSSOS_P2P_RESULT_ATT_REF</name>
+          <initializer> 9</initializer>
+          <briefdescription>
+<para>attenuation due to reflections by vertical obstacles </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_cnossos_propagation_8h_1ac341179e16875a28421482d05198230da3088e34a577a34f2c478ba60dec0b26b" prot="public">
+          <name>CNOSSOS_P2P_RESULT_ATT_DIF</name>
+          <initializer> 10</initializer>
+          <briefdescription>
+<para>attenuation due to lateral diffraction by vertical edges </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_cnossos_propagation_8h_1ac341179e16875a28421482d05198230da569574ca5e1d910fa15acd64f607eb80" prot="public">
+          <name>CNOSSOS_P2P_RESULT_ATT_SIZE</name>
+          <initializer> 11</initializer>
+          <briefdescription>
+<para>attenuation due to finite size of vertical obstacles </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Select the result to be returned by the call to <ref refid="_cnossos_propagation_8h_1a093ecd514c66dc59e2249bf90180667c" kindref="member">CNOSSOS_P2P_GetResult</ref>. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/dvm/Projets/CNOSSOS-EU/dev/CnossosPropagation/CnossosPropagation.h" line="178" bodyfile="C:/Users/dvm/Projets/CNOSSOS-EU/dev/CnossosPropagation/CnossosPropagation.h" bodystart="177" bodyend="194"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="_cnossos_propagation_8h_1ab23aeb50806723b22c684d8355d91610" prot="public" static="no">
+        <type>double</type>
+        <definition>typedef double CNOSSOS_P2P_POSITION[3]</definition>
+        <argsstring>[3]</argsstring>
+        <name>CNOSSOS_P2P_POSITION</name>
+        <briefdescription>
+<para>Encoding of positions using 3 dimensional (X,Y,Z) coordinates. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/dvm/Projets/CNOSSOS-EU/dev/CnossosPropagation/CnossosPropagation.h" line="105" bodyfile="C:/Users/dvm/Projets/CNOSSOS-EU/dev/CnossosPropagation/CnossosPropagation.h" bodystart="101" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="_cnossos_propagation_8h_1afffadd7bd99fd249541999398850b459" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>_CNOSSOS_DLL_DECL_ char *</type>
+        <definition>_CNOSSOS_DLL_DECL_ char* CNOSSOS_P2P_GetVersionDLL</definition>
+        <argsstring>(void)</argsstring>
+        <name>CNOSSOS_P2P_GetVersionDLL</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Get the current version of the CnossosPropagation shared library. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>String encoded version of the shared library. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/dvm/Projets/CNOSSOS-EU/dev/CnossosPropagation/CnossosPropagation.h" line="76" bodyfile="C:/Users/dvm/Projets/CNOSSOS-EU/dev/CnossosPropagation/CnossosPropagation.cpp" bodystart="105" bodyend="108"/>
+      </memberdef>
+      <memberdef kind="function" id="_cnossos_propagation_8h_1ac4ddc5a04925a567d4c5ef2446622501" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>_CNOSSOS_DLL_DECL_ unsigned int</type>
+        <definition>_CNOSSOS_DLL_DECL_ unsigned int CNOSSOS_P2P_GetFreq</definition>
+        <argsstring>(double *freq)</argsstring>
+        <name>CNOSSOS_P2P_GetFreq</name>
+        <param>
+          <type>double *</type>
+          <declname>freq</declname>
+        </param>
+        <briefdescription>
+<para>Get the frequency range for the spectral data. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>freq</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Array in which to return the frequency bands associated with spectral information passed to and from the shared library. If a NULL pointer is specified, the function returns the number of values that would have been written on output but does not transfer any actual values. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The number of frequency bands. </para></simplesect>
+<simplesect kind="note"><para>It is up to the caller to pass in an array of sufficient size. Applications can determine the minimal size of this array by first calling the function with a NULL argument. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/dvm/Projets/CNOSSOS-EU/dev/CnossosPropagation/CnossosPropagation.h" line="87" bodyfile="C:/Users/dvm/Projets/CNOSSOS-EU/dev/CnossosPropagation/CnossosPropagation.cpp" bodystart="110" bodyend="115"/>
+      </memberdef>
+      <memberdef kind="function" id="_cnossos_propagation_8h_1a3ea3195815666e4bd305acf07f12b480" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>_CNOSSOS_DLL_DECL_ <ref refid="struct_c_n_o_s_s_o_s___p2_p___m_a_t_e_r_i_a_l" kindref="compound">CNOSSOS_P2P_MATERIAL</ref> *</type>
+        <definition>_CNOSSOS_DLL_DECL_ CNOSSOS_P2P_MATERIAL* CNOSSOS_P2P_GetMaterial</definition>
+        <argsstring>(const char *id, bool create_if_needed=false)</argsstring>
+        <name>CNOSSOS_P2P_GetMaterial</name>
+        <param>
+          <type>const char *</type>
+          <declname>id</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>create_if_needed</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+<para>Get material pointer. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Unique textual identifier for the material </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>create_if_needed</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If a material with the given name does not exist and this flag is set to true, the library will create a new material; otherwise this function returns a NULL pointer. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>An opaque pointer to the material or NULL if no material with the given name exists and the create_if_needed flag is set to false. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/dvm/Projets/CNOSSOS-EU/dev/CnossosPropagation/CnossosPropagation.h" line="203" bodyfile="C:/Users/dvm/Projets/CNOSSOS-EU/dev/CnossosPropagation/CnossosPropagation.cpp" bodystart="117" bodyend="120"/>
+      </memberdef>
+      <memberdef kind="function" id="_cnossos_propagation_8h_1a5873816b0680922b2d3116390c8e9d85" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>_CNOSSOS_DLL_DECL_ bool</type>
+        <definition>_CNOSSOS_DLL_DECL_ bool CNOSSOS_P2P_SetSigma</definition>
+        <argsstring>(CNOSSOS_P2P_MATERIAL *mat, double const &amp;sigma)</argsstring>
+        <name>CNOSSOS_P2P_SetSigma</name>
+        <param>
+          <type><ref refid="struct_c_n_o_s_s_o_s___p2_p___m_a_t_e_r_i_a_l" kindref="compound">CNOSSOS_P2P_MATERIAL</ref> *</type>
+          <declname>mat</declname>
+        </param>
+        <param>
+          <type>double const &amp;</type>
+          <declname>sigma</declname>
+        </param>
+        <briefdescription>
+<para>Set the flow resistivity for a given material. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>mat</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An opaque pointer returned by a call to <ref refid="_cnossos_propagation_8h_1a3ea3195815666e4bd305acf07f12b480" kindref="member">CNOSSOS_P2P_GetMaterial</ref> </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>sigma</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>New value of the flow resistivity (in kPa.s/m²) </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true if the call succeeded, false otherwise </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/dvm/Projets/CNOSSOS-EU/dev/CnossosPropagation/CnossosPropagation.h" line="210" bodyfile="C:/Users/dvm/Projets/CNOSSOS-EU/dev/CnossosPropagation/CnossosPropagation.cpp" bodystart="143" bodyend="148"/>
+      </memberdef>
+      <memberdef kind="function" id="_cnossos_propagation_8h_1abe7ad4188dd7146c6765b703c210c687" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>_CNOSSOS_DLL_DECL_ bool</type>
+        <definition>_CNOSSOS_DLL_DECL_ bool CNOSSOS_P2P_GetSigma</definition>
+        <argsstring>(CNOSSOS_P2P_MATERIAL *mat, double &amp;sigma)</argsstring>
+        <name>CNOSSOS_P2P_GetSigma</name>
+        <param>
+          <type><ref refid="struct_c_n_o_s_s_o_s___p2_p___m_a_t_e_r_i_a_l" kindref="compound">CNOSSOS_P2P_MATERIAL</ref> *</type>
+          <declname>mat</declname>
+        </param>
+        <param>
+          <type>double &amp;</type>
+          <declname>sigma</declname>
+        </param>
+        <briefdescription>
+<para>Get the flow resistivity for a given material. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>mat</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An opaque pointer returned by a call to <ref refid="_cnossos_propagation_8h_1a3ea3195815666e4bd305acf07f12b480" kindref="member">CNOSSOS_P2P_GetMaterial</ref> </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>sigma</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Value of the flow resistivity (in kPa.s/m²) </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true if the call succeeded, false otherwise </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/dvm/Projets/CNOSSOS-EU/dev/CnossosPropagation/CnossosPropagation.h" line="217" bodyfile="C:/Users/dvm/Projets/CNOSSOS-EU/dev/CnossosPropagation/CnossosPropagation.cpp" bodystart="136" bodyend="141"/>
+      </memberdef>
+      <memberdef kind="function" id="_cnossos_propagation_8h_1ab4bbf357260294162457abcb895afb40" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>_CNOSSOS_DLL_DECL_ bool</type>
+        <definition>_CNOSSOS_DLL_DECL_ bool CNOSSOS_P2P_SetGValue</definition>
+        <argsstring>(CNOSSOS_P2P_MATERIAL *mat, double const &amp;G)</argsstring>
+        <name>CNOSSOS_P2P_SetGValue</name>
+        <param>
+          <type><ref refid="struct_c_n_o_s_s_o_s___p2_p___m_a_t_e_r_i_a_l" kindref="compound">CNOSSOS_P2P_MATERIAL</ref> *</type>
+          <declname>mat</declname>
+        </param>
+        <param>
+          <type>double const &amp;</type>
+          <declname>G</declname>
+        </param>
+        <briefdescription>
+<para>Set the ground factor for a given material. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>mat</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An opaque pointer returned by a call to <ref refid="_cnossos_propagation_8h_1a3ea3195815666e4bd305acf07f12b480" kindref="member">CNOSSOS_P2P_GetMaterial</ref> </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>G</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>New value of the ground factor </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true if the call succeeded, false otherwise </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/dvm/Projets/CNOSSOS-EU/dev/CnossosPropagation/CnossosPropagation.h" line="224" bodyfile="C:/Users/dvm/Projets/CNOSSOS-EU/dev/CnossosPropagation/CnossosPropagation.cpp" bodystart="129" bodyend="134"/>
+      </memberdef>
+      <memberdef kind="function" id="_cnossos_propagation_8h_1ab72ece6140bb9ddec495b6f5740905d3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>_CNOSSOS_DLL_DECL_ bool</type>
+        <definition>_CNOSSOS_DLL_DECL_ bool CNOSSOS_P2P_GetGValue</definition>
+        <argsstring>(CNOSSOS_P2P_MATERIAL *mat, double &amp;G)</argsstring>
+        <name>CNOSSOS_P2P_GetGValue</name>
+        <param>
+          <type><ref refid="struct_c_n_o_s_s_o_s___p2_p___m_a_t_e_r_i_a_l" kindref="compound">CNOSSOS_P2P_MATERIAL</ref> *</type>
+          <declname>mat</declname>
+        </param>
+        <param>
+          <type>double &amp;</type>
+          <declname>G</declname>
+        </param>
+        <briefdescription>
+<para>Get the ground factor for a given material. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>mat</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An opaque pointer returned by a call to <ref refid="_cnossos_propagation_8h_1a3ea3195815666e4bd305acf07f12b480" kindref="member">CNOSSOS_P2P_GetMaterial</ref> </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>G</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>New value of the ground factor </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true if the call succeeded, false otherwise </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/dvm/Projets/CNOSSOS-EU/dev/CnossosPropagation/CnossosPropagation.h" line="231" bodyfile="C:/Users/dvm/Projets/CNOSSOS-EU/dev/CnossosPropagation/CnossosPropagation.cpp" bodystart="122" bodyend="127"/>
+      </memberdef>
+      <memberdef kind="function" id="_cnossos_propagation_8h_1a09aa3f9ab868ae6ebfa85bd1c5944240" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>_CNOSSOS_DLL_DECL_ bool</type>
+        <definition>_CNOSSOS_DLL_DECL_ bool CNOSSOS_P2P_SetAlpha</definition>
+        <argsstring>(CNOSSOS_P2P_MATERIAL *mat, double const *alpha)</argsstring>
+        <name>CNOSSOS_P2P_SetAlpha</name>
+        <param>
+          <type><ref refid="struct_c_n_o_s_s_o_s___p2_p___m_a_t_e_r_i_a_l" kindref="compound">CNOSSOS_P2P_MATERIAL</ref> *</type>
+          <declname>mat</declname>
+        </param>
+        <param>
+          <type>double const *</type>
+          <declname>alpha</declname>
+        </param>
+        <briefdescription>
+<para>Set the spectral absorption factor for a given material. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>mat</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An opaque pointer returned by a call to <ref refid="_cnossos_propagation_8h_1a3ea3195815666e4bd305acf07f12b480" kindref="member">CNOSSOS_P2P_GetMaterial</ref> </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>alpha</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Array containing the values of the absorption factor spectrum </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true if the call succeeded, false otherwise </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/dvm/Projets/CNOSSOS-EU/dev/CnossosPropagation/CnossosPropagation.h" line="238"/>
+      </memberdef>
+      <memberdef kind="function" id="_cnossos_propagation_8h_1a8bf0218ad655aac268b0dd6895e599f6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>_CNOSSOS_DLL_DECL_ bool</type>
+        <definition>_CNOSSOS_DLL_DECL_ bool CNOSSOS_P2P_GetAlpha</definition>
+        <argsstring>(CNOSSOS_P2P_MATERIAL *mat, double *alpha)</argsstring>
+        <name>CNOSSOS_P2P_GetAlpha</name>
+        <param>
+          <type><ref refid="struct_c_n_o_s_s_o_s___p2_p___m_a_t_e_r_i_a_l" kindref="compound">CNOSSOS_P2P_MATERIAL</ref> *</type>
+          <declname>mat</declname>
+        </param>
+        <param>
+          <type>double *</type>
+          <declname>alpha</declname>
+        </param>
+        <briefdescription>
+<para>Get the spectral absorption factor for a given material. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>mat</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An opaque pointer returned by a call to <ref refid="_cnossos_propagation_8h_1a3ea3195815666e4bd305acf07f12b480" kindref="member">CNOSSOS_P2P_GetMaterial</ref> </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>alpha</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Array containing the values of the absorption factor spectrum </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true if the call succeeded, false otherwise </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/dvm/Projets/CNOSSOS-EU/dev/CnossosPropagation/CnossosPropagation.h" line="245" bodyfile="C:/Users/dvm/Projets/CNOSSOS-EU/dev/CnossosPropagation/CnossosPropagation.cpp" bodystart="150" bodyend="156"/>
+      </memberdef>
+      <memberdef kind="function" id="_cnossos_propagation_8h_1a5b1dbca88e974f35491e699a8b9187fa" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>_CNOSSOS_DLL_DECL_ <ref refid="struct_c_n_o_s_s_o_s___p2_p___e_n_g_i_n_e" kindref="compound">CNOSSOS_P2P_ENGINE</ref> *</type>
+        <definition>_CNOSSOS_DLL_DECL_ CNOSSOS_P2P_ENGINE* CNOSSOS_P2P_CreateEngine</definition>
+        <argsstring>(const char *name=0)</argsstring>
+        <name>CNOSSOS_P2P_CreateEngine</name>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+<para>Create a new calculation engine. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If specified, initializes the engine for the specified calculation method </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="see"><para><ref refid="_cnossos_propagation_8h_1a779fa81c97073515073916c4b5c72d3c" kindref="member">CNOSSOS_P2P_SelectMethod</ref> </para></simplesect>
+<simplesect kind="return"><para>An opaque pointer to the newly created calculation engine </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/dvm/Projets/CNOSSOS-EU/dev/CnossosPropagation/CnossosPropagation.h" line="252" bodyfile="C:/Users/dvm/Projets/CNOSSOS-EU/dev/CnossosPropagation/CnossosPropagation.cpp" bodystart="165" bodyend="168"/>
+      </memberdef>
+      <memberdef kind="function" id="_cnossos_propagation_8h_1aefa58346c8c969669dd1eb7dacb36ff1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>_CNOSSOS_DLL_DECL_ bool</type>
+        <definition>_CNOSSOS_DLL_DECL_ bool CNOSSOS_P2P_DeleteEngine</definition>
+        <argsstring>(CNOSSOS_P2P_ENGINE *p2p)</argsstring>
+        <name>CNOSSOS_P2P_DeleteEngine</name>
+        <param>
+          <type><ref refid="struct_c_n_o_s_s_o_s___p2_p___e_n_g_i_n_e" kindref="compound">CNOSSOS_P2P_ENGINE</ref> *</type>
+          <declname>p2p</declname>
+        </param>
+        <briefdescription>
+<para>Delete a calculation engine created by a call to <ref refid="_cnossos_propagation_8h_1a5b1dbca88e974f35491e699a8b9187fa" kindref="member">CNOSSOS_P2P_CreateEngine</ref>. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p2p</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An opaque pointer returned by a previous call to CNOSSOS_P2P_CreateEngine </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true if the call succeeded, false otherwise </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/dvm/Projets/CNOSSOS-EU/dev/CnossosPropagation/CnossosPropagation.h" line="258" bodyfile="C:/Users/dvm/Projets/CNOSSOS-EU/dev/CnossosPropagation/CnossosPropagation.cpp" bodystart="170" bodyend="175"/>
+      </memberdef>
+      <memberdef kind="function" id="_cnossos_propagation_8h_1a779fa81c97073515073916c4b5c72d3c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>_CNOSSOS_DLL_DECL_ bool</type>
+        <definition>_CNOSSOS_DLL_DECL_ bool CNOSSOS_P2P_SelectMethod</definition>
+        <argsstring>(CNOSSOS_P2P_ENGINE *p2p, const char *name)</argsstring>
+        <name>CNOSSOS_P2P_SelectMethod</name>
+        <param>
+          <type><ref refid="struct_c_n_o_s_s_o_s___p2_p___e_n_g_i_n_e" kindref="compound">CNOSSOS_P2P_ENGINE</ref> *</type>
+          <declname>p2p</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+        </param>
+        <briefdescription>
+<para>select the point to point method </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p2p</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An opaque pointer returned by a previous call to CNOSSOS_P2P_CreateEngine </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Textual identifier of the calculation method. Valid methods include &quot;ISO-9613-2&quot;, &quot;JRC-DRAFT-2010&quot; and &quot;JRC-2012&quot; </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true if the call succeeded, false otherwise </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/dvm/Projets/CNOSSOS-EU/dev/CnossosPropagation/CnossosPropagation.h" line="266" bodyfile="C:/Users/dvm/Projets/CNOSSOS-EU/dev/CnossosPropagation/CnossosPropagation.cpp" bodystart="189" bodyend="192"/>
+      </memberdef>
+      <memberdef kind="function" id="_cnossos_propagation_8h_1a0fbc355538c6f2a3df3004f3802a59a7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>_CNOSSOS_DLL_DECL_ const char *</type>
+        <definition>_CNOSSOS_DLL_DECL_ const char* CNOSSOS_P2P_GetMethod</definition>
+        <argsstring>(CNOSSOS_P2P_ENGINE *p2p)</argsstring>
+        <name>CNOSSOS_P2P_GetMethod</name>
+        <param>
+          <type><ref refid="struct_c_n_o_s_s_o_s___p2_p___e_n_g_i_n_e" kindref="compound">CNOSSOS_P2P_ENGINE</ref> *</type>
+          <declname>p2p</declname>
+        </param>
+        <briefdescription>
+<para>Get the name of the currently selected propagation path calculator. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p2p</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An opaque pointer returned by a previous call to CNOSSOS_P2P_CreateEngine </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Pointer to a string containing the name of the method </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/dvm/Projets/CNOSSOS-EU/dev/CnossosPropagation/CnossosPropagation.h" line="272" bodyfile="C:/Users/dvm/Projets/CNOSSOS-EU/dev/CnossosPropagation/CnossosPropagation.cpp" bodystart="177" bodyend="181"/>
+      </memberdef>
+      <memberdef kind="function" id="_cnossos_propagation_8h_1adb0244716e92b0efb4a37114a3017e4b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>_CNOSSOS_DLL_DECL_ const char *</type>
+        <definition>_CNOSSOS_DLL_DECL_ const char* CNOSSOS_P2P_GetVersion</definition>
+        <argsstring>(CNOSSOS_P2P_ENGINE *p2p)</argsstring>
+        <name>CNOSSOS_P2P_GetVersion</name>
+        <param>
+          <type><ref refid="struct_c_n_o_s_s_o_s___p2_p___e_n_g_i_n_e" kindref="compound">CNOSSOS_P2P_ENGINE</ref> *</type>
+          <declname>p2p</declname>
+        </param>
+        <briefdescription>
+<para>Get the version of the currently selected propagation path calculator. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p2p</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An opaque pointer returned by a previous call to CNOSSOS_P2P_CreateEngine </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Pointer to a string containing the current version of the method </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/dvm/Projets/CNOSSOS-EU/dev/CnossosPropagation/CnossosPropagation.h" line="278" bodyfile="C:/Users/dvm/Projets/CNOSSOS-EU/dev/CnossosPropagation/CnossosPropagation.cpp" bodystart="183" bodyend="187"/>
+      </memberdef>
+      <memberdef kind="function" id="_cnossos_propagation_8h_1ad993d8f1fd9265c815e1294d85598172" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>_CNOSSOS_DLL_DECL_ bool</type>
+        <definition>_CNOSSOS_DLL_DECL_ bool CNOSSOS_P2P_ClearPath</definition>
+        <argsstring>(CNOSSOS_P2P_ENGINE *p2p)</argsstring>
+        <name>CNOSSOS_P2P_ClearPath</name>
+        <param>
+          <type><ref refid="struct_c_n_o_s_s_o_s___p2_p___e_n_g_i_n_e" kindref="compound">CNOSSOS_P2P_ENGINE</ref> *</type>
+          <declname>p2p</declname>
+        </param>
+        <briefdescription>
+<para>Clear the propagation path data. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p2p</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An opaque pointer returned by a previous call to CNOSSOS_P2P_CreateEngine </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true if the call succeeded, false otherwise </para></simplesect>
+<simplesect kind="note"><para>A propagation path is created by successive calls to <ref refid="_cnossos_propagation_8h_1a508f9631f4d4091761bb493b7d52a406" kindref="member">CNOSSOS_P2P_AddToPath</ref>. A call to <ref refid="_cnossos_propagation_8h_1a093ecd514c66dc59e2249bf90180667c" kindref="member">CNOSSOS_P2P_GetResult</ref> will close the path and trigger the acoustical calculations. In order to restart the calculation for a different path, applications must call the <ref refid="_cnossos_propagation_8h_1ad993d8f1fd9265c815e1294d85598172" kindref="member">CNOSSOS_P2P_ClearPath</ref> function before constructing a new one. </para></simplesect>
+<simplesect kind="return"><para>true if the call succeeded, false otherwise </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/dvm/Projets/CNOSSOS-EU/dev/CnossosPropagation/CnossosPropagation.h" line="289" bodyfile="C:/Users/dvm/Projets/CNOSSOS-EU/dev/CnossosPropagation/CnossosPropagation.cpp" bodystart="230" bodyend="236"/>
+      </memberdef>
+      <memberdef kind="function" id="_cnossos_propagation_8h_1a508f9631f4d4091761bb493b7d52a406" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>_CNOSSOS_DLL_DECL_ unsigned int</type>
+        <definition>_CNOSSOS_DLL_DECL_ unsigned int CNOSSOS_P2P_AddToPath</definition>
+        <argsstring>(CNOSSOS_P2P_ENGINE *p2p, CNOSSOS_P2P_POSITION const &amp;pos, CNOSSOS_P2P_MATERIAL *mat, CNOSSOS_P2P_EXTENSION *ext=0)</argsstring>
+        <name>CNOSSOS_P2P_AddToPath</name>
+        <param>
+          <type><ref refid="struct_c_n_o_s_s_o_s___p2_p___e_n_g_i_n_e" kindref="compound">CNOSSOS_P2P_ENGINE</ref> *</type>
+          <declname>p2p</declname>
+        </param>
+        <param>
+          <type><ref refid="_cnossos_propagation_8h_1ab23aeb50806723b22c684d8355d91610" kindref="member">CNOSSOS_P2P_POSITION</ref> const &amp;</type>
+          <declname>pos</declname>
+        </param>
+        <param>
+          <type><ref refid="struct_c_n_o_s_s_o_s___p2_p___m_a_t_e_r_i_a_l" kindref="compound">CNOSSOS_P2P_MATERIAL</ref> *</type>
+          <declname>mat</declname>
+        </param>
+        <param>
+          <type><ref refid="struct_c_n_o_s_s_o_s___p2_p___e_x_t_e_n_s_i_o_n" kindref="compound">CNOSSOS_P2P_EXTENSION</ref> *</type>
+          <declname>ext</declname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+<para>Add a new control point to the propagation path. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p2p</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An opaque pointer returned by a previous call to CNOSSOS_P2P_CreateEngine </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pos</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Position of the control point </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>mat</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Transparent pointer to a material as returned by a previous call to <ref refid="_cnossos_propagation_8h_1a3ea3195815666e4bd305acf07f12b480" kindref="member">CNOSSOS_P2P_GetMaterial</ref> </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ext</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Transparent pointer to a vertical extension record as returned by a previous call to <ref refid="_cnossos_propagation_8h_1ad2faa541076b23babe95c8fb19e34847" kindref="member">CNOSSOS_P2P_CreatePointSource</ref>, <ref refid="_cnossos_propagation_8h_1a190291bea342ac6c312730b6759bd9ae" kindref="member">CNOSSOS_P2P_CreateLineSource</ref>, <ref refid="_cnossos_propagation_8h_1acb79e89b2e4abe3cd276568317253bfc" kindref="member">CNOSSOS_P2P_CreateReceiver</ref>, <ref refid="_cnossos_propagation_8h_1a08da83371dc88c4db674dec899eaf55a" kindref="member">CNOSSOS_P2P_CreateBarrier</ref>, <ref refid="_cnossos_propagation_8h_1ac6cb00bee72028d90f3dd868342d4841" kindref="member">CNOSSOS_P2P_CreateVerticalWall</ref> or <ref refid="_cnossos_propagation_8h_1affb164e2980d0280f759ddff07cbb28e" kindref="member">CNOSSOS_P2P_CreateVerticalEdge</ref>. For intermediate boundary positions without vertical extensions, this argument is set to NULL. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The number of positions in the propagation path after appending the specified control point </para></simplesect>
+<simplesect kind="note"><para>A control point is part of the boundary separating the solid 2.5D model from the air above. Control points can be located on the ground or on top of man-made obstacles. Altitude of control points is measured against a geo-spatial reference coordinate system. Vertical extensions encode information related to vertical objects extending above the control point&apos;s position. The height of a vertical extension is measured relative to the altitude of the control point. </para><simplesectsep/><para>A valid path should have exactly one source and one receiver vertical extension at its extreme points. Paths may start at the source and end with a receiver or vice-versa. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/dvm/Projets/CNOSSOS-EU/dev/CnossosPropagation/CnossosPropagation.h" line="317" bodyfile="C:/Users/dvm/Projets/CNOSSOS-EU/dev/CnossosPropagation/CnossosPropagation.cpp" bodystart="238" bodyend="251"/>
+      </memberdef>
+      <memberdef kind="function" id="_cnossos_propagation_8h_1ad2faa541076b23babe95c8fb19e34847" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>_CNOSSOS_DLL_DECL_ <ref refid="struct_c_n_o_s_s_o_s___p2_p___e_x_t_e_n_s_i_o_n" kindref="compound">CNOSSOS_P2P_EXTENSION</ref> *</type>
+        <definition>_CNOSSOS_DLL_DECL_ CNOSSOS_P2P_EXTENSION* CNOSSOS_P2P_CreatePointSource</definition>
+        <argsstring>(double const &amp;h)</argsstring>
+        <name>CNOSSOS_P2P_CreatePointSource</name>
+        <param>
+          <type>double const &amp;</type>
+          <declname>h</declname>
+        </param>
+        <briefdescription>
+<para>Create a vertical extension representing a point source. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>h</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>height of the point source above the boundary profile </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A transparent pointer to a vertical extension record </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/dvm/Projets/CNOSSOS-EU/dev/CnossosPropagation/CnossosPropagation.h" line="323" bodyfile="C:/Users/dvm/Projets/CNOSSOS-EU/dev/CnossosPropagation/CnossosPropagation.cpp" bodystart="194" bodyend="197"/>
+      </memberdef>
+      <memberdef kind="function" id="_cnossos_propagation_8h_1acb79e89b2e4abe3cd276568317253bfc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>_CNOSSOS_DLL_DECL_ <ref refid="struct_c_n_o_s_s_o_s___p2_p___e_x_t_e_n_s_i_o_n" kindref="compound">CNOSSOS_P2P_EXTENSION</ref> *</type>
+        <definition>_CNOSSOS_DLL_DECL_ CNOSSOS_P2P_EXTENSION* CNOSSOS_P2P_CreateReceiver</definition>
+        <argsstring>(double const &amp;h)</argsstring>
+        <name>CNOSSOS_P2P_CreateReceiver</name>
+        <param>
+          <type>double const &amp;</type>
+          <declname>h</declname>
+        </param>
+        <briefdescription>
+<para>Create a vertical extension representing a receiver point. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>h</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>height of the receiver above the boundary profile </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A transparent pointer to a vertical extension record </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/dvm/Projets/CNOSSOS-EU/dev/CnossosPropagation/CnossosPropagation.h" line="329" bodyfile="C:/Users/dvm/Projets/CNOSSOS-EU/dev/CnossosPropagation/CnossosPropagation.cpp" bodystart="199" bodyend="202"/>
+      </memberdef>
+      <memberdef kind="function" id="_cnossos_propagation_8h_1a08da83371dc88c4db674dec899eaf55a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>_CNOSSOS_DLL_DECL_ <ref refid="struct_c_n_o_s_s_o_s___p2_p___e_x_t_e_n_s_i_o_n" kindref="compound">CNOSSOS_P2P_EXTENSION</ref> *</type>
+        <definition>_CNOSSOS_DLL_DECL_ CNOSSOS_P2P_EXTENSION* CNOSSOS_P2P_CreateBarrier</definition>
+        <argsstring>(double const &amp;h, CNOSSOS_P2P_MATERIAL *mat=0)</argsstring>
+        <name>CNOSSOS_P2P_CreateBarrier</name>
+        <param>
+          <type>double const &amp;</type>
+          <declname>h</declname>
+        </param>
+        <param>
+          <type><ref refid="struct_c_n_o_s_s_o_s___p2_p___m_a_t_e_r_i_a_l" kindref="compound">CNOSSOS_P2P_MATERIAL</ref> *</type>
+          <declname>mat</declname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+<para>Create a vertical extension for a thin barrier crossed by the propagation plane. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>h</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>height of the barrier above the boundary profile </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>mat</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to the material covering the barrier, as returned by a call to <ref refid="_cnossos_propagation_8h_1a3ea3195815666e4bd305acf07f12b480" kindref="member">CNOSSOS_P2P_GetMaterial</ref> </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A transparent pointer to a vertical extension record </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/dvm/Projets/CNOSSOS-EU/dev/CnossosPropagation/CnossosPropagation.h" line="336" bodyfile="C:/Users/dvm/Projets/CNOSSOS-EU/dev/CnossosPropagation/CnossosPropagation.cpp" bodystart="204" bodyend="207"/>
+      </memberdef>
+      <memberdef kind="function" id="_cnossos_propagation_8h_1ac6cb00bee72028d90f3dd868342d4841" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>_CNOSSOS_DLL_DECL_ <ref refid="struct_c_n_o_s_s_o_s___p2_p___e_x_t_e_n_s_i_o_n" kindref="compound">CNOSSOS_P2P_EXTENSION</ref> *</type>
+        <definition>_CNOSSOS_DLL_DECL_ CNOSSOS_P2P_EXTENSION* CNOSSOS_P2P_CreateVerticalWall</definition>
+        <argsstring>(double const &amp;h, CNOSSOS_P2P_MATERIAL *mat=0)</argsstring>
+        <name>CNOSSOS_P2P_CreateVerticalWall</name>
+        <param>
+          <type>double const &amp;</type>
+          <declname>h</declname>
+        </param>
+        <param>
+          <type><ref refid="struct_c_n_o_s_s_o_s___p2_p___m_a_t_e_r_i_a_l" kindref="compound">CNOSSOS_P2P_MATERIAL</ref> *</type>
+          <declname>mat</declname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+<para>Create an extension for a vertical wall acting as a reflector for the propagation path. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>h</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>height of the reflecting wall above the boundary profile </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>mat</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to the material covering the reflecting surface, as returned by a call to <ref refid="_cnossos_propagation_8h_1a3ea3195815666e4bd305acf07f12b480" kindref="member">CNOSSOS_P2P_GetMaterial</ref> </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A transparent pointer to a vertical extension record </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/dvm/Projets/CNOSSOS-EU/dev/CnossosPropagation/CnossosPropagation.h" line="343" bodyfile="C:/Users/dvm/Projets/CNOSSOS-EU/dev/CnossosPropagation/CnossosPropagation.cpp" bodystart="209" bodyend="212"/>
+      </memberdef>
+      <memberdef kind="function" id="_cnossos_propagation_8h_1affb164e2980d0280f759ddff07cbb28e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>_CNOSSOS_DLL_DECL_ <ref refid="struct_c_n_o_s_s_o_s___p2_p___e_x_t_e_n_s_i_o_n" kindref="compound">CNOSSOS_P2P_EXTENSION</ref> *</type>
+        <definition>_CNOSSOS_DLL_DECL_ CNOSSOS_P2P_EXTENSION* CNOSSOS_P2P_CreateVerticalEdge</definition>
+        <argsstring>(double const &amp;h)</argsstring>
+        <name>CNOSSOS_P2P_CreateVerticalEdge</name>
+        <param>
+          <type>double const &amp;</type>
+          <declname>h</declname>
+        </param>
+        <briefdescription>
+<para>Create an extension for a vertical edge causing lateral diffraction of the propagation path. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>h</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>height of the diffracting edge above the boundary profile </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A transparent pointer to a vertical extension record </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/dvm/Projets/CNOSSOS-EU/dev/CnossosPropagation/CnossosPropagation.h" line="349" bodyfile="C:/Users/dvm/Projets/CNOSSOS-EU/dev/CnossosPropagation/CnossosPropagation.cpp" bodystart="214" bodyend="217"/>
+      </memberdef>
+      <memberdef kind="function" id="_cnossos_propagation_8h_1a190291bea342ac6c312730b6759bd9ae" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>_CNOSSOS_DLL_DECL_ <ref refid="struct_c_n_o_s_s_o_s___p2_p___e_x_t_e_n_s_i_o_n" kindref="compound">CNOSSOS_P2P_EXTENSION</ref> *</type>
+        <definition>_CNOSSOS_DLL_DECL_ CNOSSOS_P2P_EXTENSION* CNOSSOS_P2P_CreateLineSource</definition>
+        <argsstring>(double const &amp;h, CNOSSOS_P2P_POSITION const segment[2], double const &amp;fixedAngle=0.0)</argsstring>
+        <name>CNOSSOS_P2P_CreateLineSource</name>
+        <param>
+          <type>double const &amp;</type>
+          <declname>h</declname>
+        </param>
+        <param>
+          <type><ref refid="_cnossos_propagation_8h_1ab23aeb50806723b22c684d8355d91610" kindref="member">CNOSSOS_P2P_POSITION</ref> const</type>
+          <declname>segment</declname>
+          <array>[2]</array>
+        </param>
+        <param>
+          <type>double const &amp;</type>
+          <declname>fixedAngle</declname>
+          <defval>0.0</defval>
+        </param>
+        <briefdescription>
+<para>Create a vertical extension representing a line source segment. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>h</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>height of the source above the boundary profile </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>segment</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>end-points of the source line segment as projected on the ground </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>fixedAngle</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>explicit angle of view of the segment as seen from the receiver. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A transparent pointer to a vertical extension record </para></simplesect>
+<simplesect kind="note"><para>Setting a fixed angle is necessary in case (inverse) ray-tracing is used for constructing the propagation path as each ray is considered representative of an implicit sector of propagation with fixed opening angle and having the propagation path as its bisector. If the fixed angle argument is set to zero, the calculation will explicitly calculate the angle of view of the segment as seen from the source, which is typically the case when using beam-tracing or image-source techniques for constructing the propagation paths. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/dvm/Projets/CNOSSOS-EU/dev/CnossosPropagation/CnossosPropagation.h" line="365" bodyfile="C:/Users/dvm/Projets/CNOSSOS-EU/dev/CnossosPropagation/CnossosPropagation.cpp" bodystart="219" bodyend="228"/>
+      </memberdef>
+      <memberdef kind="function" id="_cnossos_propagation_8h_1a53a098232477de8ba179e147102c88a0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>_CNOSSOS_DLL_DECL_ bool</type>
+        <definition>_CNOSSOS_DLL_DECL_ bool CNOSSOS_P2P_SetSoundPower</definition>
+        <argsstring>(CNOSSOS_P2P_ENGINE *p2p, double const *Lw, CNOSSOS_P2P_SPECTRUM_WEIGHTING spectrumWeighting=CNOSSOS_P2P_SPECTRUM_LIN, CNOSSOS_P2P_LW_MEASUREMENT_TYPE measurementType=CNOSSOS_P2P_LW_UNDEFINED)</argsstring>
+        <name>CNOSSOS_P2P_SetSoundPower</name>
+        <param>
+          <type><ref refid="struct_c_n_o_s_s_o_s___p2_p___e_n_g_i_n_e" kindref="compound">CNOSSOS_P2P_ENGINE</ref> *</type>
+          <declname>p2p</declname>
+        </param>
+        <param>
+          <type>double const *</type>
+          <declname>Lw</declname>
+        </param>
+        <param>
+          <type><ref refid="_cnossos_propagation_8h_1a4731b6d7565c3be5eb2e35a502c5afca" kindref="member">CNOSSOS_P2P_SPECTRUM_WEIGHTING</ref></type>
+          <declname>spectrumWeighting</declname>
+          <defval>CNOSSOS_P2P_SPECTRUM_LIN</defval>
+        </param>
+        <param>
+          <type><ref refid="_cnossos_propagation_8h_1a2329eadb2cdfeb3f97cdf8749e5127ba" kindref="member">CNOSSOS_P2P_LW_MEASUREMENT_TYPE</ref></type>
+          <declname>measurementType</declname>
+          <defval>CNOSSOS_P2P_LW_UNDEFINED</defval>
+        </param>
+        <briefdescription>
+<para>Set the sound power associated with the source. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p2p</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An opaque pointer returned by a previous call to CNOSSOS_P2P_CreateEngine. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>Lw</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to an array containing the sound power spectrum. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>spectrumWeighting</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Weighting of the sound power spectrum </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>measurementType</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Measurement conditions for the sound power spectrum </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true if the call succeeded, false otherwise </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/dvm/Projets/CNOSSOS-EU/dev/CnossosPropagation/CnossosPropagation.h" line="378" bodyfile="C:/Users/dvm/Projets/CNOSSOS-EU/dev/CnossosPropagation/CnossosPropagation.cpp" bodystart="325" bodyend="343"/>
+      </memberdef>
+      <memberdef kind="function" id="_cnossos_propagation_8h_1a093ecd514c66dc59e2249bf90180667c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>_CNOSSOS_DLL_DECL_ unsigned int</type>
+        <definition>_CNOSSOS_DLL_DECL_ unsigned int CNOSSOS_P2P_GetResult</definition>
+        <argsstring>(CNOSSOS_P2P_ENGINE *p2p, CNOSSOS_P2P_RESULT index, double *result)</argsstring>
+        <name>CNOSSOS_P2P_GetResult</name>
+        <param>
+          <type><ref refid="struct_c_n_o_s_s_o_s___p2_p___e_n_g_i_n_e" kindref="compound">CNOSSOS_P2P_ENGINE</ref> *</type>
+          <declname>p2p</declname>
+        </param>
+        <param>
+          <type><ref refid="_cnossos_propagation_8h_1ac341179e16875a28421482d05198230d" kindref="member">CNOSSOS_P2P_RESULT</ref></type>
+          <declname>index</declname>
+        </param>
+        <param>
+          <type>double *</type>
+          <declname>result</declname>
+        </param>
+        <briefdescription>
+<para>Get the acoustical results for the current propagation path. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p2p</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An opaque pointer returned by a previous call to CNOSSOS_P2P_CreateEngine. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>index</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Select the type of results to be returned </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>result</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Array in which to return the acoustical results. If a NULL pointer is specified, the function returns the number of values that would have been written on output but does not transfer any actual values. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The number of values written (or not) to the array of results or zero in case an error occurred in the calculation. </para></simplesect>
+<simplesect kind="note"><para>It is up to the caller to pass in an array of sufficient size. Applications can determine the minimal size of this array by first calling the function with a NULL argument. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/dvm/Projets/CNOSSOS-EU/dev/CnossosPropagation/CnossosPropagation.h" line="391" bodyfile="C:/Users/dvm/Projets/CNOSSOS-EU/dev/CnossosPropagation/CnossosPropagation.cpp" bodystart="253" bodyend="323"/>
+      </memberdef>
+      <memberdef kind="function" id="_cnossos_propagation_8h_1a7e0272ed91d12db3e4381ed0d93573c7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>_CNOSSOS_DLL_DECL_ const char *</type>
+        <definition>_CNOSSOS_DLL_DECL_ const char* CNOSSOS_P2P_GetErrorMessage</definition>
+        <argsstring>(CNOSSOS_P2P_ENGINE *p2p)</argsstring>
+        <name>CNOSSOS_P2P_GetErrorMessage</name>
+        <param>
+          <type><ref refid="struct_c_n_o_s_s_o_s___p2_p___e_n_g_i_n_e" kindref="compound">CNOSSOS_P2P_ENGINE</ref> *</type>
+          <declname>p2p</declname>
+        </param>
+        <briefdescription>
+<para>Get a description of the last error that occurred in the acoustical calculation. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p2p</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An opaque pointer returned by a previous call to CNOSSOS_P2P_CreateEngine. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Pointer to a string containing the error message. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/dvm/Projets/CNOSSOS-EU/dev/CnossosPropagation/CnossosPropagation.h" line="397" bodyfile="C:/Users/dvm/Projets/CNOSSOS-EU/dev/CnossosPropagation/CnossosPropagation.cpp" bodystart="345" bodyend="349"/>
+      </memberdef>
+      <memberdef kind="function" id="_cnossos_propagation_8h_1a9d2ebe1a1c6eb2d6deb589791c35acdd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>_CNOSSOS_DLL_DECL_ bool</type>
+        <definition>_CNOSSOS_DLL_DECL_ bool CNOSSOS_P2P_PrintPathData</definition>
+        <argsstring>(CNOSSOS_P2P_ENGINE *p2p)</argsstring>
+        <name>CNOSSOS_P2P_PrintPathData</name>
+        <param>
+          <type><ref refid="struct_c_n_o_s_s_o_s___p2_p___e_n_g_i_n_e" kindref="compound">CNOSSOS_P2P_ENGINE</ref> *</type>
+          <declname>p2p</declname>
+        </param>
+        <briefdescription>
+<para>Print the current propagation path to the application&apos;s default output device. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p2p</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An opaque pointer returned by a previous call to CNOSSOS_P2P_CreateEngine. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true if the call succeeded, false otherwise </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/dvm/Projets/CNOSSOS-EU/dev/CnossosPropagation/CnossosPropagation.h" line="403" bodyfile="C:/Users/dvm/Projets/CNOSSOS-EU/dev/CnossosPropagation/CnossosPropagation.cpp" bodystart="351" bodyend="356"/>
+      </memberdef>
+      <memberdef kind="function" id="_cnossos_propagation_8h_1ad01f772a0eb3290c847b393a0f7bb1bf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>_CNOSSOS_DLL_DECL_ bool</type>
+        <definition>_CNOSSOS_DLL_DECL_ bool CNOSSOS_P2P_PrintPathResults</definition>
+        <argsstring>(CNOSSOS_P2P_ENGINE *p2p)</argsstring>
+        <name>CNOSSOS_P2P_PrintPathResults</name>
+        <param>
+          <type><ref refid="struct_c_n_o_s_s_o_s___p2_p___e_n_g_i_n_e" kindref="compound">CNOSSOS_P2P_ENGINE</ref> *</type>
+          <declname>p2p</declname>
+        </param>
+        <briefdescription>
+<para>Print an overview of the acoustical results to the application&apos;s output device. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p2p</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An opaque pointer returned by a previous call to CNOSSOS_P2P_CreateEngine. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true if the call succeeded, false otherwise </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/dvm/Projets/CNOSSOS-EU/dev/CnossosPropagation/CnossosPropagation.h" line="409" bodyfile="C:/Users/dvm/Projets/CNOSSOS-EU/dev/CnossosPropagation/CnossosPropagation.cpp" bodystart="358" bodyend="363"/>
+      </memberdef>
+      <memberdef kind="function" id="_cnossos_propagation_8h_1a7096053282089b210c2ab3f9fc01b2d3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>_CNOSSOS_DLL_DECL_ bool</type>
+        <definition>_CNOSSOS_DLL_DECL_ bool CNOSSOS_P2P_GetOptions</definition>
+        <argsstring>(CNOSSOS_P2P_ENGINE *p2p, CNOSSOS_P2P_OPTIONS &amp;options)</argsstring>
+        <name>CNOSSOS_P2P_GetOptions</name>
+        <param>
+          <type><ref refid="struct_c_n_o_s_s_o_s___p2_p___e_n_g_i_n_e" kindref="compound">CNOSSOS_P2P_ENGINE</ref> *</type>
+          <declname>p2p</declname>
+        </param>
+        <param>
+          <type><ref refid="struct_c_n_o_s_s_o_s___p2_p___o_p_t_i_o_n_s" kindref="compound">CNOSSOS_P2P_OPTIONS</ref> &amp;</type>
+          <declname>options</declname>
+        </param>
+        <briefdescription>
+<para>Get the current settings of the calculation options. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p2p</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An opaque pointer returned by a previous call to CNOSSOS_P2P_CreateEngine. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>options</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Data structure used to return the current settings. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true if the call succeeded, false otherwise </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/dvm/Projets/CNOSSOS-EU/dev/CnossosPropagation/CnossosPropagation.h" line="416" bodyfile="C:/Users/dvm/Projets/CNOSSOS-EU/dev/CnossosPropagation/CnossosPropagation.cpp" bodystart="386" bodyend="405"/>
+      </memberdef>
+      <memberdef kind="function" id="_cnossos_propagation_8h_1a9cbd1fc82ef237702fcb053c63aeb595" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>_CNOSSOS_DLL_DECL_ bool</type>
+        <definition>_CNOSSOS_DLL_DECL_ bool CNOSSOS_P2P_SetOptions</definition>
+        <argsstring>(CNOSSOS_P2P_ENGINE *p2p, CNOSSOS_P2P_OPTIONS const &amp;options)</argsstring>
+        <name>CNOSSOS_P2P_SetOptions</name>
+        <param>
+          <type><ref refid="struct_c_n_o_s_s_o_s___p2_p___e_n_g_i_n_e" kindref="compound">CNOSSOS_P2P_ENGINE</ref> *</type>
+          <declname>p2p</declname>
+        </param>
+        <param>
+          <type><ref refid="struct_c_n_o_s_s_o_s___p2_p___o_p_t_i_o_n_s" kindref="compound">CNOSSOS_P2P_OPTIONS</ref> const &amp;</type>
+          <declname>options</declname>
+        </param>
+        <briefdescription>
+<para>Set the current settings of the calculation options. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p2p</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An opaque pointer returned by a previous call to CNOSSOS_P2P_CreateEngine. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>options</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Data structure containing the new values of the options. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true if the call succeeded, false otherwise </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/dvm/Projets/CNOSSOS-EU/dev/CnossosPropagation/CnossosPropagation.h" line="423" bodyfile="C:/Users/dvm/Projets/CNOSSOS-EU/dev/CnossosPropagation/CnossosPropagation.cpp" bodystart="365" bodyend="384"/>
+      </memberdef>
+      <memberdef kind="function" id="_cnossos_propagation_8h_1a3d439d12286426e1cb584dfcf84bd6d8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>_CNOSSOS_DLL_DECL_ bool</type>
+        <definition>_CNOSSOS_DLL_DECL_ bool CNOSSOS_P2P_SetMeteo</definition>
+        <argsstring>(CNOSSOS_P2P_ENGINE *p2p, CNOSSOS_P2P_METEO const &amp;meteo)</argsstring>
+        <name>CNOSSOS_P2P_SetMeteo</name>
+        <param>
+          <type><ref refid="struct_c_n_o_s_s_o_s___p2_p___e_n_g_i_n_e" kindref="compound">CNOSSOS_P2P_ENGINE</ref> *</type>
+          <declname>p2p</declname>
+        </param>
+        <param>
+          <type><ref refid="struct_c_n_o_s_s_o_s___p2_p___m_e_t_e_o" kindref="compound">CNOSSOS_P2P_METEO</ref> const &amp;</type>
+          <declname>meteo</declname>
+        </param>
+        <briefdescription>
+<para>Set the meteorological condition parameters. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p2p</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An opaque pointer returned by a previous call to CNOSSOS_P2P_CreateEngine. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>meteo</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Data structure containing the new values of the meteorological parameters. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true if the call succeeded, false otherwise </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/dvm/Projets/CNOSSOS-EU/dev/CnossosPropagation/CnossosPropagation.h" line="430" bodyfile="C:/Users/dvm/Projets/CNOSSOS-EU/dev/CnossosPropagation/CnossosPropagation.cpp" bodystart="407" bodyend="419"/>
+      </memberdef>
+      <memberdef kind="function" id="_cnossos_propagation_8h_1a2fccbcafa2c41cd429cc3a02636264dc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>_CNOSSOS_DLL_DECL_ bool</type>
+        <definition>_CNOSSOS_DLL_DECL_ bool CNOSSOS_P2P_GetMeteo</definition>
+        <argsstring>(CNOSSOS_P2P_ENGINE *p2p, CNOSSOS_P2P_METEO &amp;meteo)</argsstring>
+        <name>CNOSSOS_P2P_GetMeteo</name>
+        <param>
+          <type><ref refid="struct_c_n_o_s_s_o_s___p2_p___e_n_g_i_n_e" kindref="compound">CNOSSOS_P2P_ENGINE</ref> *</type>
+          <declname>p2p</declname>
+        </param>
+        <param>
+          <type><ref refid="struct_c_n_o_s_s_o_s___p2_p___m_e_t_e_o" kindref="compound">CNOSSOS_P2P_METEO</ref> &amp;</type>
+          <declname>meteo</declname>
+        </param>
+        <briefdescription>
+<para>Get the meteorological condition parameters. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p2p</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An opaque pointer returned by a previous call to CNOSSOS_P2P_CreateEngine. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>meteo</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Data structure used to return the current settings of the meteorological parameters </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true if the call succeeded, false otherwise </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/dvm/Projets/CNOSSOS-EU/dev/CnossosPropagation/CnossosPropagation.h" line="437" bodyfile="C:/Users/dvm/Projets/CNOSSOS-EU/dev/CnossosPropagation/CnossosPropagation.cpp" bodystart="421" bodyend="433"/>
+      </memberdef>
+      <memberdef kind="function" id="_cnossos_propagation_8h_1ae50276adc947b705a5682cde4f6fa5d2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>_CNOSSOS_DLL_DECL_ bool</type>
+        <definition>_CNOSSOS_DLL_DECL_ bool CNOSSOS_P2P_ProcessPathFile</definition>
+        <argsstring>(CNOSSOS_P2P_ENGINE *p2p, const char *inputFile, const char *outputFile=0)</argsstring>
+        <name>CNOSSOS_P2P_ProcessPathFile</name>
+        <param>
+          <type><ref refid="struct_c_n_o_s_s_o_s___p2_p___e_n_g_i_n_e" kindref="compound">CNOSSOS_P2P_ENGINE</ref> *</type>
+          <declname>p2p</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>inputFile</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>outputFile</declname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+<para>Process a XML input file and optionally produce an XML output file. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p2p</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An opaque pointer returned by a previous call to CNOSSOS_P2P_CreateEngine. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>inputFile</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Name of an XML input file </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>outputFile</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Name of an (optional) XML output file </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true if the call succeeded, false otherwise </para></simplesect>
+<simplesect kind="note"><para>The name of the input file can include a full path specification or be a path name relative to the current working directory. The name of the output file can be either a full path specification or a path name relative to the location of the input file. Even if no output file is generated, the application can use the <ref refid="_cnossos_propagation_8h_1a093ecd514c66dc59e2249bf90180667c" kindref="member">CNOSSOS_P2P_GetResult</ref> function to access the acoustical results associated with the path defined in the input file. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/dvm/Projets/CNOSSOS-EU/dev/CnossosPropagation/CnossosPropagation.h" line="453" bodyfile="C:/Users/dvm/Projets/CNOSSOS-EU/dev/CnossosPropagation/CnossosPropagation.cpp" bodystart="454" bodyend="550"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>C-style API for the Cnossos-EU propagation modules. </para>    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para><ulink url="mailto:dirk.van-maercke@cstb.fr">dirk.van-maercke@cstb.fr</ulink> </para></simplesect>
+</para>    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"></codeline>
+<codeline lineno="46"><highlight class="preprocessor">#ifndef<sp/>_CNOSSOS_PROPAGATION_INCLUDED_</highlight></codeline>
+<codeline lineno="47"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>_CNOSSOS_PROPAGATION_INCLUDED_</highlight></codeline>
+<codeline lineno="48"><highlight class="preprocessor"></highlight><highlight class="comment">/*<sp/></highlight></codeline>
+<codeline lineno="49"><highlight class="comment"><sp/>*<sp/>------------------------------------------------------------------------------------------------</highlight></codeline>
+<codeline lineno="50"><highlight class="comment"><sp/>*<sp/>file:<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>CnossosPropagation.h</highlight></codeline>
+<codeline lineno="51"><highlight class="comment"><sp/>*<sp/>version:<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>1.0</highlight></codeline>
+<codeline lineno="52"><highlight class="comment"><sp/>*<sp/>author:<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>dirk.van-maercke@cstb.fr</highlight></codeline>
+<codeline lineno="53"><highlight class="comment"><sp/>*<sp/>copyright:<sp/><sp/><sp/>see<sp/>file<sp/>licence.EU.txt</highlight></codeline>
+<codeline lineno="54"><highlight class="comment"><sp/>*<sp/>description:<sp/>CnossosPropagation<sp/>defines<sp/>a<sp/>standard<sp/>C-style<sp/>API<sp/>to<sp/>the<sp/>CNOSSOS-EU<sp/>propagation</highlight></codeline>
+<codeline lineno="55"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>module.<sp/>Most<sp/>popular<sp/>programming<sp/>languages<sp/>can<sp/>be<sp/>bound<sp/>to<sp/>pure<sp/>C<sp/>functions<sp/></highlight></codeline>
+<codeline lineno="56"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>defined<sp/>in<sp/>DLL<sp/>shared<sp/>libraries,<sp/>either<sp/>at<sp/>linker<sp/>level,<sp/>either<sp/>at<sp/>run<sp/>time.</highlight></codeline>
+<codeline lineno="57"><highlight class="comment"><sp/>*<sp/>changes:</highlight></codeline>
+<codeline lineno="58"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="59"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/>03/12/2013<sp/><sp/><sp/><sp/><sp/><sp/>initial<sp/>version</highlight></codeline>
+<codeline lineno="60"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="61"><highlight class="comment"><sp/>*<sp/>-------------------------------------------------------------------------------------------------<sp/></highlight></codeline>
+<codeline lineno="62"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>_CNOSSOS_PROPAGATION_EXPORTS_</highlight></codeline>
+<codeline lineno="64"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>_CNOSSOS_DLL_DECL_<sp/>extern<sp/>&quot;C&quot;<sp/>__declspec(dllexport)</highlight></codeline>
+<codeline lineno="65"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#else</highlight></codeline>
+<codeline lineno="66" refid="_cnossos_propagation_8h_1ab177c44aad4888f0564efd48c92aa2ff" refkind="member"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>_CNOSSOS_DLL_DECL_<sp/>extern<sp/>&quot;C&quot;<sp/>__declspec(dllimport)</highlight></codeline>
+<codeline lineno="67"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+<codeline lineno="68"><highlight class="preprocessor"></highlight></codeline>
+<codeline lineno="71" refid="_cnossos_propagation_8h_1a0246ca1f6b132d426220ba4a49f3fb2f" refkind="member"><highlight class="preprocessor">#define<sp/>CNOSSOS_P2P_VERSION_API<sp/>&quot;1.001&quot;</highlight></codeline>
+<codeline lineno="72"><highlight class="preprocessor"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><ref refid="_cnossos_propagation_8h_1ab177c44aad4888f0564efd48c92aa2ff" kindref="member">_CNOSSOS_DLL_DECL_</ref><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/><ref refid="_cnossos_propagation_8cpp_1a32073e2905a8d2272903ddf86a6590e7" kindref="member" tooltip="Get the current version of the CnossosPropagation shared library.">CNOSSOS_P2P_GetVersionDLL</ref><sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/>;</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><ref refid="_cnossos_propagation_8h_1ab177c44aad4888f0564efd48c92aa2ff" kindref="member">_CNOSSOS_DLL_DECL_</ref><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="_cnossos_propagation_8cpp_1a177bd5e49fe4312e4b0d828be85f0d42" kindref="member" tooltip="Get the frequency range for the spectral data.">CNOSSOS_P2P_GetFreq</ref><sp/>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>*freq)<sp/>;</highlight></codeline>
+<codeline lineno="91"><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_c_n_o_s_s_o_s___p2_p___m_a_t_e_r_i_a_l" kindref="compound" tooltip="transparent pointer to material definition">CNOSSOS_P2P_MATERIAL</ref><sp/>;</highlight></codeline>
+<codeline lineno="96"><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_c_n_o_s_s_o_s___p2_p___e_x_t_e_n_s_i_o_n" kindref="compound" tooltip="transparent pointer to vertical extension">CNOSSOS_P2P_EXTENSION</ref><sp/>;</highlight></codeline>
+<codeline lineno="101" refid="_cnossos_propagation_8h_1ab23aeb50806723b22c684d8355d91610" refkind="member"><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_c_n_o_s_s_o_s___p2_p___e_n_g_i_n_e" kindref="compound" tooltip="Hidden class for path calculation.">CNOSSOS_P2P_ENGINE</ref><sp/>;</highlight></codeline>
+<codeline lineno="105"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="_cnossos_propagation_8h_1ab23aeb50806723b22c684d8355d91610" kindref="member" tooltip="Encoding of positions using 3 dimensional (X,Y,Z) coordinates.">CNOSSOS_P2P_POSITION</ref>[3]<sp/>;</highlight></codeline>
+<codeline lineno="109" refid="_cnossos_propagation_8h_1a4731b6d7565c3be5eb2e35a502c5afca" refkind="member"><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="_cnossos_propagation_8h_1a4731b6d7565c3be5eb2e35a502c5afca" kindref="member" tooltip="Sound power frequency weighting.">CNOSSOS_P2P_SPECTRUM_WEIGHTING</ref></highlight></codeline>
+<codeline lineno="110"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="111" refid="_cnossos_propagation_8h_1a4731b6d7565c3be5eb2e35a502c5afcaa8205813b0cebd642f73da5bc3227119b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="_cnossos_propagation_8h_1a4731b6d7565c3be5eb2e35a502c5afcaa8205813b0cebd642f73da5bc3227119b" kindref="member">CNOSSOS_P2P_SPECTRUM_LIN</ref><sp/>=<sp/>0,<sp/></highlight></codeline>
+<codeline lineno="112" refid="_cnossos_propagation_8h_1a4731b6d7565c3be5eb2e35a502c5afcaa9424f0b25b4f58e192592b7774d8bebc" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="_cnossos_propagation_8h_1a4731b6d7565c3be5eb2e35a502c5afcaa9424f0b25b4f58e192592b7774d8bebc" kindref="member">CNOSSOS_P2P_SPECTRUM_dBA</ref><sp/>=<sp/>1<sp/><sp/></highlight></codeline>
+<codeline lineno="113"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="117" refid="_cnossos_propagation_8h_1a2329eadb2cdfeb3f97cdf8749e5127ba" refkind="member"><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="_cnossos_propagation_8h_1a2329eadb2cdfeb3f97cdf8749e5127ba" kindref="member" tooltip="Sound power measurement conditions.">CNOSSOS_P2P_LW_MEASUREMENT_TYPE</ref></highlight></codeline>
+<codeline lineno="118"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="119" refid="_cnossos_propagation_8h_1a2329eadb2cdfeb3f97cdf8749e5127baa7f1ae37ac1362e5ecd7ac9980a2d09ca" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="_cnossos_propagation_8h_1a2329eadb2cdfeb3f97cdf8749e5127baa7f1ae37ac1362e5ecd7ac9980a2d09ca" kindref="member">CNOSSOS_P2P_LW_UNDEFINED</ref><sp/>=<sp/>0,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="120" refid="_cnossos_propagation_8h_1a2329eadb2cdfeb3f97cdf8749e5127baa9fba810998b812c98474e9286f6c587d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="_cnossos_propagation_8h_1a2329eadb2cdfeb3f97cdf8749e5127baa9fba810998b812c98474e9286f6c587d" kindref="member">CNOSSOS_P2P_LW_FREEFIELD</ref><sp/>=<sp/>1,<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="121" refid="_cnossos_propagation_8h_1a2329eadb2cdfeb3f97cdf8749e5127baad463c1e095c9a16792654014ef3dd5c6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="_cnossos_propagation_8h_1a2329eadb2cdfeb3f97cdf8749e5127baad463c1e095c9a16792654014ef3dd5c6" kindref="member">CNOSSOS_P2P_LW_HEMISPHERICAL</ref><sp/>=<sp/>2<sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="122"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="126" refid="_cnossos_propagation_8h_1a147f484d037a625eeeb261c4de7cc40a" refkind="member"><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="_cnossos_propagation_8h_1a147f484d037a625eeeb261c4de7cc40a" kindref="member" tooltip="Choice of meteorological averaging.">CNOSSOS_P2P_METEO_MODEL</ref></highlight></codeline>
+<codeline lineno="127"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="128" refid="_cnossos_propagation_8h_1a147f484d037a625eeeb261c4de7cc40aa1dbb0d72c1312e1d8a268f2cb7b3894e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="_cnossos_propagation_8h_1a147f484d037a625eeeb261c4de7cc40aa1dbb0d72c1312e1d8a268f2cb7b3894e" kindref="member">CNOSSOS_P2P_METEO_DEFAULT</ref><sp/>=<sp/>0,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="129" refid="_cnossos_propagation_8h_1a147f484d037a625eeeb261c4de7cc40aa875015c049d3aa4c01162e4de87d40e2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="_cnossos_propagation_8h_1a147f484d037a625eeeb261c4de7cc40aa875015c049d3aa4c01162e4de87d40e2" kindref="member">CNOSSOS_P2P_METEO_ISO9613</ref><sp/>=<sp/>1,<sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="130" refid="_cnossos_propagation_8h_1a147f484d037a625eeeb261c4de7cc40aa4f62553a64be2260ca473c0bb05334fd" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="_cnossos_propagation_8h_1a147f484d037a625eeeb261c4de7cc40aa4f62553a64be2260ca473c0bb05334fd" kindref="member">CNOSSOS_P2P_METEO_JRC2012</ref><sp/>=<sp/>2<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="131"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="135" refid="struct_c_n_o_s_s_o_s___p2_p___m_e_t_e_o" refkind="compound"><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_c_n_o_s_s_o_s___p2_p___m_e_t_e_o" kindref="compound" tooltip="Meteorological input data.">CNOSSOS_P2P_METEO</ref></highlight></codeline>
+<codeline lineno="136"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="137" refid="struct_c_n_o_s_s_o_s___p2_p___m_e_t_e_o_1aebfd4988c3a8620b03ba119dd6627617" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="_cnossos_propagation_8h_1a147f484d037a625eeeb261c4de7cc40a" kindref="member" tooltip="Choice of meteorological averaging.">CNOSSOS_P2P_METEO_MODEL</ref><sp/><ref refid="struct_c_n_o_s_s_o_s___p2_p___m_e_t_e_o_1aebfd4988c3a8620b03ba119dd6627617" kindref="member">model</ref><sp/>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="138" refid="struct_c_n_o_s_s_o_s___p2_p___m_e_t_e_o_1adeab01f166acc932e41eaa3d17365f87" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="struct_c_n_o_s_s_o_s___p2_p___m_e_t_e_o_1adeab01f166acc932e41eaa3d17365f87" kindref="member">C0</ref><sp/>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="139" refid="struct_c_n_o_s_s_o_s___p2_p___m_e_t_e_o_1a8d538e25ef1131d001a3dd9150d6fb06" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="struct_c_n_o_s_s_o_s___p2_p___m_e_t_e_o_1a8d538e25ef1131d001a3dd9150d6fb06" kindref="member">pFav</ref><sp/>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="140" refid="struct_c_n_o_s_s_o_s___p2_p___m_e_t_e_o_1a41208b62aa344c53d96582845ca3bed4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="struct_c_n_o_s_s_o_s___p2_p___m_e_t_e_o_1a41208b62aa344c53d96582845ca3bed4" kindref="member">temperature</ref><sp/>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="141" refid="struct_c_n_o_s_s_o_s___p2_p___m_e_t_e_o_1a1aa5917fd82ce33f049a245541665efc" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="struct_c_n_o_s_s_o_s___p2_p___m_e_t_e_o_1a1aa5917fd82ce33f049a245541665efc" kindref="member">humidity</ref><sp/>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="142"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="146" refid="struct_c_n_o_s_s_o_s___p2_p___o_p_t_i_o_n_s" refkind="compound"><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_c_n_o_s_s_o_s___p2_p___o_p_t_i_o_n_s" kindref="compound" tooltip="Options modifying the behavior of the calculation engine.">CNOSSOS_P2P_OPTIONS</ref></highlight></codeline>
+<codeline lineno="147"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="149"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>validation<sp/>of<sp/>input<sp/>data<sp/>with<sp/>respect<sp/>to<sp/>geometrical<sp/>requirements</highlight></codeline>
+<codeline lineno="150"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="151" refid="struct_c_n_o_s_s_o_s___p2_p___o_p_t_i_o_n_s_1ab666c67c3d9e614a9f36bbe340e04e94" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="struct_c_n_o_s_s_o_s___p2_p___o_p_t_i_o_n_s_1ab666c67c3d9e614a9f36bbe340e04e94" kindref="member" tooltip="check validity of paths in the horizontal plane">CheckHorizontalAlignment</ref><sp/>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="152" refid="struct_c_n_o_s_s_o_s___p2_p___o_p_t_i_o_n_s_1a9c306c567d5dd95099b178ca2a52b31c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="struct_c_n_o_s_s_o_s___p2_p___o_p_t_i_o_n_s_1a9c306c567d5dd95099b178ca2a52b31c" kindref="member" tooltip="check validity of laterally diffracted paths">CheckLateralDiffraction</ref><sp/>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="153" refid="struct_c_n_o_s_s_o_s___p2_p___o_p_t_i_o_n_s_1a67a8d97d863baee7b3e4977c28ccdb46" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="struct_c_n_o_s_s_o_s___p2_p___o_p_t_i_o_n_s_1a67a8d97d863baee7b3e4977c28ccdb46" kindref="member" tooltip="check height of ray path with respect to upper limits of vertical obstacles">CheckHeightLowerBound</ref><sp/>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="154" refid="struct_c_n_o_s_s_o_s___p2_p___o_p_t_i_o_n_s_1a4ed7239da8213ce093aed32485dbdd0f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="struct_c_n_o_s_s_o_s___p2_p___o_p_t_i_o_n_s_1a4ed7239da8213ce093aed32485dbdd0f" kindref="member" tooltip="check height of ray path with respect to lower limits of vertical obstacles">CheckHeightUpperBound</ref><sp/>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="155" refid="struct_c_n_o_s_s_o_s___p2_p___o_p_t_i_o_n_s_1a50d6b614c0f79c4fdea380bc6dcb95c8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="struct_c_n_o_s_s_o_s___p2_p___o_p_t_i_o_n_s_1a50d6b614c0f79c4fdea380bc6dcb95c8" kindref="member" tooltip="check whether source line segments contains actual source position">CheckSourceSegment</ref><sp/>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="156" refid="struct_c_n_o_s_s_o_s___p2_p___o_p_t_i_o_n_s_1aeecf266efc1b650a867bec2c77a4bdf0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="struct_c_n_o_s_s_o_s___p2_p___o_p_t_i_o_n_s_1aeecf266efc1b650a867bec2c77a4bdf0" kindref="member" tooltip="check conformity of sound power units and source geometry">CheckSoundPowerUnits</ref><sp/>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="158"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>reinforce<sp/>requirements<sp/>on<sp/>the<sp/>geometrical<sp/>complexity<sp/>of<sp/>the<sp/>path</highlight></codeline>
+<codeline lineno="159"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>note<sp/>that<sp/>some<sp/>requirements<sp/>will<sp/>be<sp/>reinforced<sp/>by<sp/>the<sp/>calculation<sp/>method<sp/>independently<sp/>of<sp/>user<sp/>settings</highlight></codeline>
+<codeline lineno="160"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="161" refid="struct_c_n_o_s_s_o_s___p2_p___o_p_t_i_o_n_s_1ac408d4ea971cc5fd32af1b4d532648c2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="struct_c_n_o_s_s_o_s___p2_p___o_p_t_i_o_n_s_1ac408d4ea971cc5fd32af1b4d532648c2" kindref="member" tooltip="reverse the path in case it is ordered from Receiver to Source">ForceSourceToReceiver</ref><sp/>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="162" refid="struct_c_n_o_s_s_o_s___p2_p___o_p_t_i_o_n_s_1aefde4c9bbb66f6d83071ef1fac89542f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="struct_c_n_o_s_s_o_s___p2_p___o_p_t_i_o_n_s_1aefde4c9bbb66f6d83071ef1fac89542f" kindref="member" tooltip="remove non representative terrain points">SimplifyPathGeometry</ref><sp/>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="163" refid="struct_c_n_o_s_s_o_s___p2_p___o_p_t_i_o_n_s_1a7894aa46585e3c708f4ad251ef48f04b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="struct_c_n_o_s_s_o_s___p2_p___o_p_t_i_o_n_s_1a7894aa46585e3c708f4ad251ef48f04b" kindref="member" tooltip="disable reflections">DisableReflections</ref><sp/>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="164" refid="struct_c_n_o_s_s_o_s___p2_p___o_p_t_i_o_n_s_1a995ff9784bbc4619921ce1127fc1d8df" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="struct_c_n_o_s_s_o_s___p2_p___o_p_t_i_o_n_s_1a995ff9784bbc4619921ce1127fc1d8df" kindref="member" tooltip="disable lateral diffractions">DisableLateralDiffractions</ref><sp/>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="165" refid="struct_c_n_o_s_s_o_s___p2_p___o_p_t_i_o_n_s_1aef8a7e5ed0833f05399d5412665c20b1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="struct_c_n_o_s_s_o_s___p2_p___o_p_t_i_o_n_s_1aef8a7e5ed0833f05399d5412665c20b1" kindref="member" tooltip="disable reflections and vertical diffraction for laterally diffracted paths">LimitLateralDiffraction</ref><sp/>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="167"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>disable<sp/>some<sp/>parts<sp/>of<sp/>the<sp/>acoustical<sp/>calculations,<sp/>e.g.<sp/>because<sp/>these<sp/>parts<sp/>are<sp/>already<sp/>taken<sp/>care<sp/>of</highlight></codeline>
+<codeline lineno="168"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>in<sp/>other<sp/>parts<sp/>of<sp/>the<sp/>application<sp/>software</highlight></codeline>
+<codeline lineno="169"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="170" refid="struct_c_n_o_s_s_o_s___p2_p___o_p_t_i_o_n_s_1a47d635af0140708e89a2bead57875a86" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="struct_c_n_o_s_s_o_s___p2_p___o_p_t_i_o_n_s_1a47d635af0140708e89a2bead57875a86" kindref="member" tooltip="include sound power">ExcludeSoundPower</ref><sp/>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="171" refid="struct_c_n_o_s_s_o_s___p2_p___o_p_t_i_o_n_s_1a8e9a510e3aa75c90992a8921d460fb98" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="struct_c_n_o_s_s_o_s___p2_p___o_p_t_i_o_n_s_1a8e9a510e3aa75c90992a8921d460fb98" kindref="member" tooltip="include geometrical spread">ExcludeGeometricalSpread</ref><sp/>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="172" refid="struct_c_n_o_s_s_o_s___p2_p___o_p_t_i_o_n_s_1a69dab85542b4544b7fa35424eb4a2935" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="struct_c_n_o_s_s_o_s___p2_p___o_p_t_i_o_n_s_1a69dab85542b4544b7fa35424eb4a2935" kindref="member" tooltip="include atmospheric absorption">ExcludeAirAbsorption</ref><sp/>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="173"><highlight class="normal">}<sp/>;</highlight></codeline>
+<codeline lineno="177" refid="_cnossos_propagation_8h_1ac341179e16875a28421482d05198230d" refkind="member"><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="_cnossos_propagation_8h_1ac341179e16875a28421482d05198230d" kindref="member" tooltip="Select the result to be returned by the call to CNOSSOS_P2P_GetResult.">CNOSSOS_P2P_RESULT</ref></highlight></codeline>
+<codeline lineno="178"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="179" refid="_cnossos_propagation_8h_1ac341179e16875a28421482d05198230dac8cd6900fde3e4de9396fd9a552fc126" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="_cnossos_propagation_8h_1ac341179e16875a28421482d05198230dac8cd6900fde3e4de9396fd9a552fc126" kindref="member" tooltip="global, dB(A) weighted, long term averaged noise level">CNOSSOS_P2P_RESULT_LP_AVG_dBA</ref><sp/><sp/>=<sp/>-1,<sp/></highlight></codeline>
+<codeline lineno="180" refid="_cnossos_propagation_8h_1ac341179e16875a28421482d05198230daec637eb81914210e0ebaf2d5ded6822a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="_cnossos_propagation_8h_1ac341179e16875a28421482d05198230daec637eb81914210e0ebaf2d5ded6822a" kindref="member" tooltip="global, dB(A) weighted, noise level under favorable propagation conditions">CNOSSOS_P2P_RESULT_LP_FAV_dBA</ref><sp/><sp/>=<sp/>-2,<sp/></highlight></codeline>
+<codeline lineno="181" refid="_cnossos_propagation_8h_1ac341179e16875a28421482d05198230da6eedee5d58bfe23ddea34f4e6d2ab87d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="_cnossos_propagation_8h_1ac341179e16875a28421482d05198230da6eedee5d58bfe23ddea34f4e6d2ab87d" kindref="member" tooltip="global, dB(A) weighted, noise level under homogeneous propagation conditions">CNOSSOS_P2P_RESULT_LP_HOM_dBA</ref><sp/><sp/>=<sp/>-3,<sp/></highlight></codeline>
+<codeline lineno="182" refid="_cnossos_propagation_8h_1ac341179e16875a28421482d05198230da6c9bf40eba14f90e763629e8b985b5d3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="_cnossos_propagation_8h_1ac341179e16875a28421482d05198230da6c9bf40eba14f90e763629e8b985b5d3" kindref="member" tooltip="long-time averaged noise level spectrum">CNOSSOS_P2P_RESULT_LP_AVG</ref><sp/><sp/>=<sp/>0,<sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="183" refid="_cnossos_propagation_8h_1ac341179e16875a28421482d05198230dac831cf2d6e1b7e942d3924dad4ae2365" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="_cnossos_propagation_8h_1ac341179e16875a28421482d05198230dac831cf2d6e1b7e942d3924dad4ae2365" kindref="member" tooltip="noise level spectrum under favorable propagation conditions">CNOSSOS_P2P_RESULT_LP_FAV</ref><sp/><sp/>=<sp/>1,<sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="184" refid="_cnossos_propagation_8h_1ac341179e16875a28421482d05198230dacd73081382286fc04a43944124c77126" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="_cnossos_propagation_8h_1ac341179e16875a28421482d05198230dacd73081382286fc04a43944124c77126" kindref="member" tooltip="noise level spectrum under homogeneous propagation conditions">CNOSSOS_P2P_RESULT_LP_HOM</ref><sp/><sp/>=<sp/>2,<sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="185" refid="_cnossos_propagation_8h_1ac341179e16875a28421482d05198230daecfaa26414a83d9bdcd2bcb652738bea" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="_cnossos_propagation_8h_1ac341179e16875a28421482d05198230daecfaa26414a83d9bdcd2bcb652738bea" kindref="member" tooltip="excess attenuation spectrum under favorable propagation conditions">CNOSSOS_P2P_RESULT_ATT_FAV</ref><sp/>=<sp/>3,<sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="186" refid="_cnossos_propagation_8h_1ac341179e16875a28421482d05198230daab612c4beffa46c41520d5206715f07c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="_cnossos_propagation_8h_1ac341179e16875a28421482d05198230daab612c4beffa46c41520d5206715f07c" kindref="member" tooltip="excess attenuation spectrum under homogeneous propagation conditions">CNOSSOS_P2P_RESULT_ATT_HOM</ref><sp/>=<sp/>4,<sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="187" refid="_cnossos_propagation_8h_1ac341179e16875a28421482d05198230da5f9a28df8a9516358d28424538245a56" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="_cnossos_propagation_8h_1ac341179e16875a28421482d05198230da5f9a28df8a9516358d28424538245a56" kindref="member" tooltip="sound power spectrum">CNOSSOS_P2P_RESULT_LW_SOURCE</ref><sp/>=<sp/>5,<sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="188" refid="_cnossos_propagation_8h_1ac341179e16875a28421482d05198230daa31c4d722a3050fd7f3fd94469c80cd9" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="_cnossos_propagation_8h_1ac341179e16875a28421482d05198230daa31c4d722a3050fd7f3fd94469c80cd9" kindref="member" tooltip="sound power conversion, free field versus hemispherical radiation conditions">CNOSSOS_P2P_RESULT_DELTA_LW</ref><sp/>=<sp/>6,<sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="189" refid="_cnossos_propagation_8h_1ac341179e16875a28421482d05198230da057f15add7c9532f7ebd088713f91a5c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="_cnossos_propagation_8h_1ac341179e16875a28421482d05198230da057f15add7c9532f7ebd088713f91a5c" kindref="member" tooltip="attenuation due to geometrical spreading">CNOSSOS_P2P_RESULT_ATT_GEO</ref><sp/>=<sp/>7,<sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="190" refid="_cnossos_propagation_8h_1ac341179e16875a28421482d05198230da5ceb429d916f4bf56998ce5836720196" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="_cnossos_propagation_8h_1ac341179e16875a28421482d05198230da5ceb429d916f4bf56998ce5836720196" kindref="member" tooltip="attenuation due to atmospheric absorption">CNOSSOS_P2P_RESULT_ATT_ATM</ref><sp/>=<sp/>8,<sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="191" refid="_cnossos_propagation_8h_1ac341179e16875a28421482d05198230da1fd5bfd4088af7d295366c562529cb44" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="_cnossos_propagation_8h_1ac341179e16875a28421482d05198230da1fd5bfd4088af7d295366c562529cb44" kindref="member" tooltip="attenuation due to reflections by vertical obstacles">CNOSSOS_P2P_RESULT_ATT_REF</ref><sp/>=<sp/>9,<sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="192" refid="_cnossos_propagation_8h_1ac341179e16875a28421482d05198230da3088e34a577a34f2c478ba60dec0b26b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="_cnossos_propagation_8h_1ac341179e16875a28421482d05198230da3088e34a577a34f2c478ba60dec0b26b" kindref="member" tooltip="attenuation due to lateral diffraction by vertical edges">CNOSSOS_P2P_RESULT_ATT_DIF</ref><sp/>=<sp/>10,<sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="193" refid="_cnossos_propagation_8h_1ac341179e16875a28421482d05198230da569574ca5e1d910fa15acd64f607eb80" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="_cnossos_propagation_8h_1ac341179e16875a28421482d05198230da569574ca5e1d910fa15acd64f607eb80" kindref="member" tooltip="attenuation due to finite size of vertical obstacles">CNOSSOS_P2P_RESULT_ATT_SIZE</ref><sp/>=<sp/>11<sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="194"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="203"><highlight class="normal"><ref refid="_cnossos_propagation_8h_1ab177c44aad4888f0564efd48c92aa2ff" kindref="member">_CNOSSOS_DLL_DECL_</ref><sp/><ref refid="struct_c_n_o_s_s_o_s___p2_p___m_a_t_e_r_i_a_l" kindref="compound" tooltip="transparent pointer to material definition">CNOSSOS_P2P_MATERIAL</ref>*<sp/><ref refid="_cnossos_propagation_8cpp_1a1686643abfde86ebc5219a31e96c35d1" kindref="member" tooltip="Get material pointer.">CNOSSOS_P2P_GetMaterial</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>create_if_needed<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">)<sp/>;</highlight></codeline>
+<codeline lineno="210"><highlight class="normal"><ref refid="_cnossos_propagation_8h_1ab177c44aad4888f0564efd48c92aa2ff" kindref="member">_CNOSSOS_DLL_DECL_</ref><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="_cnossos_propagation_8cpp_1ace990defea94fd25e6ea2e442b9d8a1d" kindref="member" tooltip="Set the flow resistivity for a given material.">CNOSSOS_P2P_SetSigma</ref><sp/><sp/>(<ref refid="struct_c_n_o_s_s_o_s___p2_p___m_a_t_e_r_i_a_l" kindref="compound" tooltip="transparent pointer to material definition">CNOSSOS_P2P_MATERIAL</ref>*<sp/>mat,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>sigma)<sp/>;</highlight></codeline>
+<codeline lineno="217"><highlight class="normal"><ref refid="_cnossos_propagation_8h_1ab177c44aad4888f0564efd48c92aa2ff" kindref="member">_CNOSSOS_DLL_DECL_</ref><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="_cnossos_propagation_8cpp_1ab9c7e4a771d96ff3b73aa9fac318b92f" kindref="member" tooltip="Get the flow resistivity for a given material.">CNOSSOS_P2P_GetSigma</ref><sp/><sp/>(<ref refid="struct_c_n_o_s_s_o_s___p2_p___m_a_t_e_r_i_a_l" kindref="compound" tooltip="transparent pointer to material definition">CNOSSOS_P2P_MATERIAL</ref>*<sp/>mat,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>&amp;<sp/>sigma)<sp/>;</highlight></codeline>
+<codeline lineno="224"><highlight class="normal"><ref refid="_cnossos_propagation_8h_1ab177c44aad4888f0564efd48c92aa2ff" kindref="member">_CNOSSOS_DLL_DECL_</ref><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="_cnossos_propagation_8cpp_1a45f4114320e323be768f3a102d88d0c6" kindref="member" tooltip="Set the ground factor for a given material.">CNOSSOS_P2P_SetGValue</ref><sp/>(<ref refid="struct_c_n_o_s_s_o_s___p2_p___m_a_t_e_r_i_a_l" kindref="compound" tooltip="transparent pointer to material definition">CNOSSOS_P2P_MATERIAL</ref>*<sp/>mat,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>G)<sp/>;</highlight></codeline>
+<codeline lineno="231"><highlight class="normal"><ref refid="_cnossos_propagation_8h_1ab177c44aad4888f0564efd48c92aa2ff" kindref="member">_CNOSSOS_DLL_DECL_</ref><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="_cnossos_propagation_8cpp_1ad380e548646dc4002b2e1c8ec1a59b18" kindref="member" tooltip="Get the ground factor for a given material.">CNOSSOS_P2P_GetGValue</ref><sp/>(<ref refid="struct_c_n_o_s_s_o_s___p2_p___m_a_t_e_r_i_a_l" kindref="compound" tooltip="transparent pointer to material definition">CNOSSOS_P2P_MATERIAL</ref>*<sp/>mat,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>&amp;<sp/>G)<sp/>;</highlight></codeline>
+<codeline lineno="238"><highlight class="normal"><ref refid="_cnossos_propagation_8h_1ab177c44aad4888f0564efd48c92aa2ff" kindref="member">_CNOSSOS_DLL_DECL_</ref><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="_cnossos_propagation_8cpp_1ac4ea190e0635b81d3510ad62cd0d9bfc" kindref="member">CNOSSOS_P2P_SetAlpha</ref><sp/><sp/>(<ref refid="struct_c_n_o_s_s_o_s___p2_p___m_a_t_e_r_i_a_l" kindref="compound" tooltip="transparent pointer to material definition">CNOSSOS_P2P_MATERIAL</ref>*<sp/>mat,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">*<sp/>alpha)<sp/>;</highlight></codeline>
+<codeline lineno="245"><highlight class="normal"><ref refid="_cnossos_propagation_8h_1ab177c44aad4888f0564efd48c92aa2ff" kindref="member">_CNOSSOS_DLL_DECL_</ref><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="_cnossos_propagation_8cpp_1a5dc875fdb9200de3fe44712a64147b54" kindref="member" tooltip="Get the spectral absorption factor for a given material.">CNOSSOS_P2P_GetAlpha</ref><sp/><sp/>(<ref refid="struct_c_n_o_s_s_o_s___p2_p___m_a_t_e_r_i_a_l" kindref="compound" tooltip="transparent pointer to material definition">CNOSSOS_P2P_MATERIAL</ref>*<sp/>mat,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>*<sp/>alpha)<sp/>;</highlight></codeline>
+<codeline lineno="252"><highlight class="normal"><ref refid="_cnossos_propagation_8h_1ab177c44aad4888f0564efd48c92aa2ff" kindref="member">_CNOSSOS_DLL_DECL_</ref><sp/><ref refid="struct_c_n_o_s_s_o_s___p2_p___e_n_g_i_n_e" kindref="compound" tooltip="Hidden class for path calculation.">CNOSSOS_P2P_ENGINE</ref>*<sp/><ref refid="_cnossos_propagation_8cpp_1ae0a1f923d4672188a7ada0dc86b8a96a" kindref="member" tooltip="Create a new calculation engine.">CNOSSOS_P2P_CreateEngine</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>name<sp/>=<sp/>0)<sp/>;</highlight></codeline>
+<codeline lineno="258"><highlight class="normal"><ref refid="_cnossos_propagation_8h_1ab177c44aad4888f0564efd48c92aa2ff" kindref="member">_CNOSSOS_DLL_DECL_</ref><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="_cnossos_propagation_8cpp_1a32115d4b78260f5d4872f7127a8ab98c" kindref="member" tooltip="Delete a calculation engine created by a call to CNOSSOS_P2P_CreateEngine.">CNOSSOS_P2P_DeleteEngine</ref><sp/>(<ref refid="struct_c_n_o_s_s_o_s___p2_p___e_n_g_i_n_e" kindref="compound" tooltip="Hidden class for path calculation.">CNOSSOS_P2P_ENGINE</ref>*<sp/>p2p)<sp/>;</highlight></codeline>
+<codeline lineno="266"><highlight class="normal"><ref refid="_cnossos_propagation_8h_1ab177c44aad4888f0564efd48c92aa2ff" kindref="member">_CNOSSOS_DLL_DECL_</ref><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="_cnossos_propagation_8cpp_1a971ba36c3c1de0c8b0db4b2e80684c44" kindref="member" tooltip="select the point to point method">CNOSSOS_P2P_SelectMethod</ref><sp/>(<ref refid="struct_c_n_o_s_s_o_s___p2_p___e_n_g_i_n_e" kindref="compound" tooltip="Hidden class for path calculation.">CNOSSOS_P2P_ENGINE</ref>*<sp/>p2p,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>name)<sp/>;<sp/></highlight></codeline>
+<codeline lineno="272"><highlight class="normal"><ref refid="_cnossos_propagation_8h_1ab177c44aad4888f0564efd48c92aa2ff" kindref="member">_CNOSSOS_DLL_DECL_</ref><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/><ref refid="_cnossos_propagation_8cpp_1a2fb9abd807bb41ace06a1e762687fdeb" kindref="member" tooltip="Get the name of the currently selected propagation path calculator.">CNOSSOS_P2P_GetMethod</ref><sp/>(<ref refid="struct_c_n_o_s_s_o_s___p2_p___e_n_g_i_n_e" kindref="compound" tooltip="Hidden class for path calculation.">CNOSSOS_P2P_ENGINE</ref>*<sp/>p2p)<sp/>;<sp/></highlight></codeline>
+<codeline lineno="278"><highlight class="normal"><ref refid="_cnossos_propagation_8h_1ab177c44aad4888f0564efd48c92aa2ff" kindref="member">_CNOSSOS_DLL_DECL_</ref><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/><ref refid="_cnossos_propagation_8cpp_1ac946563f705eee6dad5aec0e902f35f1" kindref="member" tooltip="Get the version of the currently selected propagation path calculator.">CNOSSOS_P2P_GetVersion</ref><sp/>(<ref refid="struct_c_n_o_s_s_o_s___p2_p___e_n_g_i_n_e" kindref="compound" tooltip="Hidden class for path calculation.">CNOSSOS_P2P_ENGINE</ref>*<sp/>p2p)<sp/>;<sp/></highlight></codeline>
+<codeline lineno="289"><highlight class="normal"><ref refid="_cnossos_propagation_8h_1ab177c44aad4888f0564efd48c92aa2ff" kindref="member">_CNOSSOS_DLL_DECL_</ref><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="_cnossos_propagation_8cpp_1a7bcd55cf7d1ac1f3a4d3174f11cd49ed" kindref="member" tooltip="Clear the propagation path data.">CNOSSOS_P2P_ClearPath</ref><sp/>(<ref refid="struct_c_n_o_s_s_o_s___p2_p___e_n_g_i_n_e" kindref="compound" tooltip="Hidden class for path calculation.">CNOSSOS_P2P_ENGINE</ref>*<sp/>p2p)<sp/>;<sp/></highlight></codeline>
+<codeline lineno="313"><highlight class="normal"><ref refid="_cnossos_propagation_8h_1ab177c44aad4888f0564efd48c92aa2ff" kindref="member">_CNOSSOS_DLL_DECL_</ref><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="_cnossos_propagation_8cpp_1ae4dc0c831e5a7e6a230d29ff3eb26572" kindref="member" tooltip="Add a new control point to the propagation path.">CNOSSOS_P2P_AddToPath</ref><sp/>(</highlight></codeline>
+<codeline lineno="314"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_c_n_o_s_s_o_s___p2_p___e_n_g_i_n_e" kindref="compound" tooltip="Hidden class for path calculation.">CNOSSOS_P2P_ENGINE</ref>*<sp/>p2p,<sp/></highlight></codeline>
+<codeline lineno="315"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="_cnossos_propagation_8h_1ab23aeb50806723b22c684d8355d91610" kindref="member" tooltip="Encoding of positions using 3 dimensional (X,Y,Z) coordinates.">CNOSSOS_P2P_POSITION</ref><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>pos,</highlight></codeline>
+<codeline lineno="316"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_c_n_o_s_s_o_s___p2_p___m_a_t_e_r_i_a_l" kindref="compound" tooltip="transparent pointer to material definition">CNOSSOS_P2P_MATERIAL</ref>*<sp/>mat,</highlight></codeline>
+<codeline lineno="317"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_c_n_o_s_s_o_s___p2_p___e_x_t_e_n_s_i_o_n" kindref="compound" tooltip="transparent pointer to vertical extension">CNOSSOS_P2P_EXTENSION</ref>*<sp/>ext<sp/>=<sp/>0)<sp/>;</highlight></codeline>
+<codeline lineno="323"><highlight class="normal"><ref refid="_cnossos_propagation_8h_1ab177c44aad4888f0564efd48c92aa2ff" kindref="member">_CNOSSOS_DLL_DECL_</ref><sp/><ref refid="struct_c_n_o_s_s_o_s___p2_p___e_x_t_e_n_s_i_o_n" kindref="compound" tooltip="transparent pointer to vertical extension">CNOSSOS_P2P_EXTENSION</ref>*<sp/><ref refid="_cnossos_propagation_8cpp_1a7ba4496056b535ece9261c667c2f0f83" kindref="member" tooltip="Create a vertical extension representing a point source.">CNOSSOS_P2P_CreatePointSource</ref><sp/>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>h)<sp/>;</highlight></codeline>
+<codeline lineno="329"><highlight class="normal"><ref refid="_cnossos_propagation_8h_1ab177c44aad4888f0564efd48c92aa2ff" kindref="member">_CNOSSOS_DLL_DECL_</ref><sp/><ref refid="struct_c_n_o_s_s_o_s___p2_p___e_x_t_e_n_s_i_o_n" kindref="compound" tooltip="transparent pointer to vertical extension">CNOSSOS_P2P_EXTENSION</ref>*<sp/><ref refid="_cnossos_propagation_8cpp_1a73c0ab4a89e60500aa45e09ed5640e74" kindref="member" tooltip="Create a vertical extension representing a receiver point.">CNOSSOS_P2P_CreateReceiver</ref><sp/>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>h)<sp/>;</highlight></codeline>
+<codeline lineno="336"><highlight class="normal"><ref refid="_cnossos_propagation_8h_1ab177c44aad4888f0564efd48c92aa2ff" kindref="member">_CNOSSOS_DLL_DECL_</ref><sp/><ref refid="struct_c_n_o_s_s_o_s___p2_p___e_x_t_e_n_s_i_o_n" kindref="compound" tooltip="transparent pointer to vertical extension">CNOSSOS_P2P_EXTENSION</ref>*<sp/><ref refid="_cnossos_propagation_8cpp_1a1ed4d1e2dff7c9fce96acb885d5ecc3c" kindref="member" tooltip="Create a vertical extension for a thin barrier crossed by the propagation plane.">CNOSSOS_P2P_CreateBarrier</ref><sp/>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>h,<sp/><ref refid="struct_c_n_o_s_s_o_s___p2_p___m_a_t_e_r_i_a_l" kindref="compound" tooltip="transparent pointer to material definition">CNOSSOS_P2P_MATERIAL</ref>*<sp/>mat<sp/>=<sp/>0)<sp/>;</highlight></codeline>
+<codeline lineno="343"><highlight class="normal"><ref refid="_cnossos_propagation_8h_1ab177c44aad4888f0564efd48c92aa2ff" kindref="member">_CNOSSOS_DLL_DECL_</ref><sp/><ref refid="struct_c_n_o_s_s_o_s___p2_p___e_x_t_e_n_s_i_o_n" kindref="compound" tooltip="transparent pointer to vertical extension">CNOSSOS_P2P_EXTENSION</ref>*<sp/><ref refid="_cnossos_propagation_8cpp_1aae3fce186556d029f91907670214ac4b" kindref="member" tooltip="Create an extension for a vertical wall acting as a reflector for the propagation path...">CNOSSOS_P2P_CreateVerticalWall</ref><sp/>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>h,<sp/><ref refid="struct_c_n_o_s_s_o_s___p2_p___m_a_t_e_r_i_a_l" kindref="compound" tooltip="transparent pointer to material definition">CNOSSOS_P2P_MATERIAL</ref>*<sp/>mat<sp/>=<sp/>0)<sp/>;</highlight></codeline>
+<codeline lineno="349"><highlight class="normal"><ref refid="_cnossos_propagation_8h_1ab177c44aad4888f0564efd48c92aa2ff" kindref="member">_CNOSSOS_DLL_DECL_</ref><sp/><ref refid="struct_c_n_o_s_s_o_s___p2_p___e_x_t_e_n_s_i_o_n" kindref="compound" tooltip="transparent pointer to vertical extension">CNOSSOS_P2P_EXTENSION</ref>*<sp/><ref refid="_cnossos_propagation_8cpp_1a0550708cdb1244fef61f1bad14c3a0b7" kindref="member" tooltip="Create an extension for a vertical edge causing lateral diffraction of the propagation path...">CNOSSOS_P2P_CreateVerticalEdge</ref><sp/>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>h)<sp/>;</highlight></codeline>
+<codeline lineno="362"><highlight class="normal"><ref refid="_cnossos_propagation_8h_1ab177c44aad4888f0564efd48c92aa2ff" kindref="member">_CNOSSOS_DLL_DECL_</ref><sp/><ref refid="struct_c_n_o_s_s_o_s___p2_p___e_x_t_e_n_s_i_o_n" kindref="compound" tooltip="transparent pointer to vertical extension">CNOSSOS_P2P_EXTENSION</ref>*<sp/><ref refid="_cnossos_propagation_8cpp_1a002002deea29e837ba791875c5462ac9" kindref="member" tooltip="Create a vertical extension representing a line source segment.">CNOSSOS_P2P_CreateLineSource</ref><sp/>(</highlight></codeline>
+<codeline lineno="363"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>h,<sp/></highlight></codeline>
+<codeline lineno="364"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="_cnossos_propagation_8h_1ab23aeb50806723b22c684d8355d91610" kindref="member" tooltip="Encoding of positions using 3 dimensional (X,Y,Z) coordinates.">CNOSSOS_P2P_POSITION</ref><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>segment[2],<sp/></highlight></codeline>
+<codeline lineno="365"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>fixedAngle<sp/>=<sp/>0.0)<sp/>;</highlight></codeline>
+<codeline lineno="374"><highlight class="normal"><ref refid="_cnossos_propagation_8h_1ab177c44aad4888f0564efd48c92aa2ff" kindref="member">_CNOSSOS_DLL_DECL_</ref><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="_cnossos_propagation_8cpp_1abb68ef089d17b311360ab4d7639e6c39" kindref="member" tooltip="Set the sound power associated with the source.">CNOSSOS_P2P_SetSoundPower</ref><sp/>(</highlight></codeline>
+<codeline lineno="375"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_c_n_o_s_s_o_s___p2_p___e_n_g_i_n_e" kindref="compound" tooltip="Hidden class for path calculation.">CNOSSOS_P2P_ENGINE</ref>*<sp/>p2p,<sp/></highlight></codeline>
+<codeline lineno="376"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">*<sp/>Lw,</highlight></codeline>
+<codeline lineno="377"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="_cnossos_propagation_8h_1a4731b6d7565c3be5eb2e35a502c5afca" kindref="member" tooltip="Sound power frequency weighting.">CNOSSOS_P2P_SPECTRUM_WEIGHTING</ref><sp/>spectrumWeighting<sp/>=<sp/><ref refid="_cnossos_propagation_8h_1a4731b6d7565c3be5eb2e35a502c5afcaa8205813b0cebd642f73da5bc3227119b" kindref="member">CNOSSOS_P2P_SPECTRUM_LIN</ref>,</highlight></codeline>
+<codeline lineno="378"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="_cnossos_propagation_8h_1a2329eadb2cdfeb3f97cdf8749e5127ba" kindref="member" tooltip="Sound power measurement conditions.">CNOSSOS_P2P_LW_MEASUREMENT_TYPE</ref><sp/>measurementType<sp/>=<sp/><ref refid="_cnossos_propagation_8h_1a2329eadb2cdfeb3f97cdf8749e5127baa7f1ae37ac1362e5ecd7ac9980a2d09ca" kindref="member">CNOSSOS_P2P_LW_UNDEFINED</ref>)<sp/>;</highlight></codeline>
+<codeline lineno="391"><highlight class="normal"><ref refid="_cnossos_propagation_8h_1ab177c44aad4888f0564efd48c92aa2ff" kindref="member">_CNOSSOS_DLL_DECL_</ref><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="_cnossos_propagation_8cpp_1a1f67fcfb8275e9af29988a6b420e20e7" kindref="member" tooltip="Get the acoustical results for the current propagation path.">CNOSSOS_P2P_GetResult</ref><sp/>(<ref refid="struct_c_n_o_s_s_o_s___p2_p___e_n_g_i_n_e" kindref="compound" tooltip="Hidden class for path calculation.">CNOSSOS_P2P_ENGINE</ref>*<sp/>p2p,<sp/><ref refid="_cnossos_propagation_8h_1ac341179e16875a28421482d05198230d" kindref="member" tooltip="Select the result to be returned by the call to CNOSSOS_P2P_GetResult.">CNOSSOS_P2P_RESULT</ref><sp/>index,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>*<sp/>result)<sp/>;</highlight></codeline>
+<codeline lineno="397"><highlight class="normal"><ref refid="_cnossos_propagation_8h_1ab177c44aad4888f0564efd48c92aa2ff" kindref="member">_CNOSSOS_DLL_DECL_</ref><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/><ref refid="_cnossos_propagation_8cpp_1a6588d381050e16d98f765350485799c8" kindref="member" tooltip="Get a description of the last error that occurred in the acoustical calculation.">CNOSSOS_P2P_GetErrorMessage</ref><sp/>(<ref refid="struct_c_n_o_s_s_o_s___p2_p___e_n_g_i_n_e" kindref="compound" tooltip="Hidden class for path calculation.">CNOSSOS_P2P_ENGINE</ref>*<sp/>p2p)<sp/>;<sp/></highlight></codeline>
+<codeline lineno="403"><highlight class="normal"><ref refid="_cnossos_propagation_8h_1ab177c44aad4888f0564efd48c92aa2ff" kindref="member">_CNOSSOS_DLL_DECL_</ref><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="_cnossos_propagation_8cpp_1a7fea9801c0b9392bcb9bd18ccd5dd34f" kindref="member" tooltip="Print the current propagation path to the application&amp;#39;s default output device.">CNOSSOS_P2P_PrintPathData</ref><sp/>(<ref refid="struct_c_n_o_s_s_o_s___p2_p___e_n_g_i_n_e" kindref="compound" tooltip="Hidden class for path calculation.">CNOSSOS_P2P_ENGINE</ref>*<sp/>p2p)<sp/>;</highlight></codeline>
+<codeline lineno="409"><highlight class="normal"><ref refid="_cnossos_propagation_8h_1ab177c44aad4888f0564efd48c92aa2ff" kindref="member">_CNOSSOS_DLL_DECL_</ref><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="_cnossos_propagation_8cpp_1a4c6e919f1d76063dbdbae37a9e159fe1" kindref="member" tooltip="Print an overview of the acoustical results to the application&amp;#39;s output device.">CNOSSOS_P2P_PrintPathResults</ref><sp/>(<ref refid="struct_c_n_o_s_s_o_s___p2_p___e_n_g_i_n_e" kindref="compound" tooltip="Hidden class for path calculation.">CNOSSOS_P2P_ENGINE</ref>*<sp/>p2p)<sp/>;</highlight></codeline>
+<codeline lineno="416"><highlight class="normal"><ref refid="_cnossos_propagation_8h_1ab177c44aad4888f0564efd48c92aa2ff" kindref="member">_CNOSSOS_DLL_DECL_</ref><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="_cnossos_propagation_8cpp_1accb1cfd31b8543ef5c2091431f156e1c" kindref="member" tooltip="Get the current settings of the calculation options.">CNOSSOS_P2P_GetOptions</ref><sp/>(<ref refid="struct_c_n_o_s_s_o_s___p2_p___e_n_g_i_n_e" kindref="compound" tooltip="Hidden class for path calculation.">CNOSSOS_P2P_ENGINE</ref>*<sp/>p2p,<sp/><ref refid="struct_c_n_o_s_s_o_s___p2_p___o_p_t_i_o_n_s" kindref="compound" tooltip="Options modifying the behavior of the calculation engine.">CNOSSOS_P2P_OPTIONS</ref><sp/>&amp;<sp/>options)<sp/>;</highlight></codeline>
+<codeline lineno="423"><highlight class="normal"><ref refid="_cnossos_propagation_8h_1ab177c44aad4888f0564efd48c92aa2ff" kindref="member">_CNOSSOS_DLL_DECL_</ref><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="_cnossos_propagation_8cpp_1a4cadc590fad2b84dd9c34aba49732479" kindref="member" tooltip="Set the current settings of the calculation options.">CNOSSOS_P2P_SetOptions</ref><sp/>(<ref refid="struct_c_n_o_s_s_o_s___p2_p___e_n_g_i_n_e" kindref="compound" tooltip="Hidden class for path calculation.">CNOSSOS_P2P_ENGINE</ref>*<sp/>p2p,<sp/><ref refid="struct_c_n_o_s_s_o_s___p2_p___o_p_t_i_o_n_s" kindref="compound" tooltip="Options modifying the behavior of the calculation engine.">CNOSSOS_P2P_OPTIONS</ref><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>options)<sp/>;</highlight></codeline>
+<codeline lineno="430"><highlight class="normal"><ref refid="_cnossos_propagation_8h_1ab177c44aad4888f0564efd48c92aa2ff" kindref="member">_CNOSSOS_DLL_DECL_</ref><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="_cnossos_propagation_8cpp_1a3f61cba80fbb3a0bb616632fd279a6d0" kindref="member" tooltip="Set the meteorological condition parameters.">CNOSSOS_P2P_SetMeteo</ref><sp/>(<ref refid="struct_c_n_o_s_s_o_s___p2_p___e_n_g_i_n_e" kindref="compound" tooltip="Hidden class for path calculation.">CNOSSOS_P2P_ENGINE</ref>*<sp/>p2p,<sp/><ref refid="struct_c_n_o_s_s_o_s___p2_p___m_e_t_e_o" kindref="compound" tooltip="Meteorological input data.">CNOSSOS_P2P_METEO</ref><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>meteo)<sp/>;</highlight></codeline>
+<codeline lineno="437"><highlight class="normal"><ref refid="_cnossos_propagation_8h_1ab177c44aad4888f0564efd48c92aa2ff" kindref="member">_CNOSSOS_DLL_DECL_</ref><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="_cnossos_propagation_8cpp_1a7d17290fb8b374b2adef74dcc3e9b61f" kindref="member" tooltip="Get the meteorological condition parameters.">CNOSSOS_P2P_GetMeteo</ref><sp/>(<ref refid="struct_c_n_o_s_s_o_s___p2_p___e_n_g_i_n_e" kindref="compound" tooltip="Hidden class for path calculation.">CNOSSOS_P2P_ENGINE</ref>*<sp/>p2p,<sp/><ref refid="struct_c_n_o_s_s_o_s___p2_p___m_e_t_e_o" kindref="compound" tooltip="Meteorological input data.">CNOSSOS_P2P_METEO</ref><sp/>&amp;<sp/>meteo)<sp/>;</highlight></codeline>
+<codeline lineno="450"><highlight class="normal"><ref refid="_cnossos_propagation_8h_1ab177c44aad4888f0564efd48c92aa2ff" kindref="member">_CNOSSOS_DLL_DECL_</ref><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="_cnossos_propagation_8cpp_1a32c4662b003c86be1f8b08809ab4e60b" kindref="member" tooltip="Process a XML input file and optionally produce an XML output file.">CNOSSOS_P2P_ProcessPathFile</ref><sp/>(</highlight></codeline>
+<codeline lineno="451"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_c_n_o_s_s_o_s___p2_p___e_n_g_i_n_e" kindref="compound" tooltip="Hidden class for path calculation.">CNOSSOS_P2P_ENGINE</ref>*<sp/>p2p,<sp/></highlight></codeline>
+<codeline lineno="452"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>inputFile,</highlight></codeline>
+<codeline lineno="453"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>outputFile<sp/>=<sp/>0)<sp/>;</highlight></codeline>
+<codeline lineno="454"><highlight class="normal"></highlight></codeline>
+<codeline lineno="455"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="C:/Users/dvm/Projets/CNOSSOS-EU/dev/CnossosPropagation/CnossosPropagation.h"/>
+  </compounddef>
+</doxygen>

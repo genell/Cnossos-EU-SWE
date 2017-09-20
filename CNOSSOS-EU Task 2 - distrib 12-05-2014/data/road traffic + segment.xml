@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<CNOSSOS-EU version="1.001">
+	<!-- select calculation method -->
+	<method>
+		<select id="JRC-2012" />
+		<meteo model="ISO-9613-2">
+			<!-- user defined temperature and humidity -->
+			<temperature> 20.0 </temperature>
+			<humidity> 60.0 </humidity>
+			<!-- propagation conditions -->
+			<pFav> 0.50 </pFav>
+			<C0>   3.00 </C0>
+		</meteo>
+	</method>
+	<!-- define or modify material properties -->
+	<materials>
+		<!-- user defined material propertes -->
+		<mat id = "UserDefined">
+			<G>     1.0 </G>
+			<sigma>  50 </sigma>
+		</mat>
+		<!-- for testing only (change G value for predefined ground type "H" -->
+		<mat id = "H">
+			<G> 0.05 </G>
+		</mat>
+		<!-- for testing only (change absorption value for predefined type "A3" -->
+		<mat id = "A3">
+			<G> 1.0 </G>
+			<alpha> 0.35 0.50 0.75 0.85 0.95 0.99 0.99 0.95 </alpha> 
+		</mat>
+	</materials>
+	<!-- propagation path -->
+	<path>
+		<!-- sourcer -->
+		<cp id="source">
+			<pos>
+				<x>	  0.00 </x>
+				<y>   0.00 </y> 
+				<z>   0.00 </z>
+			</pos>
+			<mat id="H" />
+			<ext>
+				<source>
+					<import file="CNOSSOS_Road_Output.xml" />
+					<!-- source geometry in the horizontal plane = segment from Y=-10 to Y=+10m -->
+					<extGeometry>
+						<lineSegment>
+							<posStart>
+								<y> -10 </y>
+							</posStart>
+							<posEnd>
+								<y>  10 </y>
+							</posEnd>
+						</lineSegment>
+					</extGeometry>
+				</source>
+			</ext>
+		</cp>
+		<!-- border of hard platform at x = 7.5m, groundType = H  -->
+		<cp id="ground">
+			<pos>
+				<x>	7.50 </x>
+				<z> 0.00 </z>
+			</pos>
+			<mat id="H" />
+		</cp>
+		<!-- berm, 7.5m width, 2.5m high -->
+		<cp id="berm">
+			<pos>
+				<x>	10.00 </x>
+				<z>  2.50 </z>
+			</pos>
+			<mat id="H" />
+		</cp>
+		<cp id="ground">
+			<pos>
+				<x>	12.50 </x>
+				<z>  2.50 </z>
+			</pos>
+			<mat id="UserDefined" />
+		</cp>
+		<cp id="ground">
+			<pos>
+				<x>	15.00 </x>
+				<z>  0.00 </z>
+			</pos>
+			<mat id="UserDefined" />
+		</cp>
+		<!-- receiver at x = 100m, h = 4m, groundType = UserDefined -->
+		<cp id= "receiver">
+			<pos>
+				<x>	  100.00 </x>
+				<z>    0.00 </z>
+			</pos>
+			<mat id = "D" />
+			<ext>
+				<receiver>
+					<h> 4.0 </h>
+				</receiver>
+			</ext>
+		</cp>
+	</path>
+</CNOSSOS-EU>

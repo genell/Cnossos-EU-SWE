@@ -1,0 +1,32 @@
+﻿La génération a démarré 4/9/2014 4:03:57 PM.
+     1>Projet "C:\Users\dvm\Projets\CNOSSOS-EU\dev\SimpleXML\SimpleXML.vcxproj" sur le nœud 2 (rebuild cible(s)).
+     1>_PrepareForClean:
+         Suppression du fichier "Debug\SimpleXML.lastbuildstate".
+       InitializeBuildStatus:
+         Création de "Debug\SimpleXML.unsuccessfulbuild", car "AlwaysCreate" a été spécifié.
+       ClCompile:
+         c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _LIB /D _CRT_SECURE_NO_WARNINGS /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt SimpleXML.cpp
+         SimpleXML.cpp
+         c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _LIB /D _CRT_SECURE_NO_WARNINGS /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TC /analyze- /errorReport:prompt xmlparse.c xmlrole.c xmltok.c xmltok_impl.c xmltok_ns.c
+         xmltok_ns.c
+         xmltok_impl.c
+         xmltok.c
+         xmlrole.c
+         xmlparse.c
+         Génération de code en cours...
+       Lib:
+         c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\Lib.exe /OUT:"C:\Users\dvm\Projets\CNOSSOS-EU\dev\Debug\SimpleXML.lib" /NOLOGO Debug\SimpleXML.obj
+         Debug\xmlparse.obj
+         Debug\xmlrole.obj
+         Debug\xmltok.obj
+         Debug\xmltok_impl.obj
+         Debug\xmltok_ns.obj
+         SimpleXML.vcxproj -> C:\Users\dvm\Projets\CNOSSOS-EU\dev\Debug\SimpleXML.lib
+       FinalizeBuildStatus:
+         Suppression du fichier "Debug\SimpleXML.unsuccessfulbuild".
+         Mise à jour de l'horodatage "Debug\SimpleXML.lastbuildstate".
+     1>Génération du projet "C:\Users\dvm\Projets\CNOSSOS-EU\dev\SimpleXML\SimpleXML.vcxproj" terminée (rebuild cible(s)).
+
+La génération a réussi.
+
+Temps écoulé 00:00:01.12

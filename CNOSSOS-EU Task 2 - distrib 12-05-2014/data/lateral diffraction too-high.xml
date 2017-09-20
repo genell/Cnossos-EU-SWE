@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<CNOSSOS-EU>
+	<!-- select calculation method -->
+	<method>
+		<select id="ISO-9613-2" />
+		<!-- in general, you don't need to specify options unless you want to change the default behavior of the method -->
+		<options>
+			<option id="CheckHeightUpperBound" value="false" />
+			<option id="CheckHeightLowerBound" value="false" />
+			<option id="ExcludeSoundPower" value="false" />
+			<option id="ForceSourceToReceiver" value = "false" />
+		</options>
+		<meteo model="ISO-9613-2">
+			<temperature> 20.0 </temperature>
+			<humidity> 60.0 </humidity>
+			<pFav> 0.50 </pFav>
+			<C0>   3.00 </C0>
+		</meteo>
+	</method>
+	<!-- define or modify material properties -->
+	<materials>
+		<!-- user defined material propertes -->
+		<mat id = "UserDefined">
+			<G> 0.9 </G>
+			<sigma> 250 </sigma>
+			<alpha> 
+				0.10	0.20	0.30	0.40	
+				0.50	0.60	0.70	0.80
+			</alpha>
+		</mat>
+		<!-- for testing only (change G value for predefined ground type "H" -->
+		<mat id = "H">
+			<G> 0.01 </G>
+		</mat>
+		<!-- for testing only (change absorption value for predefined type "A3" -->
+		<mat id = "A3">
+			<G> 1.0 </G>
+			<alpha> 0.35 0.50 0.75 0.85 0.95 0.99 0.99 0.95 </alpha> 
+		</mat>
+	</materials>
+	<!-- propagation path -->
+	<path>
+		<!-- sourcer -->
+		<cp id="source">
+			<pos>
+				<x>	  0.00 </x>
+				<y>   0.00 </y> 
+				<z>   0.00 </z>
+			</pos>
+			<mat id="H" />
+			<ext>
+				<source>
+					<h> 0.50 </h>
+					<!-- TODO: read sound power from external file -->
+					<!-- sound power definitions
+						 * measurementType = "Unknown", "FreeField" or "HemiSpherical" 
+						 * sourceType = "PointSource", "LineSource" or "AreaSource"   				
+					     * frequencyWeighting = "LIN" or "dBA"
+					-->
+					<Lw sourceType="PointSource" measurementType="HemiSpherical" frequencyWeighting="LIN"> 
+						80.0 90.0 95.0 100.0 100.0 100.0 95.0 90.0 
+					</Lw>
+				</source>
+			</ext>
+		</cp>
+		<!--  diffracting edge  -->
+		<cp id="edge.1">
+			<pos>
+				<x>	10.00 </x>
+				<y>  2.00 </y>
+				<z>  0.00 </z>
+			</pos>
+			<mat id="H" />
+			<ext>
+				<edge>
+					<h> 3.00 </h>
+				</edge>
+			</ext>
+		</cp>
+		<!--  diffracting edge  -->
+		<cp id="edge.2">
+			<pos>
+				<x>	20.00 </x>
+				<y>  2.00 </y>
+				<z>  0.00 </z>
+			</pos>
+			<mat id="H" />
+			<ext>
+				<edge>
+					<h> 3.00 </h>
+				</edge>
+			</ext>
+		</cp>
+		<!-- receiver at x = 100m, groundType = D -->
+		<cp id= "receiver">
+			<pos>
+				<x>	  50.00 </x>
+				<y>	   0.00 </y>
+				<z>    0.00 </z>
+			</pos>
+			<mat id = "H" />
+			<ext>
+				<receiver>
+					<h> 8.5 </h>
+				</receiver>
+			</ext>
+		</cp>
+	</path>
+</CNOSSOS-EU>

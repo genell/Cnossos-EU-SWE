@@ -1,0 +1,163 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygenindex xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="index.xsd" version="1.7.4">
+  <compound refid="struct_c_n_o_s_s_o_s___p2_p___e_n_g_i_n_e" kind="struct"><name>CNOSSOS_P2P_ENGINE</name>
+    <member refid="struct_c_n_o_s_s_o_s___p2_p___e_n_g_i_n_e_1a15191f516c50d9fca7a3043ce606f067" kind="variable"><name>method</name></member>
+    <member refid="struct_c_n_o_s_s_o_s___p2_p___e_n_g_i_n_e_1adcca971879565fbf0f14f9f62db72e76" kind="variable"><name>path</name></member>
+    <member refid="struct_c_n_o_s_s_o_s___p2_p___e_n_g_i_n_e_1aed0389b71fdc0ff56343cc33c34d851d" kind="variable"><name>source</name></member>
+    <member refid="struct_c_n_o_s_s_o_s___p2_p___e_n_g_i_n_e_1a842a3c057c0b8f8d3ccf0a58d7fcf9f0" kind="variable"><name>options</name></member>
+    <member refid="struct_c_n_o_s_s_o_s___p2_p___e_n_g_i_n_e_1af6879cfb605fecc5df65cb3d466db03b" kind="variable"><name>result</name></member>
+    <member refid="struct_c_n_o_s_s_o_s___p2_p___e_n_g_i_n_e_1a0c36ecb8fbbbedf85c463a864e5c1559" kind="variable"><name>calculationDone</name></member>
+    <member refid="struct_c_n_o_s_s_o_s___p2_p___e_n_g_i_n_e_1a3908fac64750aa1e9c6ec3f8b22e0f47" kind="variable"><name>hasErrors</name></member>
+    <member refid="struct_c_n_o_s_s_o_s___p2_p___e_n_g_i_n_e_1a662a548fc130660ab58b56b5ed7fa2c6" kind="variable"><name>errorMessage</name></member>
+    <member refid="struct_c_n_o_s_s_o_s___p2_p___e_n_g_i_n_e_1aed051498b32883bb545ed5723d0b6434" kind="function"><name>CNOSSOS_P2P_ENGINE</name></member>
+    <member refid="struct_c_n_o_s_s_o_s___p2_p___e_n_g_i_n_e_1aacc9607de6b92288310660da6db77b79" kind="function"><name>selectMethod</name></member>
+    <member refid="struct_c_n_o_s_s_o_s___p2_p___e_n_g_i_n_e_1ae5813b5c5a67436c43e4058b91541b9c" kind="function"><name>doCalculation</name></member>
+  </compound>
+  <compound refid="struct_c_n_o_s_s_o_s___p2_p___e_x_t_e_n_s_i_o_n" kind="struct"><name>CNOSSOS_P2P_EXTENSION</name>
+  </compound>
+  <compound refid="struct_c_n_o_s_s_o_s___p2_p___m_a_t_e_r_i_a_l" kind="struct"><name>CNOSSOS_P2P_MATERIAL</name>
+  </compound>
+  <compound refid="struct_c_n_o_s_s_o_s___p2_p___m_e_t_e_o" kind="struct"><name>CNOSSOS_P2P_METEO</name>
+    <member refid="struct_c_n_o_s_s_o_s___p2_p___m_e_t_e_o_1aebfd4988c3a8620b03ba119dd6627617" kind="variable"><name>model</name></member>
+    <member refid="struct_c_n_o_s_s_o_s___p2_p___m_e_t_e_o_1adeab01f166acc932e41eaa3d17365f87" kind="variable"><name>C0</name></member>
+    <member refid="struct_c_n_o_s_s_o_s___p2_p___m_e_t_e_o_1a8d538e25ef1131d001a3dd9150d6fb06" kind="variable"><name>pFav</name></member>
+    <member refid="struct_c_n_o_s_s_o_s___p2_p___m_e_t_e_o_1a41208b62aa344c53d96582845ca3bed4" kind="variable"><name>temperature</name></member>
+    <member refid="struct_c_n_o_s_s_o_s___p2_p___m_e_t_e_o_1a1aa5917fd82ce33f049a245541665efc" kind="variable"><name>humidity</name></member>
+  </compound>
+  <compound refid="struct_c_n_o_s_s_o_s___p2_p___o_p_t_i_o_n_s" kind="struct"><name>CNOSSOS_P2P_OPTIONS</name>
+    <member refid="struct_c_n_o_s_s_o_s___p2_p___o_p_t_i_o_n_s_1ab666c67c3d9e614a9f36bbe340e04e94" kind="variable"><name>CheckHorizontalAlignment</name></member>
+    <member refid="struct_c_n_o_s_s_o_s___p2_p___o_p_t_i_o_n_s_1a9c306c567d5dd95099b178ca2a52b31c" kind="variable"><name>CheckLateralDiffraction</name></member>
+    <member refid="struct_c_n_o_s_s_o_s___p2_p___o_p_t_i_o_n_s_1a67a8d97d863baee7b3e4977c28ccdb46" kind="variable"><name>CheckHeightLowerBound</name></member>
+    <member refid="struct_c_n_o_s_s_o_s___p2_p___o_p_t_i_o_n_s_1a4ed7239da8213ce093aed32485dbdd0f" kind="variable"><name>CheckHeightUpperBound</name></member>
+    <member refid="struct_c_n_o_s_s_o_s___p2_p___o_p_t_i_o_n_s_1a50d6b614c0f79c4fdea380bc6dcb95c8" kind="variable"><name>CheckSourceSegment</name></member>
+    <member refid="struct_c_n_o_s_s_o_s___p2_p___o_p_t_i_o_n_s_1aeecf266efc1b650a867bec2c77a4bdf0" kind="variable"><name>CheckSoundPowerUnits</name></member>
+    <member refid="struct_c_n_o_s_s_o_s___p2_p___o_p_t_i_o_n_s_1ac408d4ea971cc5fd32af1b4d532648c2" kind="variable"><name>ForceSourceToReceiver</name></member>
+    <member refid="struct_c_n_o_s_s_o_s___p2_p___o_p_t_i_o_n_s_1aefde4c9bbb66f6d83071ef1fac89542f" kind="variable"><name>SimplifyPathGeometry</name></member>
+    <member refid="struct_c_n_o_s_s_o_s___p2_p___o_p_t_i_o_n_s_1a7894aa46585e3c708f4ad251ef48f04b" kind="variable"><name>DisableReflections</name></member>
+    <member refid="struct_c_n_o_s_s_o_s___p2_p___o_p_t_i_o_n_s_1a995ff9784bbc4619921ce1127fc1d8df" kind="variable"><name>DisableLateralDiffractions</name></member>
+    <member refid="struct_c_n_o_s_s_o_s___p2_p___o_p_t_i_o_n_s_1aef8a7e5ed0833f05399d5412665c20b1" kind="variable"><name>LimitLateralDiffraction</name></member>
+    <member refid="struct_c_n_o_s_s_o_s___p2_p___o_p_t_i_o_n_s_1a47d635af0140708e89a2bead57875a86" kind="variable"><name>ExcludeSoundPower</name></member>
+    <member refid="struct_c_n_o_s_s_o_s___p2_p___o_p_t_i_o_n_s_1a8e9a510e3aa75c90992a8921d460fb98" kind="variable"><name>ExcludeGeometricalSpread</name></member>
+    <member refid="struct_c_n_o_s_s_o_s___p2_p___o_p_t_i_o_n_s_1a69dab85542b4544b7fa35424eb4a2935" kind="variable"><name>ExcludeAirAbsorption</name></member>
+  </compound>
+  <compound refid="namespace_cnossos_e_u" kind="namespace"><name>CnossosEU</name>
+  </compound>
+  <compound refid="namespace_geometry" kind="namespace"><name>Geometry</name>
+  </compound>
+  <compound refid="namespace_system" kind="namespace"><name>System</name>
+  </compound>
+  <compound refid="_cnossos_propagation_8cpp" kind="file"><name>CnossosPropagation.cpp</name>
+    <member refid="_cnossos_propagation_8cpp_1a32073e2905a8d2272903ddf86a6590e7" kind="function"><name>CNOSSOS_P2P_GetVersionDLL</name></member>
+    <member refid="_cnossos_propagation_8cpp_1a177bd5e49fe4312e4b0d828be85f0d42" kind="function"><name>CNOSSOS_P2P_GetFreq</name></member>
+    <member refid="_cnossos_propagation_8cpp_1a1686643abfde86ebc5219a31e96c35d1" kind="function"><name>CNOSSOS_P2P_GetMaterial</name></member>
+    <member refid="_cnossos_propagation_8cpp_1ad380e548646dc4002b2e1c8ec1a59b18" kind="function"><name>CNOSSOS_P2P_GetGValue</name></member>
+    <member refid="_cnossos_propagation_8cpp_1a45f4114320e323be768f3a102d88d0c6" kind="function"><name>CNOSSOS_P2P_SetGValue</name></member>
+    <member refid="_cnossos_propagation_8cpp_1ab9c7e4a771d96ff3b73aa9fac318b92f" kind="function"><name>CNOSSOS_P2P_GetSigma</name></member>
+    <member refid="_cnossos_propagation_8cpp_1ace990defea94fd25e6ea2e442b9d8a1d" kind="function"><name>CNOSSOS_P2P_SetSigma</name></member>
+    <member refid="_cnossos_propagation_8cpp_1a5dc875fdb9200de3fe44712a64147b54" kind="function"><name>CNOSSOS_P2P_GetAlpha</name></member>
+    <member refid="_cnossos_propagation_8cpp_1ac4ea190e0635b81d3510ad62cd0d9bfc" kind="function"><name>CNOSSOS_P2P_SetAlpha</name></member>
+    <member refid="_cnossos_propagation_8cpp_1ae0a1f923d4672188a7ada0dc86b8a96a" kind="function"><name>CNOSSOS_P2P_CreateEngine</name></member>
+    <member refid="_cnossos_propagation_8cpp_1a32115d4b78260f5d4872f7127a8ab98c" kind="function"><name>CNOSSOS_P2P_DeleteEngine</name></member>
+    <member refid="_cnossos_propagation_8cpp_1a2fb9abd807bb41ace06a1e762687fdeb" kind="function"><name>CNOSSOS_P2P_GetMethod</name></member>
+    <member refid="_cnossos_propagation_8cpp_1ac946563f705eee6dad5aec0e902f35f1" kind="function"><name>CNOSSOS_P2P_GetVersion</name></member>
+    <member refid="_cnossos_propagation_8cpp_1a971ba36c3c1de0c8b0db4b2e80684c44" kind="function"><name>CNOSSOS_P2P_SelectMethod</name></member>
+    <member refid="_cnossos_propagation_8cpp_1a7ba4496056b535ece9261c667c2f0f83" kind="function"><name>CNOSSOS_P2P_CreatePointSource</name></member>
+    <member refid="_cnossos_propagation_8cpp_1a73c0ab4a89e60500aa45e09ed5640e74" kind="function"><name>CNOSSOS_P2P_CreateReceiver</name></member>
+    <member refid="_cnossos_propagation_8cpp_1a1ed4d1e2dff7c9fce96acb885d5ecc3c" kind="function"><name>CNOSSOS_P2P_CreateBarrier</name></member>
+    <member refid="_cnossos_propagation_8cpp_1aae3fce186556d029f91907670214ac4b" kind="function"><name>CNOSSOS_P2P_CreateVerticalWall</name></member>
+    <member refid="_cnossos_propagation_8cpp_1a0550708cdb1244fef61f1bad14c3a0b7" kind="function"><name>CNOSSOS_P2P_CreateVerticalEdge</name></member>
+    <member refid="_cnossos_propagation_8cpp_1a002002deea29e837ba791875c5462ac9" kind="function"><name>CNOSSOS_P2P_CreateLineSource</name></member>
+    <member refid="_cnossos_propagation_8cpp_1a7bcd55cf7d1ac1f3a4d3174f11cd49ed" kind="function"><name>CNOSSOS_P2P_ClearPath</name></member>
+    <member refid="_cnossos_propagation_8cpp_1ae4dc0c831e5a7e6a230d29ff3eb26572" kind="function"><name>CNOSSOS_P2P_AddToPath</name></member>
+    <member refid="_cnossos_propagation_8cpp_1a1f67fcfb8275e9af29988a6b420e20e7" kind="function"><name>CNOSSOS_P2P_GetResult</name></member>
+    <member refid="_cnossos_propagation_8cpp_1abb68ef089d17b311360ab4d7639e6c39" kind="function"><name>CNOSSOS_P2P_SetSoundPower</name></member>
+    <member refid="_cnossos_propagation_8cpp_1a6588d381050e16d98f765350485799c8" kind="function"><name>CNOSSOS_P2P_GetErrorMessage</name></member>
+    <member refid="_cnossos_propagation_8cpp_1a7fea9801c0b9392bcb9bd18ccd5dd34f" kind="function"><name>CNOSSOS_P2P_PrintPathData</name></member>
+    <member refid="_cnossos_propagation_8cpp_1a4c6e919f1d76063dbdbae37a9e159fe1" kind="function"><name>CNOSSOS_P2P_PrintPathResults</name></member>
+    <member refid="_cnossos_propagation_8cpp_1a4cadc590fad2b84dd9c34aba49732479" kind="function"><name>CNOSSOS_P2P_SetOptions</name></member>
+    <member refid="_cnossos_propagation_8cpp_1accb1cfd31b8543ef5c2091431f156e1c" kind="function"><name>CNOSSOS_P2P_GetOptions</name></member>
+    <member refid="_cnossos_propagation_8cpp_1a3f61cba80fbb3a0bb616632fd279a6d0" kind="function"><name>CNOSSOS_P2P_SetMeteo</name></member>
+    <member refid="_cnossos_propagation_8cpp_1a7d17290fb8b374b2adef74dcc3e9b61f" kind="function"><name>CNOSSOS_P2P_GetMeteo</name></member>
+    <member refid="_cnossos_propagation_8cpp_1ad8d93b8bec2183d2023982d89de5b408" kind="function"><name>getcwd</name></member>
+    <member refid="_cnossos_propagation_8cpp_1ad6fa290f24a38c62fdb2d6c7bb60fe1f" kind="function"><name>getcwd</name></member>
+    <member refid="_cnossos_propagation_8cpp_1a32c4662b003c86be1f8b08809ab4e60b" kind="function"><name>CNOSSOS_P2P_ProcessPathFile</name></member>
+  </compound>
+  <compound refid="_cnossos_propagation_8h" kind="file"><name>CnossosPropagation.h</name>
+    <member refid="_cnossos_propagation_8h_1ab177c44aad4888f0564efd48c92aa2ff" kind="define"><name>_CNOSSOS_DLL_DECL_</name></member>
+    <member refid="_cnossos_propagation_8h_1a0246ca1f6b132d426220ba4a49f3fb2f" kind="define"><name>CNOSSOS_P2P_VERSION_API</name></member>
+    <member refid="_cnossos_propagation_8h_1a4731b6d7565c3be5eb2e35a502c5afca" kind="enum"><name>CNOSSOS_P2P_SPECTRUM_WEIGHTING</name></member>
+    <member refid="_cnossos_propagation_8h_1a4731b6d7565c3be5eb2e35a502c5afcaa8205813b0cebd642f73da5bc3227119b" kind="enumvalue"><name>CNOSSOS_P2P_SPECTRUM_LIN</name></member>
+    <member refid="_cnossos_propagation_8h_1a4731b6d7565c3be5eb2e35a502c5afcaa9424f0b25b4f58e192592b7774d8bebc" kind="enumvalue"><name>CNOSSOS_P2P_SPECTRUM_dBA</name></member>
+    <member refid="_cnossos_propagation_8h_1a2329eadb2cdfeb3f97cdf8749e5127ba" kind="enum"><name>CNOSSOS_P2P_LW_MEASUREMENT_TYPE</name></member>
+    <member refid="_cnossos_propagation_8h_1a2329eadb2cdfeb3f97cdf8749e5127baa7f1ae37ac1362e5ecd7ac9980a2d09ca" kind="enumvalue"><name>CNOSSOS_P2P_LW_UNDEFINED</name></member>
+    <member refid="_cnossos_propagation_8h_1a2329eadb2cdfeb3f97cdf8749e5127baa9fba810998b812c98474e9286f6c587d" kind="enumvalue"><name>CNOSSOS_P2P_LW_FREEFIELD</name></member>
+    <member refid="_cnossos_propagation_8h_1a2329eadb2cdfeb3f97cdf8749e5127baad463c1e095c9a16792654014ef3dd5c6" kind="enumvalue"><name>CNOSSOS_P2P_LW_HEMISPHERICAL</name></member>
+    <member refid="_cnossos_propagation_8h_1a147f484d037a625eeeb261c4de7cc40a" kind="enum"><name>CNOSSOS_P2P_METEO_MODEL</name></member>
+    <member refid="_cnossos_propagation_8h_1a147f484d037a625eeeb261c4de7cc40aa1dbb0d72c1312e1d8a268f2cb7b3894e" kind="enumvalue"><name>CNOSSOS_P2P_METEO_DEFAULT</name></member>
+    <member refid="_cnossos_propagation_8h_1a147f484d037a625eeeb261c4de7cc40aa875015c049d3aa4c01162e4de87d40e2" kind="enumvalue"><name>CNOSSOS_P2P_METEO_ISO9613</name></member>
+    <member refid="_cnossos_propagation_8h_1a147f484d037a625eeeb261c4de7cc40aa4f62553a64be2260ca473c0bb05334fd" kind="enumvalue"><name>CNOSSOS_P2P_METEO_JRC2012</name></member>
+    <member refid="_cnossos_propagation_8h_1ac341179e16875a28421482d05198230d" kind="enum"><name>CNOSSOS_P2P_RESULT</name></member>
+    <member refid="_cnossos_propagation_8h_1ac341179e16875a28421482d05198230dac8cd6900fde3e4de9396fd9a552fc126" kind="enumvalue"><name>CNOSSOS_P2P_RESULT_LP_AVG_dBA</name></member>
+    <member refid="_cnossos_propagation_8h_1ac341179e16875a28421482d05198230daec637eb81914210e0ebaf2d5ded6822a" kind="enumvalue"><name>CNOSSOS_P2P_RESULT_LP_FAV_dBA</name></member>
+    <member refid="_cnossos_propagation_8h_1ac341179e16875a28421482d05198230da6eedee5d58bfe23ddea34f4e6d2ab87d" kind="enumvalue"><name>CNOSSOS_P2P_RESULT_LP_HOM_dBA</name></member>
+    <member refid="_cnossos_propagation_8h_1ac341179e16875a28421482d05198230da6c9bf40eba14f90e763629e8b985b5d3" kind="enumvalue"><name>CNOSSOS_P2P_RESULT_LP_AVG</name></member>
+    <member refid="_cnossos_propagation_8h_1ac341179e16875a28421482d05198230dac831cf2d6e1b7e942d3924dad4ae2365" kind="enumvalue"><name>CNOSSOS_P2P_RESULT_LP_FAV</name></member>
+    <member refid="_cnossos_propagation_8h_1ac341179e16875a28421482d05198230dacd73081382286fc04a43944124c77126" kind="enumvalue"><name>CNOSSOS_P2P_RESULT_LP_HOM</name></member>
+    <member refid="_cnossos_propagation_8h_1ac341179e16875a28421482d05198230daecfaa26414a83d9bdcd2bcb652738bea" kind="enumvalue"><name>CNOSSOS_P2P_RESULT_ATT_FAV</name></member>
+    <member refid="_cnossos_propagation_8h_1ac341179e16875a28421482d05198230daab612c4beffa46c41520d5206715f07c" kind="enumvalue"><name>CNOSSOS_P2P_RESULT_ATT_HOM</name></member>
+    <member refid="_cnossos_propagation_8h_1ac341179e16875a28421482d05198230da5f9a28df8a9516358d28424538245a56" kind="enumvalue"><name>CNOSSOS_P2P_RESULT_LW_SOURCE</name></member>
+    <member refid="_cnossos_propagation_8h_1ac341179e16875a28421482d05198230daa31c4d722a3050fd7f3fd94469c80cd9" kind="enumvalue"><name>CNOSSOS_P2P_RESULT_DELTA_LW</name></member>
+    <member refid="_cnossos_propagation_8h_1ac341179e16875a28421482d05198230da057f15add7c9532f7ebd088713f91a5c" kind="enumvalue"><name>CNOSSOS_P2P_RESULT_ATT_GEO</name></member>
+    <member refid="_cnossos_propagation_8h_1ac341179e16875a28421482d05198230da5ceb429d916f4bf56998ce5836720196" kind="enumvalue"><name>CNOSSOS_P2P_RESULT_ATT_ATM</name></member>
+    <member refid="_cnossos_propagation_8h_1ac341179e16875a28421482d05198230da1fd5bfd4088af7d295366c562529cb44" kind="enumvalue"><name>CNOSSOS_P2P_RESULT_ATT_REF</name></member>
+    <member refid="_cnossos_propagation_8h_1ac341179e16875a28421482d05198230da3088e34a577a34f2c478ba60dec0b26b" kind="enumvalue"><name>CNOSSOS_P2P_RESULT_ATT_DIF</name></member>
+    <member refid="_cnossos_propagation_8h_1ac341179e16875a28421482d05198230da569574ca5e1d910fa15acd64f607eb80" kind="enumvalue"><name>CNOSSOS_P2P_RESULT_ATT_SIZE</name></member>
+    <member refid="_cnossos_propagation_8h_1ab23aeb50806723b22c684d8355d91610" kind="typedef"><name>CNOSSOS_P2P_POSITION</name></member>
+    <member refid="_cnossos_propagation_8h_1afffadd7bd99fd249541999398850b459" kind="function"><name>CNOSSOS_P2P_GetVersionDLL</name></member>
+    <member refid="_cnossos_propagation_8h_1ac4ddc5a04925a567d4c5ef2446622501" kind="function"><name>CNOSSOS_P2P_GetFreq</name></member>
+    <member refid="_cnossos_propagation_8h_1a3ea3195815666e4bd305acf07f12b480" kind="function"><name>CNOSSOS_P2P_GetMaterial</name></member>
+    <member refid="_cnossos_propagation_8h_1a5873816b0680922b2d3116390c8e9d85" kind="function"><name>CNOSSOS_P2P_SetSigma</name></member>
+    <member refid="_cnossos_propagation_8h_1abe7ad4188dd7146c6765b703c210c687" kind="function"><name>CNOSSOS_P2P_GetSigma</name></member>
+    <member refid="_cnossos_propagation_8h_1ab4bbf357260294162457abcb895afb40" kind="function"><name>CNOSSOS_P2P_SetGValue</name></member>
+    <member refid="_cnossos_propagation_8h_1ab72ece6140bb9ddec495b6f5740905d3" kind="function"><name>CNOSSOS_P2P_GetGValue</name></member>
+    <member refid="_cnossos_propagation_8h_1a09aa3f9ab868ae6ebfa85bd1c5944240" kind="function"><name>CNOSSOS_P2P_SetAlpha</name></member>
+    <member refid="_cnossos_propagation_8h_1a8bf0218ad655aac268b0dd6895e599f6" kind="function"><name>CNOSSOS_P2P_GetAlpha</name></member>
+    <member refid="_cnossos_propagation_8h_1a5b1dbca88e974f35491e699a8b9187fa" kind="function"><name>CNOSSOS_P2P_CreateEngine</name></member>
+    <member refid="_cnossos_propagation_8h_1aefa58346c8c969669dd1eb7dacb36ff1" kind="function"><name>CNOSSOS_P2P_DeleteEngine</name></member>
+    <member refid="_cnossos_propagation_8h_1a779fa81c97073515073916c4b5c72d3c" kind="function"><name>CNOSSOS_P2P_SelectMethod</name></member>
+    <member refid="_cnossos_propagation_8h_1a0fbc355538c6f2a3df3004f3802a59a7" kind="function"><name>CNOSSOS_P2P_GetMethod</name></member>
+    <member refid="_cnossos_propagation_8h_1adb0244716e92b0efb4a37114a3017e4b" kind="function"><name>CNOSSOS_P2P_GetVersion</name></member>
+    <member refid="_cnossos_propagation_8h_1ad993d8f1fd9265c815e1294d85598172" kind="function"><name>CNOSSOS_P2P_ClearPath</name></member>
+    <member refid="_cnossos_propagation_8h_1a508f9631f4d4091761bb493b7d52a406" kind="function"><name>CNOSSOS_P2P_AddToPath</name></member>
+    <member refid="_cnossos_propagation_8h_1ad2faa541076b23babe95c8fb19e34847" kind="function"><name>CNOSSOS_P2P_CreatePointSource</name></member>
+    <member refid="_cnossos_propagation_8h_1acb79e89b2e4abe3cd276568317253bfc" kind="function"><name>CNOSSOS_P2P_CreateReceiver</name></member>
+    <member refid="_cnossos_propagation_8h_1a08da83371dc88c4db674dec899eaf55a" kind="function"><name>CNOSSOS_P2P_CreateBarrier</name></member>
+    <member refid="_cnossos_propagation_8h_1ac6cb00bee72028d90f3dd868342d4841" kind="function"><name>CNOSSOS_P2P_CreateVerticalWall</name></member>
+    <member refid="_cnossos_propagation_8h_1affb164e2980d0280f759ddff07cbb28e" kind="function"><name>CNOSSOS_P2P_CreateVerticalEdge</name></member>
+    <member refid="_cnossos_propagation_8h_1a190291bea342ac6c312730b6759bd9ae" kind="function"><name>CNOSSOS_P2P_CreateLineSource</name></member>
+    <member refid="_cnossos_propagation_8h_1a53a098232477de8ba179e147102c88a0" kind="function"><name>CNOSSOS_P2P_SetSoundPower</name></member>
+    <member refid="_cnossos_propagation_8h_1a093ecd514c66dc59e2249bf90180667c" kind="function"><name>CNOSSOS_P2P_GetResult</name></member>
+    <member refid="_cnossos_propagation_8h_1a7e0272ed91d12db3e4381ed0d93573c7" kind="function"><name>CNOSSOS_P2P_GetErrorMessage</name></member>
+    <member refid="_cnossos_propagation_8h_1a9d2ebe1a1c6eb2d6deb589791c35acdd" kind="function"><name>CNOSSOS_P2P_PrintPathData</name></member>
+    <member refid="_cnossos_propagation_8h_1ad01f772a0eb3290c847b393a0f7bb1bf" kind="function"><name>CNOSSOS_P2P_PrintPathResults</name></member>
+    <member refid="_cnossos_propagation_8h_1a7096053282089b210c2ab3f9fc01b2d3" kind="function"><name>CNOSSOS_P2P_GetOptions</name></member>
+    <member refid="_cnossos_propagation_8h_1a9cbd1fc82ef237702fcb053c63aeb595" kind="function"><name>CNOSSOS_P2P_SetOptions</name></member>
+    <member refid="_cnossos_propagation_8h_1a3d439d12286426e1cb584dfcf84bd6d8" kind="function"><name>CNOSSOS_P2P_SetMeteo</name></member>
+    <member refid="_cnossos_propagation_8h_1a2fccbcafa2c41cd429cc3a02636264dc" kind="function"><name>CNOSSOS_P2P_GetMeteo</name></member>
+    <member refid="_cnossos_propagation_8h_1ae50276adc947b705a5682cde4f6fa5d2" kind="function"><name>CNOSSOS_P2P_ProcessPathFile</name></member>
+  </compound>
+  <compound refid="dllmain_8cpp" kind="file"><name>dllmain.cpp</name>
+    <member refid="dllmain_8cpp_1a26e64fb39b69bcd9d1274d279f1561b9" kind="function"><name>DllMain</name></member>
+  </compound>
+  <compound refid="doc_8dox" kind="file"><name>doc.dox</name>
+  </compound>
+  <compound refid="stdafx_8cpp" kind="file"><name>stdafx.cpp</name>
+  </compound>
+  <compound refid="stdafx_8h" kind="file"><name>stdafx.h</name>
+    <member refid="stdafx_8h_1ac7bef5d85e3dcd73eef56ad39ffc84a9" kind="define"><name>WIN32_LEAN_AND_MEAN</name></member>
+  </compound>
+  <compound refid="targetver_8h" kind="file"><name>targetver.h</name>
+  </compound>
+  <compound refid="main" kind="page"><name>main</name>
+  </compound>
+</doxygenindex>

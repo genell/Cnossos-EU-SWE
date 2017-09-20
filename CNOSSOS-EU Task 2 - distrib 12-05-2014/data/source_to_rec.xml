@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<CNOSSOS-EU version="1.001">
+	<!-- select calculation method -->
+	<method>
+		<select id="JRC-draft-2010" />
+		<!-- in general, you don't need to specify options unless you want to change the default behavior of the method -->
+		<options>
+			<option id="ForceSourceToReceiver" value = "true" />
+		</options>
+		<meteo model="ISO-9613-2">
+			<pFav> 0.50 </pFav>
+			<C0>   3.00 </C0>
+		</meteo>
+	</method>
+	<!-- define or modify material properties -->
+	<!-- propagation path -->
+	<path>
+		<!-- receiver at x = 100m, groundType = D -->
+		<cp id= "receiver">
+			<pos>
+				<x>	  100.00 </x>
+				<y>   0.00 </y> 
+				<z>    0.00 </z>
+			</pos>
+			<mat id = "D" />
+			<ext>
+				<receiver>
+					<h> 2.5 </h>
+				</receiver>
+			</ext>
+		</cp>
+		<!-- border of hard platform at x = 10m, groundType = D  -->
+		<cp id="ground">
+			<pos>
+				<x>	10.00 </x>
+				<z>  0.00 </z>
+			</pos>
+			<mat id="D" />
+		</cp>
+		<!-- sourcer -->
+		<cp id="source">
+			<pos>
+				<x>	  0.00 </x>
+				<z>   0.00 </z>
+			</pos>
+			<mat id="H" />
+			<ext>
+				<source>
+					<h> 0.50 </h>
+					<!-- sound power definitions
+						 * measurementType = "Unknown", "FreeField" or "HemiSpherical" 
+						 * sourceType = "PointSource", "LineSource" or "AreaSource"   				
+					     * frequencyWeighting = "LIN" or "dBA"
+					-->
+					<Lw sourceType="PointSource" measurementType="HemiSpherical" frequencyWeighting="LIN"> 
+						80.0 90.0 95.0 100.0 100.0 100.0 95.0 90.0 
+					</Lw>
+				</source>
+			</ext>
+		</cp>
+	</path>
+</CNOSSOS-EU>

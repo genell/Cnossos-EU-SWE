@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.4">
+  <compounddef id="struct_c_n_o_s_s_o_s___p2_p___e_x_t_e_n_s_i_o_n" kind="struct" prot="public">
+    <compoundname>CNOSSOS_P2P_EXTENSION</compoundname>
+    <briefdescription>
+<para>transparent pointer to vertical extension </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/Users/dvm/Projets/CNOSSOS-EU/dev/CnossosPropagation/CnossosPropagation.cpp" line="103" bodyfile="C:/Users/dvm/Projets/CNOSSOS-EU/dev/CnossosPropagation/CnossosPropagation.cpp" bodystart="103" bodyend="103"/>
+    <listofallmembers>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

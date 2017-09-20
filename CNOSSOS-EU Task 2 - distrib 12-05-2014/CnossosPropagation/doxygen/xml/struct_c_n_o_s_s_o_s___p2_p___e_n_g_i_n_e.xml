@@ -1,0 +1,182 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.4">
+  <compounddef id="struct_c_n_o_s_s_o_s___p2_p___e_n_g_i_n_e" kind="struct" prot="public">
+    <compoundname>CNOSSOS_P2P_ENGINE</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct_c_n_o_s_s_o_s___p2_p___e_n_g_i_n_e_1a15191f516c50d9fca7a3043ce606f067" prot="public" static="no" mutable="no">
+        <type>ref_ptr&lt; CalculationMethod &gt;</type>
+        <definition>ref_ptr&lt;CalculationMethod&gt; CNOSSOS_P2P_ENGINE::method</definition>
+        <argsstring></argsstring>
+        <name>method</name>
+        <briefdescription>
+<para>pointer to the calculation method </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/dvm/Projets/CNOSSOS-EU/dev/CnossosPropagation/CnossosPropagation.cpp" line="33" bodyfile="C:/Users/dvm/Projets/CNOSSOS-EU/dev/CnossosPropagation/CnossosPropagation.cpp" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_c_n_o_s_s_o_s___p2_p___e_n_g_i_n_e_1adcca971879565fbf0f14f9f62db72e76" prot="public" static="no" mutable="no">
+        <type>PropagationPath</type>
+        <definition>PropagationPath CNOSSOS_P2P_ENGINE::path</definition>
+        <argsstring></argsstring>
+        <name>path</name>
+        <briefdescription>
+<para>propagation path data </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/dvm/Projets/CNOSSOS-EU/dev/CnossosPropagation/CnossosPropagation.cpp" line="34" bodyfile="C:/Users/dvm/Projets/CNOSSOS-EU/dev/CnossosPropagation/CnossosPropagation.cpp" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_c_n_o_s_s_o_s___p2_p___e_n_g_i_n_e_1aed0389b71fdc0ff56343cc33c34d851d" prot="public" static="no" mutable="no">
+        <type>ElementarySource</type>
+        <definition>ElementarySource CNOSSOS_P2P_ENGINE::source</definition>
+        <argsstring></argsstring>
+        <name>source</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/dvm/Projets/CNOSSOS-EU/dev/CnossosPropagation/CnossosPropagation.cpp" line="35" bodyfile="C:/Users/dvm/Projets/CNOSSOS-EU/dev/CnossosPropagation/CnossosPropagation.cpp" bodystart="35" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_c_n_o_s_s_o_s___p2_p___e_n_g_i_n_e_1a842a3c057c0b8f8d3ccf0a58d7fcf9f0" prot="public" static="no" mutable="no">
+        <type>PropagationPathOptions</type>
+        <definition>PropagationPathOptions CNOSSOS_P2P_ENGINE::options</definition>
+        <argsstring></argsstring>
+        <name>options</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/dvm/Projets/CNOSSOS-EU/dev/CnossosPropagation/CnossosPropagation.cpp" line="36" bodyfile="C:/Users/dvm/Projets/CNOSSOS-EU/dev/CnossosPropagation/CnossosPropagation.cpp" bodystart="36" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_c_n_o_s_s_o_s___p2_p___e_n_g_i_n_e_1af6879cfb605fecc5df65cb3d466db03b" prot="public" static="no" mutable="no">
+        <type>PathResult</type>
+        <definition>PathResult CNOSSOS_P2P_ENGINE::result</definition>
+        <argsstring></argsstring>
+        <name>result</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/dvm/Projets/CNOSSOS-EU/dev/CnossosPropagation/CnossosPropagation.cpp" line="37" bodyfile="C:/Users/dvm/Projets/CNOSSOS-EU/dev/CnossosPropagation/CnossosPropagation.cpp" bodystart="37" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_c_n_o_s_s_o_s___p2_p___e_n_g_i_n_e_1a0c36ecb8fbbbedf85c463a864e5c1559" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool CNOSSOS_P2P_ENGINE::calculationDone</definition>
+        <argsstring></argsstring>
+        <name>calculationDone</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/dvm/Projets/CNOSSOS-EU/dev/CnossosPropagation/CnossosPropagation.cpp" line="38" bodyfile="C:/Users/dvm/Projets/CNOSSOS-EU/dev/CnossosPropagation/CnossosPropagation.cpp" bodystart="38" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_c_n_o_s_s_o_s___p2_p___e_n_g_i_n_e_1a3908fac64750aa1e9c6ec3f8b22e0f47" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool CNOSSOS_P2P_ENGINE::hasErrors</definition>
+        <argsstring></argsstring>
+        <name>hasErrors</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/dvm/Projets/CNOSSOS-EU/dev/CnossosPropagation/CnossosPropagation.cpp" line="39" bodyfile="C:/Users/dvm/Projets/CNOSSOS-EU/dev/CnossosPropagation/CnossosPropagation.cpp" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_c_n_o_s_s_o_s___p2_p___e_n_g_i_n_e_1a662a548fc130660ab58b56b5ed7fa2c6" prot="public" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string CNOSSOS_P2P_ENGINE::errorMessage</definition>
+        <argsstring></argsstring>
+        <name>errorMessage</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/dvm/Projets/CNOSSOS-EU/dev/CnossosPropagation/CnossosPropagation.cpp" line="40" bodyfile="C:/Users/dvm/Projets/CNOSSOS-EU/dev/CnossosPropagation/CnossosPropagation.cpp" bodystart="40" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="struct_c_n_o_s_s_o_s___p2_p___e_n_g_i_n_e_1aed051498b32883bb545ed5723d0b6434" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>CNOSSOS_P2P_ENGINE::CNOSSOS_P2P_ENGINE</definition>
+        <argsstring>(const char *name)</argsstring>
+        <name>CNOSSOS_P2P_ENGINE</name>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+        </param>
+        <briefdescription>
+<para>constructor </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/dvm/Projets/CNOSSOS-EU/dev/CnossosPropagation/CnossosPropagation.cpp" line="46" bodyfile="C:/Users/dvm/Projets/CNOSSOS-EU/dev/CnossosPropagation/CnossosPropagation.cpp" bodystart="44" bodyend="51"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_c_n_o_s_s_o_s___p2_p___e_n_g_i_n_e_1aacc9607de6b92288310660da6db77b79" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool CNOSSOS_P2P_ENGINE::selectMethod</definition>
+        <argsstring>(const char *name)</argsstring>
+        <name>selectMethod</name>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+        </param>
+        <briefdescription>
+<para>select the calculation method </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/dvm/Projets/CNOSSOS-EU/dev/CnossosPropagation/CnossosPropagation.cpp" line="56" bodyfile="C:/Users/dvm/Projets/CNOSSOS-EU/dev/CnossosPropagation/CnossosPropagation.cpp" bodystart="55" bodyend="60"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_c_n_o_s_s_o_s___p2_p___e_n_g_i_n_e_1ae5813b5c5a67436c43e4058b91541b9c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool CNOSSOS_P2P_ENGINE::doCalculation</definition>
+        <argsstring>(void)</argsstring>
+        <name>doCalculation</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>process the path </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/dvm/Projets/CNOSSOS-EU/dev/CnossosPropagation/CnossosPropagation.cpp" line="65" bodyfile="C:/Users/dvm/Projets/CNOSSOS-EU/dev/CnossosPropagation/CnossosPropagation.cpp" bodystart="64" bodyend="94"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Hidden class for path calculation. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/Users/dvm/Projets/CNOSSOS-EU/dev/CnossosPropagation/CnossosPropagation.cpp" line="32" bodyfile="C:/Users/dvm/Projets/CNOSSOS-EU/dev/CnossosPropagation/CnossosPropagation.cpp" bodystart="31" bodyend="95"/>
+    <listofallmembers>
+      <member refid="struct_c_n_o_s_s_o_s___p2_p___e_n_g_i_n_e_1a0c36ecb8fbbbedf85c463a864e5c1559" prot="public" virt="non-virtual"><scope>CNOSSOS_P2P_ENGINE</scope><name>calculationDone</name></member>
+      <member refid="struct_c_n_o_s_s_o_s___p2_p___e_n_g_i_n_e_1aed051498b32883bb545ed5723d0b6434" prot="public" virt="non-virtual"><scope>CNOSSOS_P2P_ENGINE</scope><name>CNOSSOS_P2P_ENGINE</name></member>
+      <member refid="struct_c_n_o_s_s_o_s___p2_p___e_n_g_i_n_e_1ae5813b5c5a67436c43e4058b91541b9c" prot="public" virt="non-virtual"><scope>CNOSSOS_P2P_ENGINE</scope><name>doCalculation</name></member>
+      <member refid="struct_c_n_o_s_s_o_s___p2_p___e_n_g_i_n_e_1a662a548fc130660ab58b56b5ed7fa2c6" prot="public" virt="non-virtual"><scope>CNOSSOS_P2P_ENGINE</scope><name>errorMessage</name></member>
+      <member refid="struct_c_n_o_s_s_o_s___p2_p___e_n_g_i_n_e_1a3908fac64750aa1e9c6ec3f8b22e0f47" prot="public" virt="non-virtual"><scope>CNOSSOS_P2P_ENGINE</scope><name>hasErrors</name></member>
+      <member refid="struct_c_n_o_s_s_o_s___p2_p___e_n_g_i_n_e_1a15191f516c50d9fca7a3043ce606f067" prot="public" virt="non-virtual"><scope>CNOSSOS_P2P_ENGINE</scope><name>method</name></member>
+      <member refid="struct_c_n_o_s_s_o_s___p2_p___e_n_g_i_n_e_1a842a3c057c0b8f8d3ccf0a58d7fcf9f0" prot="public" virt="non-virtual"><scope>CNOSSOS_P2P_ENGINE</scope><name>options</name></member>
+      <member refid="struct_c_n_o_s_s_o_s___p2_p___e_n_g_i_n_e_1adcca971879565fbf0f14f9f62db72e76" prot="public" virt="non-virtual"><scope>CNOSSOS_P2P_ENGINE</scope><name>path</name></member>
+      <member refid="struct_c_n_o_s_s_o_s___p2_p___e_n_g_i_n_e_1af6879cfb605fecc5df65cb3d466db03b" prot="public" virt="non-virtual"><scope>CNOSSOS_P2P_ENGINE</scope><name>result</name></member>
+      <member refid="struct_c_n_o_s_s_o_s___p2_p___e_n_g_i_n_e_1aacc9607de6b92288310660da6db77b79" prot="public" virt="non-virtual"><scope>CNOSSOS_P2P_ENGINE</scope><name>selectMethod</name></member>
+      <member refid="struct_c_n_o_s_s_o_s___p2_p___e_n_g_i_n_e_1aed0389b71fdc0ff56343cc33c34d851d" prot="public" virt="non-virtual"><scope>CNOSSOS_P2P_ENGINE</scope><name>source</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

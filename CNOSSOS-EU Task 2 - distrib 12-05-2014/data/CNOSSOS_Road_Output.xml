@@ -1,0 +1,14 @@
+<?xml version="1.0" ?>
+<CNOSSOS_SourcePower version="X1.0">
+	<source>
+		<h>0.05</h> <!-- in meter -->
+		<!-- sound power definitions
+		* sourceType         = "PointSource", "LineSource" or "AreaSource" 
+		* measurementType    = "Unknown", "FreeField" or "HemiSpherical" 
+		* frequencyWeighting = "LIN" or "dBA"
+		-->
+		<Lw sourceType="LineSource" measurementType="HemiSpherical" frequencyWeighting="LIN"> 
+			100.5 96.6 97.9 96.6 92.1 89.1 85.3 81.9 
+		</Lw>
+	</source>
+</CNOSSOS_SourcePower>

@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.4">
+  <compounddef id="main" kind="page">
+    <compoundname>main</compoundname>
+    <title>CNOSSOS-EU Propagation Modules</title>
+    <detaileddescription>
+<sect1 id="main_1main1">
+<title>Public functions defined in the CnossosPropagation shared library</title>
+<sect2 id="main_1s1">
+<title>Create, configure and delete the calculation engine</title>
+<para><itemizedlist>
+<listitem><para><ref refid="_cnossos_propagation_8h_1a5b1dbca88e974f35491e699a8b9187fa" kindref="member">CNOSSOS_P2P_CreateEngine</ref></para></listitem><listitem><para><ref refid="_cnossos_propagation_8h_1aefa58346c8c969669dd1eb7dacb36ff1" kindref="member">CNOSSOS_P2P_DeleteEngine</ref></para></listitem><listitem><para><ref refid="_cnossos_propagation_8h_1a779fa81c97073515073916c4b5c72d3c" kindref="member">CNOSSOS_P2P_SelectMethod</ref></para></listitem><listitem><para><ref refid="_cnossos_propagation_8h_1a0fbc355538c6f2a3df3004f3802a59a7" kindref="member">CNOSSOS_P2P_GetMethod</ref></para></listitem><listitem><para><ref refid="_cnossos_propagation_8h_1adb0244716e92b0efb4a37114a3017e4b" kindref="member">CNOSSOS_P2P_GetVersion</ref></para></listitem><listitem><para><ref refid="_cnossos_propagation_8h_1a9cbd1fc82ef237702fcb053c63aeb595" kindref="member">CNOSSOS_P2P_SetOptions</ref></para></listitem><listitem><para><ref refid="_cnossos_propagation_8h_1a7096053282089b210c2ab3f9fc01b2d3" kindref="member">CNOSSOS_P2P_GetOptions</ref></para></listitem><listitem><para><ref refid="_cnossos_propagation_8h_1a3d439d12286426e1cb584dfcf84bd6d8" kindref="member">CNOSSOS_P2P_SetMeteo</ref></para></listitem><listitem><para><ref refid="_cnossos_propagation_8h_1a2fccbcafa2c41cd429cc3a02636264dc" kindref="member">CNOSSOS_P2P_GetMeteo</ref> </para></listitem></itemizedlist>
+</para></sect2>
+<sect2 id="main_1s2">
+<title>Define the propagation path</title>
+<para><itemizedlist>
+<listitem><para><ref refid="_cnossos_propagation_8h_1ad993d8f1fd9265c815e1294d85598172" kindref="member">CNOSSOS_P2P_ClearPath</ref></para></listitem><listitem><para><ref refid="_cnossos_propagation_8h_1a508f9631f4d4091761bb493b7d52a406" kindref="member">CNOSSOS_P2P_AddToPath</ref></para></listitem><listitem><para><ref refid="_cnossos_propagation_8h_1a53a098232477de8ba179e147102c88a0" kindref="member">CNOSSOS_P2P_SetSoundPower</ref> </para></listitem></itemizedlist>
+</para></sect2>
+<sect2 id="main_1s3">
+<title>Create vertical extensions</title>
+<para><itemizedlist>
+<listitem><para><ref refid="_cnossos_propagation_8h_1ad2faa541076b23babe95c8fb19e34847" kindref="member">CNOSSOS_P2P_CreatePointSource</ref></para></listitem><listitem><para><ref refid="_cnossos_propagation_8h_1a190291bea342ac6c312730b6759bd9ae" kindref="member">CNOSSOS_P2P_CreateLineSource</ref></para></listitem><listitem><para><ref refid="_cnossos_propagation_8h_1acb79e89b2e4abe3cd276568317253bfc" kindref="member">CNOSSOS_P2P_CreateReceiver</ref></para></listitem><listitem><para><ref refid="_cnossos_propagation_8h_1a08da83371dc88c4db674dec899eaf55a" kindref="member">CNOSSOS_P2P_CreateBarrier</ref></para></listitem><listitem><para><ref refid="_cnossos_propagation_8h_1ac6cb00bee72028d90f3dd868342d4841" kindref="member">CNOSSOS_P2P_CreateVerticalWall</ref></para></listitem><listitem><para><ref refid="_cnossos_propagation_8h_1affb164e2980d0280f759ddff07cbb28e" kindref="member">CNOSSOS_P2P_CreateVerticalEdge</ref> </para></listitem></itemizedlist>
+</para></sect2>
+<sect2 id="main_1s4">
+<title>Get the acoustical results</title>
+<para><itemizedlist>
+<listitem><para><ref refid="_cnossos_propagation_8h_1a093ecd514c66dc59e2249bf90180667c" kindref="member">CNOSSOS_P2P_GetResult</ref></para></listitem><listitem><para><ref refid="_cnossos_propagation_8h_1a9d2ebe1a1c6eb2d6deb589791c35acdd" kindref="member">CNOSSOS_P2P_PrintPathData</ref></para></listitem><listitem><para><ref refid="_cnossos_propagation_8h_1ad01f772a0eb3290c847b393a0f7bb1bf" kindref="member">CNOSSOS_P2P_PrintPathResults</ref> </para></listitem></itemizedlist>
+</para></sect2>
+<sect2 id="main_1s5">
+<title>Manage material properties</title>
+<para><itemizedlist>
+<listitem><para><ref refid="_cnossos_propagation_8h_1a3ea3195815666e4bd305acf07f12b480" kindref="member">CNOSSOS_P2P_GetMaterial</ref></para></listitem><listitem><para><ref refid="_cnossos_propagation_8h_1ab72ece6140bb9ddec495b6f5740905d3" kindref="member">CNOSSOS_P2P_GetGValue</ref></para></listitem><listitem><para><ref refid="_cnossos_propagation_8h_1ab4bbf357260294162457abcb895afb40" kindref="member">CNOSSOS_P2P_SetGValue</ref></para></listitem><listitem><para><ref refid="_cnossos_propagation_8h_1abe7ad4188dd7146c6765b703c210c687" kindref="member">CNOSSOS_P2P_GetSigma</ref></para></listitem><listitem><para><ref refid="_cnossos_propagation_8h_1a5873816b0680922b2d3116390c8e9d85" kindref="member">CNOSSOS_P2P_SetSigma</ref></para></listitem><listitem><para><ref refid="_cnossos_propagation_8h_1a8bf0218ad655aac268b0dd6895e599f6" kindref="member">CNOSSOS_P2P_GetAlpha</ref></para></listitem><listitem><para><ref refid="_cnossos_propagation_8h_1a09aa3f9ab868ae6ebfa85bd1c5944240" kindref="member">CNOSSOS_P2P_SetAlpha</ref> </para></listitem></itemizedlist>
+</para></sect2>
+<sect2 id="main_1s6">
+<title>Utility functions</title>
+<para><itemizedlist>
+<listitem><para><ref refid="_cnossos_propagation_8h_1afffadd7bd99fd249541999398850b459" kindref="member">CNOSSOS_P2P_GetVersionDLL</ref></para></listitem><listitem><para><ref refid="_cnossos_propagation_8h_1a7e0272ed91d12db3e4381ed0d93573c7" kindref="member">CNOSSOS_P2P_GetErrorMessage</ref></para></listitem><listitem><para><ref refid="_cnossos_propagation_8h_1ae50276adc947b705a5682cde4f6fa5d2" kindref="member">CNOSSOS_P2P_ProcessPathFile</ref> </para></listitem></itemizedlist>
+</para></sect2>
+</sect1>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

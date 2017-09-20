@@ -1,0 +1,22 @@
+﻿La génération a démarré 5/12/2014 6:15:16 PM.
+     1>Projet "C:\Users\dvm\Projets\CNOSSOS-EU\dev\CnossosPropagation\CnossosPropagation.vcxproj" sur le nœud 2 (build cible(s)).
+     1>InitializeBuildStatus:
+         Création de "Debug\CnossosPropagation.unsuccessfulbuild", car "AlwaysCreate" a été spécifié.
+       ClCompile:
+         Toutes les sorties sont à jour.
+         Toutes les sorties sont à jour.
+         Toutes les sorties sont à jour.
+       Link:
+         c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:NONE /OUT:"C:\Users\dvm\Projets\CNOSSOS-EU\dev\Debug\CnossosPropagation.dll" /INCREMENTAL /NOLOGO "C:\Users\dvm\Projets\CNOSSOS-EU\dev\Debug\\PropagationPath.lib" "C:\Users\dvm\Projets\CNOSSOS-EU\dev\Debug\\HarmonoiseP2P.lib" "C:\Users\dvm\Projets\CNOSSOS-EU\dev\Debug\\SimpleXML.lib" kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST:NO /DEBUG /PDB:"C:\Users\dvm\Projets\CNOSSOS-EU\dev\Debug\CnossosPropagation.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\dvm\Projets\CNOSSOS-EU\dev\Debug\CnossosPropagation.lib" /MACHINE:X86 /DLL Debug\CnossosPropagation.obj
+         Debug\dllmain.obj
+         Debug\stdafx.obj
+            Création de la bibliothèque C:\Users\dvm\Projets\CNOSSOS-EU\dev\Debug\CnossosPropagation.lib et de l'objet C:\Users\dvm\Projets\CNOSSOS-EU\dev\Debug\CnossosPropagation.exp
+         CnossosPropagation.vcxproj -> C:\Users\dvm\Projets\CNOSSOS-EU\dev\Debug\CnossosPropagation.dll
+       FinalizeBuildStatus:
+         Suppression du fichier "Debug\CnossosPropagation.unsuccessfulbuild".
+         Mise à jour de l'horodatage "Debug\CnossosPropagation.lastbuildstate".
+     1>Génération du projet "C:\Users\dvm\Projets\CNOSSOS-EU\dev\CnossosPropagation\CnossosPropagation.vcxproj" terminée (build cible(s)).
+
+La génération a réussi.
+
+Temps écoulé 00:00:00.23

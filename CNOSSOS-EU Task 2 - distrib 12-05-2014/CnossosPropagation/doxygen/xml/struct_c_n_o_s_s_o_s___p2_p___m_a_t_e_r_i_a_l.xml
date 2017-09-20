@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.4">
+  <compounddef id="struct_c_n_o_s_s_o_s___p2_p___m_a_t_e_r_i_a_l" kind="struct" prot="public">
+    <compoundname>CNOSSOS_P2P_MATERIAL</compoundname>
+    <briefdescription>
+<para>transparent pointer to material definition </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/Users/dvm/Projets/CNOSSOS-EU/dev/CnossosPropagation/CnossosPropagation.cpp" line="99" bodyfile="C:/Users/dvm/Projets/CNOSSOS-EU/dev/CnossosPropagation/CnossosPropagation.cpp" bodystart="99" bodyend="99"/>
+    <listofallmembers>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

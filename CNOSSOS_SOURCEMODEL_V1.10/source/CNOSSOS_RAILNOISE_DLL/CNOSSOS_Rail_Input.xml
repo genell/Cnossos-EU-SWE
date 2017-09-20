@@ -1,0 +1,26 @@
+<CNOSSOS_Rail_Input version="V1.0">
+    <Test>true</Test>
+    <Tref>12</Tref>
+    <Source>A</Source>
+    <Idling>false</Idling>
+
+    <Track  SectionLength="100"
+            VerticalAngle="60"
+            HorizontalAngle="30"
+            TrackTransferID="3"
+            StructureTransferID="3"
+            RailRoughnessID="3"
+            ImpactNoiseID="3"
+            CurveRadius="250"
+            BridgeConstantID="3"
+            />
+    <Vehicles>
+        <Vehicle Ref="3"
+                 Description="TEST"
+                 RunningCondition="accelerating"
+                 Q="1"
+                 v="250"
+                 IdlingTime="1"
+        />
+    </Vehicles>
+</CNOSSOS_Rail_Input>

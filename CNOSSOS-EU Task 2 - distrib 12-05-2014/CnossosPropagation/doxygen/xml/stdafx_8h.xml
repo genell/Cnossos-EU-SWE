@@ -1,0 +1,85 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.4">
+  <compounddef id="stdafx_8h" kind="file">
+    <compoundname>stdafx.h</compoundname>
+    <includes refid="targetver_8h" local="yes">targetver.h</includes>
+    <includes local="no">windows.h</includes>
+    <includedby refid="dllmain_8cpp" local="yes">dllmain.cpp</includedby>
+    <includedby refid="stdafx_8cpp" local="yes">stdafx.cpp</includedby>
+    <incdepgraph>
+      <node id="29">
+        <label>windows.h</label>
+      </node>
+      <node id="28">
+        <label>SDKDDKVer.h</label>
+      </node>
+      <node id="27">
+        <label>targetver.h</label>
+        <link refid="targetver_8h"/>
+        <childnode refid="28" relation="include">
+        </childnode>
+      </node>
+      <node id="26">
+        <label>stdafx.h</label>
+        <link refid="stdafx.h"/>
+        <childnode refid="27" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="31">
+        <label>dllmain.cpp</label>
+        <link refid="dllmain_8cpp"/>
+      </node>
+      <node id="32">
+        <label>stdafx.cpp</label>
+        <link refid="stdafx_8cpp"/>
+      </node>
+      <node id="30">
+        <label>stdafx.h</label>
+        <link refid="stdafx.h"/>
+        <childnode refid="31" relation="include">
+        </childnode>
+        <childnode refid="32" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="stdafx_8h_1ac7bef5d85e3dcd73eef56ad39ffc84a9" prot="public" static="no">
+        <name>WIN32_LEAN_AND_MEAN</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/dvm/Projets/CNOSSOS-EU/dev/CnossosPropagation/stdafx.h" line="10" bodyfile="C:/Users/dvm/Projets/CNOSSOS-EU/dev/CnossosPropagation/stdafx.h" bodystart="10" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">//<sp/>stdafx.h :<sp/>fichier<sp/>Include<sp/>pour<sp/>les<sp/>fichiers<sp/>Include<sp/>système<sp/>standard,</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">//<sp/>ou<sp/>les<sp/>fichiers<sp/>Include<sp/>spécifiques<sp/>aux<sp/>projets<sp/>qui<sp/>sont<sp/>utilisés<sp/>fréquemment,</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">//<sp/>et<sp/>sont<sp/>rarement<sp/>modifiés</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>once</highlight></codeline>
+<codeline lineno="7"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="targetver_8h" kindref="compound">targetver.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10" refid="stdafx_8h_1ac7bef5d85e3dcd73eef56ad39ffc84a9" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>WIN32_LEAN_AND_MEAN<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>//<sp/>Exclure<sp/>les<sp/>en-têtes<sp/>Windows<sp/>rarement<sp/>utilisés</highlight></codeline>
+<codeline lineno="11"><highlight class="preprocessor"></highlight><highlight class="comment">//<sp/>Fichiers<sp/>d&apos;en-tête<sp/>Windows :</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;windows.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="comment">//<sp/>TODO:<sp/>faites<sp/>référence<sp/>ici<sp/>aux<sp/>en-têtes<sp/>supplémentaires<sp/>nécessaires<sp/>au<sp/>programme</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="C:/Users/dvm/Projets/CNOSSOS-EU/dev/CnossosPropagation/stdafx.h"/>
+  </compounddef>
+</doxygen>

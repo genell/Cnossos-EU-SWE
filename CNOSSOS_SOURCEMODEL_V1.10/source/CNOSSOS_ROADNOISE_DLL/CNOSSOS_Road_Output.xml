@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<CNOSSOS_SourcePower version="V1.0">
+	<!--
+		CNOSSOS_Road_Output.XML contains the calculated source power.
+
+		Format:
+		- Decimal separator a point (".")
+		- Spectral information is given as
+			- 8 values for octave information (63 Hz .. 8 kHz);
+			- 24 values for 1/3 octave information (50 Hz .. 10 kHz)
+			- values are separated by 1 or more spaces.
+	-->
+	<source>
+		<!-- Source height in m -->
+		<h>0.05</h>
+		<!-- Sound power definitions
+			* sourceType = "PointSource", "LineSource" or "AreaSource"
+			* measurementType    = "Unknown", "FreeField" or "HemiSpherical"
+			* frequencyWeighting = "LIN" or "dBA"
+		-->
+		<Lw sourceType="LineSource"
+			measurementType="HemiSpherical"
+			frequencyWeighting="LIN">
+			100.45   96.57   97.88   96.63   92.01   89.11   85.35   80.92
+		</Lw>
+	</source>
+</CNOSSOS_SourcePower>

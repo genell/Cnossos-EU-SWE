@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<CNOSSOS-EU>
+	<!-- select calculation method -->
+	<method>
+		<select id="ISO-9613-2" />
+		<!-- in general, you don't need to specify options unless you want to change 
+		     the default behavior of the method; e.g. by setting hard boundaries for 
+			 specular reflections, you can simulate the behavior of the ISO 9613-2
+			 while using JRC-draft-2010 or JRC-2012 as the propagation model -->
+		<options>
+			<option id="CheckHeightUpperBound" value="true" />
+			<option id="CheckHeightLowerBound" value="true" />
+		</options>
+		<meteo model="DEFAULT">
+			<temperature> 15.0 </temperature>
+			<humidity>    70.0 </humidity>
+			<pFav> 0.50 </pFav>
+			<C0>   3.00 </C0>
+		</meteo>
+	</method>
+	<!-- define or modify material properties -->
+	<materials>
+		<!-- user defined material propertes -->
+		<mat id = "UserDefined">
+			<G> 0.9 </G>
+			<sigma> 250 </sigma>
+			<alpha> 
+				0.10	0.25	0.50	0.65
+				0.80	0.85    0.95    0.85
+			</alpha>
+		</mat>
+	</materials>
+	<!-- propagation path -->
+	<path>
+		<!-- sourcer -->
+		<cp id="source">
+			<pos>
+				<x>	  0.00 </x>
+				<y>   0.00 </y> 
+				<z>   0.00 </z>
+			</pos>
+			<mat id="H" />
+			<ext>
+				<source>
+					<h> 0.50 </h>
+					<!-- TODO: read sound power from external file -->
+					<!-- sound power definitions
+						 * measurementType = "Unknown", "FreeField" or "HemiSpherical" 
+						 * sourceType = "PointSource", "LineSource" or "AreaSource"   				
+					     * frequencyWeighting = "LIN" or "dBA"
+					-->
+					<Lw sourceType="PointSource" measurementType="HemiSpherical" frequencyWeighting="LIN"> 
+						80.0 90.0 95.0 100.0 100.0 100.0 95.0 90.0 
+					</Lw>
+				</source>
+			</ext>
+		</cp>
+		<!-- border of hard platform at x = -10m, groundType = H  -->
+		<cp id="#1">
+			<pos>
+				<x>	-10.00 </x>
+				<y>   2.50 </y>
+				<z>   0.00 </z>
+			</pos>
+			<mat id="H" />
+		</cp>
+		<!-- reflecting barrier on top of an embankment  -->
+		<cp id="#2">
+			<pos>
+				<x>	-20.00 </x>
+				<y>   5.00 </y>
+				<z>   1.00 </z>
+			</pos>
+			<mat id="D" />
+			<ext>
+				<wall>
+					<h> 1.50 </h>
+					<mat id="UserDefined" />
+				</wall>
+			</ext>
+		</cp>
+		<!-- foot of the embankment  -->
+		<cp id="#3">
+			<pos>
+				<x>	-10.00 </x>
+				<y>   7.50 </y>
+				<z>   0.00 </z>
+			</pos>
+			<mat id="D" />
+		</cp>
+		<!-- receiver at x = 20m, groundType = H -->
+		<!-- note that the specular reflection at the wall exists if 2.0 < h < 6.5m -->
+		<cp id= "receiver">
+			<pos>
+				<x>	 20.00 </x>
+				<y>	 15.00 </y>	
+				<z>   0.00 </z>
+			</pos>
+			<mat id = "D" />
+			<ext>
+				<receiver>
+					<h> 7.5 </h>
+				</receiver>
+			</ext>
+		</cp>
+	</path>
+</CNOSSOS-EU>

@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+	<xs:element name="TrackParameters">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Date" type="xs:date">
+					<xs:annotation><xs:documentation>Catalogue date (informative)</xs:documentation></xs:annotation>
+				</xs:element>
+				<xs:element ref="TrackTransfer"/>
+				<xs:element ref="StructureTransfer"/>
+				<xs:element ref="RailRoughness"/>
+				<xs:element ref="ImpactNoise"/>
+				<xs:element ref="BridgeConstant"/>
+			</xs:sequence>
+			<xs:attribute name="version" use="required" type="xs:string">
+				<xs:annotation><xs:documentation>Version of this file format.</xs:documentation></xs:annotation>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="TrackTransfer">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Track" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:attributeGroup ref="common-attributes"/>
+						<xs:attribute name="SleeperCode" use="optional" type="xs:string">
+							<xs:annotation><xs:documentation>(informative)</xs:documentation></xs:annotation>
+						</xs:attribute>
+						<xs:attribute name="RailpadCode" use="optional" type="xs:string">
+							<xs:annotation><xs:documentation>(informative)</xs:documentation></xs:annotation>
+						</xs:attribute>
+						<xs:attribute name="Values" use="required" type="list-of-decimals">
+							<xs:annotation><xs:documentation>Values are given per 1/3 octave band  (50 Hz .. 10 kHz)</xs:documentation></xs:annotation>
+						</xs:attribute>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="StructureTransfer">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Structure" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:attributeGroup ref="common-attributes"/>
+						<xs:attribute name="Values" use="required" type="list-of-decimals">
+							<xs:annotation><xs:documentation>Values are given per 1/3 octave band  (50 Hz .. 10 kHz)</xs:documentation></xs:annotation>
+						</xs:attribute>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="RailRoughness">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Rail" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:attributeGroup ref="common-attributes"/>
+						<xs:attribute name="RoughnessCode" use="optional" type="xs:string">
+							<xs:annotation><xs:documentation>(informative)</xs:documentation></xs:annotation>
+						</xs:attribute>
+						<xs:attribute name="Values" use="required" type="list-of-decimals">
+							<xs:annotation><xs:documentation>Values are given per wavelength  (100 cm .. 0.04 cm)</xs:documentation></xs:annotation>
+						</xs:attribute>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="ImpactNoise">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Impact" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:attributeGroup ref="common-attributes"/>
+						<xs:attribute name="JointDensity" use="required" type="xs:integer">
+							<xs:annotation><xs:documentation>Number of joints per 100 metres</xs:documentation></xs:annotation>
+						</xs:attribute>
+						<xs:attribute name="JointDensityDescription" use="optional" type="xs:string">
+							<xs:annotation><xs:documentation>(informative)</xs:documentation></xs:annotation>
+						</xs:attribute>
+						<xs:attribute name="RoughnessCode" use="optional" type="xs:string">
+							<xs:annotation><xs:documentation>(informative)</xs:documentation></xs:annotation>
+						</xs:attribute>
+						<xs:attribute name="Values" use="required" type="list-of-decimals">
+							<xs:annotation><xs:documentation>Values are given per wavelength  (100 cm .. 0.04 cm)</xs:documentation></xs:annotation>
+						</xs:attribute>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="BridgeConstant">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Bridge" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:attributeGroup ref="common-attributes"/>
+						<xs:attribute name="Value" use="required" type="xs:integer">
+							<xs:annotation><xs:documentation>ΔLbridge [dB]</xs:documentation></xs:annotation>
+						</xs:attribute>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:attributeGroup name="common-attributes">
+		<xs:attribute name="ID" use="required" type="xs:integer"/>
+		<xs:attribute name="Default" use="optional" type="xs:boolean">
+			<xs:annotation><xs:documentation>(informative)</xs:documentation></xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="Reference" use="optional" type="xs:string">
+			<xs:annotation><xs:documentation>(informative)</xs:documentation></xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="Description" use="optional" type="xs:string">
+			<xs:annotation><xs:documentation>(informative)</xs:documentation></xs:annotation>
+		</xs:attribute>
+	</xs:attributeGroup>
+
+	<xs:simpleType name="list-of-decimals">
+		<xs:annotation><xs:documentation>list of decimals</xs:documentation></xs:annotation>
+		<xs:list itemType="xs:decimal"/>
+	</xs:simpleType>
+</xs:schema>

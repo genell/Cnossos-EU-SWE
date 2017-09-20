@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+	<xs:element name="CNOSSOS_Rail_Input">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Test" type="xs:boolean">
+					<xs:annotation><xs:documentation>whether or not to create a tab-separated file with the intermediate results</xs:documentation></xs:annotation>
+				</xs:element>
+				<xs:element name="Tref" type="xs:decimal">
+					<xs:annotation><xs:documentation>The reference time in hours</xs:documentation></xs:annotation>
+				</xs:element>
+				<xs:element name="Source">
+					<xs:annotation><xs:documentation>The source to calculate</xs:documentation></xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:enumeration value="A">
+								<xs:annotation><xs:documentation>source at 0.5 m</xs:documentation></xs:annotation>
+							</xs:enumeration>
+							<xs:enumeration value="B">
+								<xs:annotation><xs:documentation>source at 4.0 m</xs:documentation></xs:annotation>
+							</xs:enumeration>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="Idling" type="xs:boolean">
+					<xs:annotation><xs:documentation>whether to calculate idling (true) or moving (false) vehicles</xs:documentation></xs:annotation>
+				</xs:element>
+				<xs:element ref="Track"/>
+				<xs:element ref="Vehicles"/>
+			</xs:sequence>
+			<xs:attribute name="version" use="required" type="xs:string">
+				<xs:annotation><xs:documentation>Version of this file format.</xs:documentation></xs:annotation>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="Track">
+		<xs:annotation><xs:documentation>The track-specific parameters to be used</xs:documentation></xs:annotation>
+		<xs:complexType>
+			<xs:attribute name="SectionLength" use="required" type="xs:decimal">
+				<xs:annotation><xs:documentation>the length of the track section [m]</xs:documentation></xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="VerticalAngle" use="required" type="xs:integer">
+				<xs:annotation><xs:documentation>the vertical angle [°]</xs:documentation></xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="HorizontalAngle" use="required" type="xs:integer">
+				<xs:annotation><xs:documentation>the horizontal angle [°]</xs:documentation></xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="TrackTransferID" use="required" type="xs:integer">
+				<xs:annotation><xs:documentation>references /TrackParameters/TrackTransfer/Track with the given ID, in CNOSSOS_Rail_Track.xml</xs:documentation></xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="StructureTransferID" use="required" type="xs:integer">
+				<xs:annotation><xs:documentation>references /TrackParameters/StructureTransfer/Structure with the given ID, in CNOSSOS_Rail_Track.xml</xs:documentation></xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="RailRoughnessID" use="required" type="xs:integer">
+				<xs:annotation><xs:documentation>references /TrackParameters/RailRoughness/Rail with the given ID, in CNOSSOS_Rail_Track.xml</xs:documentation></xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="ImpactNoiseID" use="required" type="xs:integer">
+				<xs:annotation><xs:documentation>references /TrackParameters/ImpactNoise/Impact with the given ID, in CNOSSOS_Rail_Track.xml</xs:documentation></xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="CurveRadius" use="required" type="xs:decimal">
+				<xs:annotation><xs:documentation>the radius R of the curve [m]</xs:documentation></xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="BridgeConstantID" use="required" type="xs:integer">
+				<xs:annotation><xs:documentation>references /TrackParameters/BridgeConstant/Bridge with the given ID, in CNOSSOS_Rail_Track.xml</xs:documentation></xs:annotation>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="Vehicles">
+		<xs:annotation><xs:documentation>The types of vehicle circulating on the specified track section.</xs:documentation></xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Vehicle" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:attribute name="Ref" use="required" type="xs:integer">
+							<xs:annotation><xs:documentation>references /RailParameters/VehicleDefinition/Vehicle with the given ID, in CNOSSOS_Rail_Vehicles.xml. Also used for VehicleTransfer, WheelRoughness, ContactFilter, TractionNoise and AerodynamicNoise in that same file.</xs:documentation></xs:annotation>
+						</xs:attribute>
+						<xs:attribute name="Description" use="required" type="xs:string">
+							<xs:annotation><xs:documentation></xs:documentation></xs:annotation>
+						</xs:attribute>
+						<xs:attribute name="RunningCondition" use="required">
+							<xs:annotation><xs:documentation>the running condition of railway vehicles. Note that when Idling (see above) is set to 'true', only idling vehicles will be taken into account. Vice versa, when Idling is set to 'false', only moving vehicles will be taken into account.</xs:documentation></xs:annotation>
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:enumeration value="constant"/>
+									<xs:enumeration value="accelerating"/>
+									<xs:enumeration value="decelerating"/>
+									<xs:enumeration value="idling"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+						<xs:attribute name="Q" use="optional" type="xs:integer">
+							<xs:annotation><xs:documentation>the number of vehicles on the track section; not used when RunningCondition = "idling"</xs:documentation></xs:annotation>
+						</xs:attribute>
+						<xs:attribute name="v" use="optional" type="xs:integer">
+							<xs:annotation><xs:documentation>the speed of the vehicles [km/h]; not used when RunningCondition = "idling"</xs:documentation></xs:annotation>
+						</xs:attribute>
+						<xs:attribute name="IdlingTime" use="optional" type="xs:integer">
+							<xs:annotation><xs:documentation>the idling time of the vehicle [hours]; only used when RunningCondition = "idling"</xs:documentation></xs:annotation>
+						</xs:attribute>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+</xs:schema>

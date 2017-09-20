@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<CNOSSOS-EU version="1.001">
+	<!-- select calculation method -->
+	<method>
+		<select id="JRC-draft-2010" />
+		<!-- in general, you don't need to specify options unless you want to change the default behavior of the method -->
+		<options>
+			<option id="CheckHeightUpperBound" value="false" />
+			<option id="CheckHeightLowerBound" value="false" />
+			<option id="ExcludeSoundPower" value="false" />
+			<option id="ForceSourceToReceiver" value = "false" />
+			<option id="SimplifyPathGeometry" value = "true" />
+		</options>
+		<meteo model="ISO-9613-2">
+			<temperature> 20.0 </temperature>
+			<humidity> 60.0 </humidity>
+			<pFav> 50.0 </pFav>
+			<C0>   3.00 </C0>
+		</meteo>
+	</method>
+	<!-- define or modify material properties -->
+	<!-- propagation path -->
+	<path>
+		<!-- receiver at x = 100m, groundType = D -->
+		<cp id= "receiver">
+			<pos>
+				<x>	  25.00 </x>
+				<y>   80.00 </y>
+				<z>    0.00 </z>
+			</pos>
+			<mat id = "D" />
+			<ext>
+				<receiver>
+					<h> 4.5 </h>
+				</receiver>
+			</ext>
+		</cp>
+		<!-- border of hard platform at x = 10m, groundType = H  -->
+		<cp id="ground">
+			<pos>
+				<x>	 25.00 </x>
+				<y>   0.00 </y>
+				<z>   0.00 </z>
+			</pos>
+			<mat id="H" />
+			<ext>
+				<wall>
+					<h> 100.0 </h>
+				</wall>
+			</ext>
+		</cp>
+		<!-- extra terrain point  -->
+		<cp id="ground">
+			<pos>
+				<x>	 15.00 </x>
+				<y>   0.00 </y>
+				<z>   0.25 </z>
+			</pos>
+			<mat id="H" />
+		</cp>
+		<!-- sourcer -->
+		<cp id="source">
+			<pos>
+				<x>	  5.00 </x>
+				<y>   0.00 </y> 
+				<z>   0.00 </z>
+			</pos>
+			<mat id="H" />
+			<ext>
+				<source>
+					<!-- <import file="CNOSSOS_Road_Output.xml"/> -->
+					<h> 0.50 </h>
+					<!-- TODO: read sound power from external file -->
+					<!-- sound power definitions
+						 * measurementType = "Unknown", "FreeField" or "HemiSpherical" 
+						 * sourceType = "PointSource", "LineSource" or "AreaSource"   				
+					     * frequencyWeighting = "LIN" or "dBA"
+					-->
+					<Lw sourceType="LineSource" measurementType="HemiSpherical" frequencyWeighting="LIN"> 
+						80.0 90.0 95.0 100.0 100.0 100.0 95.0 90.0 
+					</Lw>
+					<extGeometry>
+						<lineSegment>
+							<posStart> 
+								<x>  5.05 </x>
+								<y> -10.0 </y>
+							</posStart>
+							<posEnd> 
+								<y>  10.0 </y>
+							</posEnd>
+						</lineSegment>
+					</extGeometry>
+				</source>
+			</ext>
+		</cp>
+	</path>
+</CNOSSOS-EU>

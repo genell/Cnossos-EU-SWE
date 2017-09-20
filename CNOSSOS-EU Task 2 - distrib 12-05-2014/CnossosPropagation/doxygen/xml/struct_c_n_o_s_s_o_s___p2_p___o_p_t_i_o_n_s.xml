@@ -1,0 +1,212 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.4">
+  <compounddef id="struct_c_n_o_s_s_o_s___p2_p___o_p_t_i_o_n_s" kind="struct" prot="public">
+    <compoundname>CNOSSOS_P2P_OPTIONS</compoundname>
+    <includes refid="_cnossos_propagation_8h" local="no">CnossosPropagation.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct_c_n_o_s_s_o_s___p2_p___o_p_t_i_o_n_s_1ab666c67c3d9e614a9f36bbe340e04e94" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool CNOSSOS_P2P_OPTIONS::CheckHorizontalAlignment</definition>
+        <argsstring></argsstring>
+        <name>CheckHorizontalAlignment</name>
+        <briefdescription>
+<para>check validity of paths in the horizontal plane </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/dvm/Projets/CNOSSOS-EU/dev/CnossosPropagation/CnossosPropagation.h" line="151" bodyfile="C:/Users/dvm/Projets/CNOSSOS-EU/dev/CnossosPropagation/CnossosPropagation.h" bodystart="151" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_c_n_o_s_s_o_s___p2_p___o_p_t_i_o_n_s_1a9c306c567d5dd95099b178ca2a52b31c" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool CNOSSOS_P2P_OPTIONS::CheckLateralDiffraction</definition>
+        <argsstring></argsstring>
+        <name>CheckLateralDiffraction</name>
+        <briefdescription>
+<para>check validity of laterally diffracted paths </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/dvm/Projets/CNOSSOS-EU/dev/CnossosPropagation/CnossosPropagation.h" line="152" bodyfile="C:/Users/dvm/Projets/CNOSSOS-EU/dev/CnossosPropagation/CnossosPropagation.h" bodystart="152" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_c_n_o_s_s_o_s___p2_p___o_p_t_i_o_n_s_1a67a8d97d863baee7b3e4977c28ccdb46" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool CNOSSOS_P2P_OPTIONS::CheckHeightLowerBound</definition>
+        <argsstring></argsstring>
+        <name>CheckHeightLowerBound</name>
+        <briefdescription>
+<para>check height of ray path with respect to upper limits of vertical obstacles </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/dvm/Projets/CNOSSOS-EU/dev/CnossosPropagation/CnossosPropagation.h" line="153" bodyfile="C:/Users/dvm/Projets/CNOSSOS-EU/dev/CnossosPropagation/CnossosPropagation.h" bodystart="153" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_c_n_o_s_s_o_s___p2_p___o_p_t_i_o_n_s_1a4ed7239da8213ce093aed32485dbdd0f" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool CNOSSOS_P2P_OPTIONS::CheckHeightUpperBound</definition>
+        <argsstring></argsstring>
+        <name>CheckHeightUpperBound</name>
+        <briefdescription>
+<para>check height of ray path with respect to lower limits of vertical obstacles </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/dvm/Projets/CNOSSOS-EU/dev/CnossosPropagation/CnossosPropagation.h" line="154" bodyfile="C:/Users/dvm/Projets/CNOSSOS-EU/dev/CnossosPropagation/CnossosPropagation.h" bodystart="154" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_c_n_o_s_s_o_s___p2_p___o_p_t_i_o_n_s_1a50d6b614c0f79c4fdea380bc6dcb95c8" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool CNOSSOS_P2P_OPTIONS::CheckSourceSegment</definition>
+        <argsstring></argsstring>
+        <name>CheckSourceSegment</name>
+        <briefdescription>
+<para>check whether source line segments contains actual source position </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/dvm/Projets/CNOSSOS-EU/dev/CnossosPropagation/CnossosPropagation.h" line="155" bodyfile="C:/Users/dvm/Projets/CNOSSOS-EU/dev/CnossosPropagation/CnossosPropagation.h" bodystart="155" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_c_n_o_s_s_o_s___p2_p___o_p_t_i_o_n_s_1aeecf266efc1b650a867bec2c77a4bdf0" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool CNOSSOS_P2P_OPTIONS::CheckSoundPowerUnits</definition>
+        <argsstring></argsstring>
+        <name>CheckSoundPowerUnits</name>
+        <briefdescription>
+<para>check conformity of sound power units and source geometry </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/dvm/Projets/CNOSSOS-EU/dev/CnossosPropagation/CnossosPropagation.h" line="156" bodyfile="C:/Users/dvm/Projets/CNOSSOS-EU/dev/CnossosPropagation/CnossosPropagation.h" bodystart="156" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_c_n_o_s_s_o_s___p2_p___o_p_t_i_o_n_s_1ac408d4ea971cc5fd32af1b4d532648c2" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool CNOSSOS_P2P_OPTIONS::ForceSourceToReceiver</definition>
+        <argsstring></argsstring>
+        <name>ForceSourceToReceiver</name>
+        <briefdescription>
+<para>reverse the path in case it is ordered from Receiver to Source </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/dvm/Projets/CNOSSOS-EU/dev/CnossosPropagation/CnossosPropagation.h" line="161" bodyfile="C:/Users/dvm/Projets/CNOSSOS-EU/dev/CnossosPropagation/CnossosPropagation.h" bodystart="161" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_c_n_o_s_s_o_s___p2_p___o_p_t_i_o_n_s_1aefde4c9bbb66f6d83071ef1fac89542f" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool CNOSSOS_P2P_OPTIONS::SimplifyPathGeometry</definition>
+        <argsstring></argsstring>
+        <name>SimplifyPathGeometry</name>
+        <briefdescription>
+<para>remove non representative terrain points </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/dvm/Projets/CNOSSOS-EU/dev/CnossosPropagation/CnossosPropagation.h" line="162" bodyfile="C:/Users/dvm/Projets/CNOSSOS-EU/dev/CnossosPropagation/CnossosPropagation.h" bodystart="162" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_c_n_o_s_s_o_s___p2_p___o_p_t_i_o_n_s_1a7894aa46585e3c708f4ad251ef48f04b" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool CNOSSOS_P2P_OPTIONS::DisableReflections</definition>
+        <argsstring></argsstring>
+        <name>DisableReflections</name>
+        <briefdescription>
+<para>disable reflections </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/dvm/Projets/CNOSSOS-EU/dev/CnossosPropagation/CnossosPropagation.h" line="163" bodyfile="C:/Users/dvm/Projets/CNOSSOS-EU/dev/CnossosPropagation/CnossosPropagation.h" bodystart="163" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_c_n_o_s_s_o_s___p2_p___o_p_t_i_o_n_s_1a995ff9784bbc4619921ce1127fc1d8df" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool CNOSSOS_P2P_OPTIONS::DisableLateralDiffractions</definition>
+        <argsstring></argsstring>
+        <name>DisableLateralDiffractions</name>
+        <briefdescription>
+<para>disable lateral diffractions </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/dvm/Projets/CNOSSOS-EU/dev/CnossosPropagation/CnossosPropagation.h" line="164" bodyfile="C:/Users/dvm/Projets/CNOSSOS-EU/dev/CnossosPropagation/CnossosPropagation.h" bodystart="164" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_c_n_o_s_s_o_s___p2_p___o_p_t_i_o_n_s_1aef8a7e5ed0833f05399d5412665c20b1" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool CNOSSOS_P2P_OPTIONS::LimitLateralDiffraction</definition>
+        <argsstring></argsstring>
+        <name>LimitLateralDiffraction</name>
+        <briefdescription>
+<para>disable reflections and vertical diffraction for laterally diffracted paths </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/dvm/Projets/CNOSSOS-EU/dev/CnossosPropagation/CnossosPropagation.h" line="165" bodyfile="C:/Users/dvm/Projets/CNOSSOS-EU/dev/CnossosPropagation/CnossosPropagation.h" bodystart="165" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_c_n_o_s_s_o_s___p2_p___o_p_t_i_o_n_s_1a47d635af0140708e89a2bead57875a86" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool CNOSSOS_P2P_OPTIONS::ExcludeSoundPower</definition>
+        <argsstring></argsstring>
+        <name>ExcludeSoundPower</name>
+        <briefdescription>
+<para>include sound power </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/dvm/Projets/CNOSSOS-EU/dev/CnossosPropagation/CnossosPropagation.h" line="170" bodyfile="C:/Users/dvm/Projets/CNOSSOS-EU/dev/CnossosPropagation/CnossosPropagation.h" bodystart="170" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_c_n_o_s_s_o_s___p2_p___o_p_t_i_o_n_s_1a8e9a510e3aa75c90992a8921d460fb98" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool CNOSSOS_P2P_OPTIONS::ExcludeGeometricalSpread</definition>
+        <argsstring></argsstring>
+        <name>ExcludeGeometricalSpread</name>
+        <briefdescription>
+<para>include geometrical spread </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/dvm/Projets/CNOSSOS-EU/dev/CnossosPropagation/CnossosPropagation.h" line="171" bodyfile="C:/Users/dvm/Projets/CNOSSOS-EU/dev/CnossosPropagation/CnossosPropagation.h" bodystart="171" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_c_n_o_s_s_o_s___p2_p___o_p_t_i_o_n_s_1a69dab85542b4544b7fa35424eb4a2935" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool CNOSSOS_P2P_OPTIONS::ExcludeAirAbsorption</definition>
+        <argsstring></argsstring>
+        <name>ExcludeAirAbsorption</name>
+        <briefdescription>
+<para>include atmospheric absorption </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/dvm/Projets/CNOSSOS-EU/dev/CnossosPropagation/CnossosPropagation.h" line="172" bodyfile="C:/Users/dvm/Projets/CNOSSOS-EU/dev/CnossosPropagation/CnossosPropagation.h" bodystart="172" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Options modifying the behavior of the calculation engine. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/Users/dvm/Projets/CNOSSOS-EU/dev/CnossosPropagation/CnossosPropagation.h" line="147" bodyfile="C:/Users/dvm/Projets/CNOSSOS-EU/dev/CnossosPropagation/CnossosPropagation.h" bodystart="146" bodyend="173"/>
+    <listofallmembers>
+      <member refid="struct_c_n_o_s_s_o_s___p2_p___o_p_t_i_o_n_s_1a67a8d97d863baee7b3e4977c28ccdb46" prot="public" virt="non-virtual"><scope>CNOSSOS_P2P_OPTIONS</scope><name>CheckHeightLowerBound</name></member>
+      <member refid="struct_c_n_o_s_s_o_s___p2_p___o_p_t_i_o_n_s_1a4ed7239da8213ce093aed32485dbdd0f" prot="public" virt="non-virtual"><scope>CNOSSOS_P2P_OPTIONS</scope><name>CheckHeightUpperBound</name></member>
+      <member refid="struct_c_n_o_s_s_o_s___p2_p___o_p_t_i_o_n_s_1ab666c67c3d9e614a9f36bbe340e04e94" prot="public" virt="non-virtual"><scope>CNOSSOS_P2P_OPTIONS</scope><name>CheckHorizontalAlignment</name></member>
+      <member refid="struct_c_n_o_s_s_o_s___p2_p___o_p_t_i_o_n_s_1a9c306c567d5dd95099b178ca2a52b31c" prot="public" virt="non-virtual"><scope>CNOSSOS_P2P_OPTIONS</scope><name>CheckLateralDiffraction</name></member>
+      <member refid="struct_c_n_o_s_s_o_s___p2_p___o_p_t_i_o_n_s_1aeecf266efc1b650a867bec2c77a4bdf0" prot="public" virt="non-virtual"><scope>CNOSSOS_P2P_OPTIONS</scope><name>CheckSoundPowerUnits</name></member>
+      <member refid="struct_c_n_o_s_s_o_s___p2_p___o_p_t_i_o_n_s_1a50d6b614c0f79c4fdea380bc6dcb95c8" prot="public" virt="non-virtual"><scope>CNOSSOS_P2P_OPTIONS</scope><name>CheckSourceSegment</name></member>
+      <member refid="struct_c_n_o_s_s_o_s___p2_p___o_p_t_i_o_n_s_1a995ff9784bbc4619921ce1127fc1d8df" prot="public" virt="non-virtual"><scope>CNOSSOS_P2P_OPTIONS</scope><name>DisableLateralDiffractions</name></member>
+      <member refid="struct_c_n_o_s_s_o_s___p2_p___o_p_t_i_o_n_s_1a7894aa46585e3c708f4ad251ef48f04b" prot="public" virt="non-virtual"><scope>CNOSSOS_P2P_OPTIONS</scope><name>DisableReflections</name></member>
+      <member refid="struct_c_n_o_s_s_o_s___p2_p___o_p_t_i_o_n_s_1a69dab85542b4544b7fa35424eb4a2935" prot="public" virt="non-virtual"><scope>CNOSSOS_P2P_OPTIONS</scope><name>ExcludeAirAbsorption</name></member>
+      <member refid="struct_c_n_o_s_s_o_s___p2_p___o_p_t_i_o_n_s_1a8e9a510e3aa75c90992a8921d460fb98" prot="public" virt="non-virtual"><scope>CNOSSOS_P2P_OPTIONS</scope><name>ExcludeGeometricalSpread</name></member>
+      <member refid="struct_c_n_o_s_s_o_s___p2_p___o_p_t_i_o_n_s_1a47d635af0140708e89a2bead57875a86" prot="public" virt="non-virtual"><scope>CNOSSOS_P2P_OPTIONS</scope><name>ExcludeSoundPower</name></member>
+      <member refid="struct_c_n_o_s_s_o_s___p2_p___o_p_t_i_o_n_s_1ac408d4ea971cc5fd32af1b4d532648c2" prot="public" virt="non-virtual"><scope>CNOSSOS_P2P_OPTIONS</scope><name>ForceSourceToReceiver</name></member>
+      <member refid="struct_c_n_o_s_s_o_s___p2_p___o_p_t_i_o_n_s_1aef8a7e5ed0833f05399d5412665c20b1" prot="public" virt="non-virtual"><scope>CNOSSOS_P2P_OPTIONS</scope><name>LimitLateralDiffraction</name></member>
+      <member refid="struct_c_n_o_s_s_o_s___p2_p___o_p_t_i_o_n_s_1aefde4c9bbb66f6d83071ef1fac89542f" prot="public" virt="non-virtual"><scope>CNOSSOS_P2P_OPTIONS</scope><name>SimplifyPathGeometry</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

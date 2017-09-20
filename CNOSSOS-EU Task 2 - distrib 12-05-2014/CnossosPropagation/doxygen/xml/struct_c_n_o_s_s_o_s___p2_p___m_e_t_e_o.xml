@@ -1,0 +1,86 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.4">
+  <compounddef id="struct_c_n_o_s_s_o_s___p2_p___m_e_t_e_o" kind="struct" prot="public">
+    <compoundname>CNOSSOS_P2P_METEO</compoundname>
+    <includes refid="_cnossos_propagation_8h" local="no">CnossosPropagation.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct_c_n_o_s_s_o_s___p2_p___m_e_t_e_o_1aebfd4988c3a8620b03ba119dd6627617" prot="public" static="no" mutable="no">
+        <type><ref refid="_cnossos_propagation_8h_1a147f484d037a625eeeb261c4de7cc40a" kindref="member">CNOSSOS_P2P_METEO_MODEL</ref></type>
+        <definition>CNOSSOS_P2P_METEO_MODEL CNOSSOS_P2P_METEO::model</definition>
+        <argsstring></argsstring>
+        <name>model</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Choice of meteorological model </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/dvm/Projets/CNOSSOS-EU/dev/CnossosPropagation/CnossosPropagation.h" line="137" bodyfile="C:/Users/dvm/Projets/CNOSSOS-EU/dev/CnossosPropagation/CnossosPropagation.h" bodystart="137" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_c_n_o_s_s_o_s___p2_p___m_e_t_e_o_1adeab01f166acc932e41eaa3d17365f87" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double CNOSSOS_P2P_METEO::C0</definition>
+        <argsstring></argsstring>
+        <name>C0</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>C0 correction term as defined in ISO 9613-2 </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/dvm/Projets/CNOSSOS-EU/dev/CnossosPropagation/CnossosPropagation.h" line="138" bodyfile="C:/Users/dvm/Projets/CNOSSOS-EU/dev/CnossosPropagation/CnossosPropagation.h" bodystart="138" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_c_n_o_s_s_o_s___p2_p___m_e_t_e_o_1a8d538e25ef1131d001a3dd9150d6fb06" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double CNOSSOS_P2P_METEO::pFav</definition>
+        <argsstring></argsstring>
+        <name>pFav</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Frequency of occurence of favourable propagation conditions </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/dvm/Projets/CNOSSOS-EU/dev/CnossosPropagation/CnossosPropagation.h" line="139" bodyfile="C:/Users/dvm/Projets/CNOSSOS-EU/dev/CnossosPropagation/CnossosPropagation.h" bodystart="139" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_c_n_o_s_s_o_s___p2_p___m_e_t_e_o_1a41208b62aa344c53d96582845ca3bed4" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double CNOSSOS_P2P_METEO::temperature</definition>
+        <argsstring></argsstring>
+        <name>temperature</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Air temperature </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/dvm/Projets/CNOSSOS-EU/dev/CnossosPropagation/CnossosPropagation.h" line="140" bodyfile="C:/Users/dvm/Projets/CNOSSOS-EU/dev/CnossosPropagation/CnossosPropagation.h" bodystart="140" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_c_n_o_s_s_o_s___p2_p___m_e_t_e_o_1a1aa5917fd82ce33f049a245541665efc" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double CNOSSOS_P2P_METEO::humidity</definition>
+        <argsstring></argsstring>
+        <name>humidity</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Air relative humidity (expressed as %) </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/dvm/Projets/CNOSSOS-EU/dev/CnossosPropagation/CnossosPropagation.h" line="141" bodyfile="C:/Users/dvm/Projets/CNOSSOS-EU/dev/CnossosPropagation/CnossosPropagation.h" bodystart="141" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Meteorological input data. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/Users/dvm/Projets/CNOSSOS-EU/dev/CnossosPropagation/CnossosPropagation.h" line="136" bodyfile="C:/Users/dvm/Projets/CNOSSOS-EU/dev/CnossosPropagation/CnossosPropagation.h" bodystart="135" bodyend="142"/>
+    <listofallmembers>
+      <member refid="struct_c_n_o_s_s_o_s___p2_p___m_e_t_e_o_1adeab01f166acc932e41eaa3d17365f87" prot="public" virt="non-virtual"><scope>CNOSSOS_P2P_METEO</scope><name>C0</name></member>
+      <member refid="struct_c_n_o_s_s_o_s___p2_p___m_e_t_e_o_1a1aa5917fd82ce33f049a245541665efc" prot="public" virt="non-virtual"><scope>CNOSSOS_P2P_METEO</scope><name>humidity</name></member>
+      <member refid="struct_c_n_o_s_s_o_s___p2_p___m_e_t_e_o_1aebfd4988c3a8620b03ba119dd6627617" prot="public" virt="non-virtual"><scope>CNOSSOS_P2P_METEO</scope><name>model</name></member>
+      <member refid="struct_c_n_o_s_s_o_s___p2_p___m_e_t_e_o_1a8d538e25ef1131d001a3dd9150d6fb06" prot="public" virt="non-virtual"><scope>CNOSSOS_P2P_METEO</scope><name>pFav</name></member>
+      <member refid="struct_c_n_o_s_s_o_s___p2_p___m_e_t_e_o_1a41208b62aa344c53d96582845ca3bed4" prot="public" virt="non-virtual"><scope>CNOSSOS_P2P_METEO</scope><name>temperature</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

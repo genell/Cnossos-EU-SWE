@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<CNOSSOS_SoundPower version="V1.0">
+    <source>
+        <h>0.5</h>
+        <Lw sourceType="PointSource"
+            measurementType="HemiSpherical"
+            frequencyWeighting="LIN">
+    	    57.57  59.50  60.51  63.52  71.10  79.79  82.34  84.18 <!-- Linear -->
+        </Lw>
+    </source>
+    <source>
+        <h>4.0</h>
+        <Lw sourceType="PointSource"
+            measurementType="HemiSpherical"
+            frequencyWeighting="LIN">
+            0 0 0 0 0 0 0 0
+        </Lw>
+    </source>
+</CNOSSOS_SoundPower>

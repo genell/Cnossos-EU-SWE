@@ -1,0 +1,32 @@
+﻿La génération a démarré 5/12/2014 6:17:46 PM.
+     1>Projet "C:\Users\dvm\Projets\CNOSSOS-EU\dev\PropagationPath\PropagationPath.vcxproj" sur le nœud 2 (build cible(s)).
+     1>InitializeBuildStatus:
+         Création de "Release\PropagationPath.unsuccessfulbuild", car "AlwaysCreate" a été spécifié.
+       ClCompile:
+         c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /Zi /nologo /W3 /WX- /O2 /Oi /Oy- /GL /D WIN32 /D NDEBUG /D _LIB /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt "JRC-2012.cpp"
+         JRC-2012.cpp
+       Lib:
+         c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\Lib.exe /OUT:"C:\Users\dvm\Projets\CNOSSOS-EU\dev\Release\PropagationPath.lib" /NOLOGO /LTCG Release\CalculationMethod.obj
+         "Release\ISO-9613-2.obj"
+         "Release\JRC-2012.obj"
+         "Release\JRC-draft-2010.obj"
+         Release\Material.obj
+         Release\MeanPlane.obj
+         Release\MeteoCondition.obj
+         Release\PathParseXML.obj
+         Release\PathResult.obj
+         Release\PropagationPath.obj
+         Release\ReferenceObject.obj
+         Release\SelectMethod.obj
+         Release\SourceGeometry.obj
+         Release\Spectrum.obj
+         Release\SystemClock.obj
+         PropagationPath.vcxproj -> C:\Users\dvm\Projets\CNOSSOS-EU\dev\Release\PropagationPath.lib
+       FinalizeBuildStatus:
+         Suppression du fichier "Release\PropagationPath.unsuccessfulbuild".
+         Mise à jour de l'horodatage "Release\PropagationPath.lastbuildstate".
+     1>Génération du projet "C:\Users\dvm\Projets\CNOSSOS-EU\dev\PropagationPath\PropagationPath.vcxproj" terminée (build cible(s)).
+
+La génération a réussi.
+
+Temps écoulé 00:00:00.95

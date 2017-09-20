@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<CNOSSOS-EU>
+	<!-- select calculation method -->
+	<method>
+		<select id="ISO-9613-2" />
+		<meteo model="DEFAULT">
+			<temperature> 15.0 </temperature>
+			<humidity>    70.0 </humidity>
+			<pFav> 0.50 </pFav>
+			<C0>   3.00 </C0>
+		</meteo>
+	</method>
+	<!-- propagation path -->
+	<path>
+		<!-- sourcer -->
+		<cp id="source">
+			<pos>
+				<x>	  0.00 </x>
+				<y>   0.00 </y> 
+				<z>   1.00 </z>
+			</pos>
+			<mat id="H" />
+			<ext>
+				<source>
+					<h> 0.05 </h>
+					<!-- TODO: read sound power from external file -->
+					<!-- sound power definitions
+						 * measurementType = "Unknown", "FreeField" or "HemiSpherical" 
+						 * sourceType = "PointSource", "LineSource" or "AreaSource"   				
+					     * frequencyWeighting = "LIN" or "dBA"
+					-->
+					<Lw sourceType="PointSource" measurementType="HemiSpherical" frequencyWeighting="LIN"> 
+						80.0 90.0 95.0 100.0 100.0 100.0 95.0 90.0 
+					</Lw>
+				</source>
+			</ext>
+		</cp>
+		<!-- border of hard platform at x = 5m, groundType = H  -->
+		<cp id="border">
+			<pos>
+				<x>	 5.00 </x>
+				<z>  1.00 </z>
+			</pos>
+			<mat id="H" />
+		</cp>
+		<!-- border of hard platform at x = 5m, groundType = H  -->
+		<cp id="ground">
+			<pos>
+				<x>	 7.00 </x>
+				<z>  0.00 </z>
+			</pos>
+			<mat id="D" />
+		</cp>
+		<!-- receiver at x = 10m, groundType = D -->
+		<cp id= "receiver">
+			<pos>
+				<x>	 500.00 </x>
+				<z>    0.00 </z>
+			</pos>
+			<mat id = "D" />
+			<ext>
+				<receiver>
+					<h> 2.5 </h>
+				</receiver>
+			</ext>
+		</cp>
+	</path>
+</CNOSSOS-EU>
