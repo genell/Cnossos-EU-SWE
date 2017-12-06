@@ -1,0 +1,310 @@
+<?xml version="1.0" ?>
+<TrackParameters version="V1.0">
+    <!-- 
+        CNOSSOS_Rail_Track.XML contains all look-up tables needed for the 
+        calculation of the emission of rail noise which are related to the 
+        track.
+    
+        Format:
+        - Decimal separator a point ('.')
+        - Spectral information is given as 
+            - 8 values for octave information (63 Hz .. 8 kHz)
+            - 24 values for 1/3 octave information (50 Hz .. 10 kHz)
+            - values are separated by 1 or more spaces.
+        - Information concerning wavelengths 
+            - is given as 32 values (100 cm .. 0.08 cm)
+            - Wavelengths:
+                100.000   80.000   63.000   50.000   40.000   31.500   25.000
+                 20.000   16.000   12.500   10.000    8.000    6.300    5.000
+                  4.000    3.150    2.500    2.000    1.600    1.250    1.000
+                  0.800    0.630    0.500    0.400    0.315    0.250    0.200
+                  0.160    0.125    0.100    0.080
+        - Values are separated by 1 or more spaces.
+    -->
+	<Date>2014-04-27</Date> <!-- Catalogue date (informative) -->
+
+    <TrackTransfer>
+        <!-- 
+            - ID = unique identification of the track transfer function
+            - Default = true or false (informative)
+            - Reference = (informative), examples:
+                            IMAGINE 
+                            European Commission
+                            Member State
+                            Local User
+                            CNOSSOS
+            - Description = (informative)
+            - SleeperCode = (informative), options
+                            Concrete bi-block
+                            Concrete mono-block
+                            Steel
+                            Wood
+                            Steel zigzag
+            - RailpadCode = (informative), options
+                            Stiff
+                            Medium
+                            Soft
+            - Values are given per 1/3 octave band  (50 Hz .. 10 kHz)
+            - NOTE 1: Values should be Sound Power Level per axle for use directly in Equ IV-7
+            - NOTE 2: Values were converted from SPL to SWL using method in IMAGINE
+        -->
+        <Track ID="0"  Default="true"
+                       Reference=""
+                       Description="empty track transfer function"
+                       SleeperCode=""
+                       RailpadCode=""
+                       Values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0"
+        />
+        <Track ID="1"  Default="true"
+                       Reference="IMAGINE"
+                       Description="min"
+                       SleeperCode=""
+                       RailpadCode=""
+                       Values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0"
+        />
+        <Track ID="2"  Default="true"
+                       Reference="IMAGINE"
+                       Description="max"
+                       SleeperCode=""
+                       RailpadCode=""
+                       Values="140 140 140 140 140 140 140 140 140 140 140 140 140 140 140 140 140 140 140 140 140 140 140 140"
+        />
+        <Track ID="3"  Default="true"
+                       Reference="IMAGINE"
+                       Description="Mono-block sleeper on soft rail pad"
+                       SleeperCode="Concrete mono-block"
+                       RailpadCode="Soft"
+                       Values="53.3 59.3 67.2 75.9 79.2 81.8 84.2 88.6 91.0 94.5 97.0 99.2 104.0 107.1 108.3 108.5 109.7 110.0 110.0 110.0 110.3 110.0 110.1 110.6"
+        />
+        <Track ID="4"  Default="true"
+                       Reference="IMAGINE"
+                       Description="Mono-block sleeper on medium stiffness rail pad"
+                       SleeperCode="Concrete mono-block"
+                       RailpadCode="Medium"
+                       Values="50.9 57.8 66.5 76.8 80.9 83.3 85.8 90.0 91.6 93.9 95.6 97.4 101.7 104.4 106.0 106.8 108.3 108.9 109.1 109.4 109.9 109.9 110.3 111.0"
+        />
+        <Track ID="5"  Default="true"
+                       Reference="IMAGINE"
+                       Description="Mono-block on hard rail pad"
+                       SleeperCode="Concrete mono-block"
+                       RailpadCode="Hard"
+                       Values="50.1 57.2 66.3 77.2 81.6 84.0 86.5 90.7 92.1 94.3 95.8 97.0 100.3 102.5 104.2 105.4 107.1 107.9 108.2 108.7 109.4 109.7 110.4 111.4"
+        />
+        <Track ID="6"  Default="true"
+                       Reference="IMAGINE"
+                       Description="Bi-block sleeper on soft rail pad"
+                       SleeperCode="Concrete bi-block"
+                       RailpadCode="Soft"
+                       Values="50.9 56.6 64.3 72.3 75.4 78.5 81.8 86.6 89.1 91.9 94.5 97.5 104.0 107.9 108.9 108.8 109.8 110.2 110.1 110.1 110.3 109.9 110.0 110.4"
+        />
+        <Track ID="7"  Default="true"
+                       Reference="IMAGINE"
+                       Description="Bi-block sleeper on medium stiffness rail pad"
+                       SleeperCode="Concrete bi-block"
+                       RailpadCode="Medium"
+                       Values="50.0 56.1 64.1 72.5 75.8 79.1 83.6 88.7 89.6 89.7 90.6 93.8 100.6 104.7 106.3 107.1 108.8 109.3 109.4 109.7 110.0 109.8 110.0 110.5"
+        />
+        <Track ID="8"  Default="true"
+                       Reference="IMAGINE"
+                       Description="Bi-block sleeper on hard rail pad"
+                       SleeperCode="Concrete bi-block"
+                       RailpadCode="Hard"
+                       Values="49.8 55.9 64.0 72.5 75.9 79.4 84.4 89.7 90.2 90.2 90.8 93.1 97.9 101.1 103.4 105.4 107.7 108.5 108.7 109.1 109.6 109.6 109.9 110.6"
+        />
+        <Track ID="9"  Default="true"
+                       Reference="IMAGINE"
+                       Description="Wooden sleepers"
+                       SleeperCode="Wood"
+                       RailpadCode=""
+                       Values="44.0 51.0 59.9 70.8 75.1 76.9 77.2 80.9 85.3 92.5 97.0 98.7 102.8 105.4 106.5 106.4 107.5 108.1 108.4 108.7 109.1 109.1 109.5 110.2"
+        />
+    </TrackTransfer>
+
+    <StructureTransfer>
+        <!-- 
+            - ID = unique identification of the superstructure transfer function
+            - Default = true or false (informative)
+            - Reference = (informative), examples:
+                            IMAGINE 
+                            European Commission
+                            Member State
+                            Local User
+                            CNOSSOS
+            - Description = (informative)
+            - Values are given per 1/3 octave band  (50 Hz .. 10 kHz)
+            - NOTE: Values should be Sound Power Level per axle for use directly in Equ IV-9
+        -->
+        <Structure ID="0"  Default="true"
+                           Reference=""
+                           Description="empty superstructure transfer function"
+                           Values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0"
+        />
+        <Structure ID="1"  Default="true"
+                           Reference="IMAGINE"
+                           Description="min"
+                           Values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0"
+        />
+        <Structure ID="2"  Default="true"
+                           Reference="IMAGINE"
+                           Description="max"
+                           Values="140 140 140 140 140 140 140 140 140 140 140 140 140 140 140 140 140 140 140 140 140 140 140 140"
+        />
+        <Structure ID="3"  Default="true"
+                           Reference="CNOSSOS"
+                           Description="CNOSSOS-EU Default"
+                           Values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0"
+        />
+    </StructureTransfer>
+
+    <RailRoughness>
+        <!-- 
+            - ID = unique identification of the rail roughness
+            - Default = true or false (informative)
+            - Reference = (informative), examples:
+                            IMAGINE 
+                            European Commission
+                            Member State
+                            Local User
+                            CNOSSOS
+            - Description = (informative)
+            - RougnessCode = (informative), options
+                            Not maintained and bad condition
+                            Well maintained and very smooth
+                            Normally maintained smooth
+                            Not well maintained
+            - Values are given per wave length  (100 cm .. 0.08 cm)
+        -->
+        <Rail ID="0" Default="true"
+                     Reference=""
+                     Description="empty rail roughness"
+                     RoughnessCode=""
+                     Values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0"
+        />
+        <Rail ID="1" Default="true"
+                     Reference="IMAGINE"
+                     Description="min"
+                     RoughnessCode="Well maintained and very smooth"
+                     Values="-15 -15 -15 -15 -15 -15 -15 -15 -15 -15 -15 -15 -15 -15 -15 -15 -15 -15 -15 -15 -15 -15 -15 -15 -15 -15 -15 -15 -15 -15 -15 -15"
+        />
+        <Rail ID="2" Default="true"
+                     Reference="IMAGINE"
+                     Description="max"
+                     RoughnessCode="Not maintained and bad condition"
+                     Values="22 22 22 22 22 22 22 22 22 22 22 22 22 22 22 22 22 22 22 22 22 22 22 22 22 22 22 22 22 22 22 22"
+        />
+        <Rail ID="3" Default="true"
+                     Reference="IMAGINE"
+                     Description="EN ISO 3095 2013"
+                     RoughnessCode="Well maintained and very smooth"
+                     Values="17.1 17.1 17.1 17.1 17.1 15 13 11 9 7 4.9 2.9 0.9 -1.1 -3.2 -5 -5.6 -6.2 -6.8 -7.4 -8 -8.6 -9.2 -9.8 -10.4 -11 -11.6 -12.2 -12.8 -13.4 -14 -14"
+        />
+        <Rail ID="4" Default="true"
+                     Reference="IMAGINE"
+                     Description="Average network"
+                     RoughnessCode="Normally maintained smooth"
+                     Values="11 11 11 11 11 10 9 8 7 6 5 4 3 2 1 0 -1 -2 -3 -4 -5 -6 -7 -8 -9 -10 -11 -12 -13 -14 -15 -15"
+        />
+    </RailRoughness>
+
+    <ImpactNoise>
+        <!-- 
+            - ID = unique identification of the record
+            - Default = true or false (informative)
+            - Reference = (informative), examples:
+                            IMAGINE 
+                            European Commission
+                            Member State
+                            Local User
+                            CNOSSOS
+            - Description = (informative)
+            - RoughnessCode = (informative), options
+                            Not maintained and bad condition
+                            Well maintained and very smooth
+                            Normally maintained smooth
+                            Not well maintained
+            - JointDensity = Joint density is given per 100 meters, options
+                            2
+                            3
+                            0
+                            1
+            - JointDensityDescription = (informative), options
+                            2 switches/joints/crossings / 100m
+                            >2 switches/joints/crossings / 100m
+                            none
+                            single switch/joint/crossing / 100m
+            - Values are given per wave length  (100 cm .. 0.08 cm)
+        -->
+        <Impact ID="0"  Default="true"
+                        Reference=""
+                        Description="empty impact noise"
+                        RoughnessCode=""
+                        JointDensity=""
+                        JointDensityDescription=""
+                        Values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0"
+        />
+        <Impact ID="1"  Default="true"
+                        Reference="IMAGINE"
+                        Description="min"
+                        RoughnessCode="Normally maintained smooth"
+                        JointDensity="0"
+                        JointDensityDescription="none"
+                        Values="-40 -40 -40 -40 -40 -40 -40 -40 -40 -40 -40 -40 -40 -40 -40 -40 -40 -40 -40 -40 -40 -40 -40 -40 -40 -40 -40 -40 -40 -40 -40 -40"
+        />
+        <Impact ID="2"  Default="true"
+                        Reference="IMAGINE"
+                        Description="max"
+                        RoughnessCode="Normally maintained smooth"
+                        JointDensity="3"
+                        JointDensityDescription="more than 2 switches/joints/crossings/100m"
+                        Values="30 30 30 30 30 30 30 30 30 30 30 30 30 30 30 30 30 30 30 30 30 30 30 30 30 30 30 30 30 30 30 30"
+        />
+        <Impact ID="3"  Default="true"
+                        Reference="IMAGINE"
+                        Description="Single switch/joint/crossing/100m"
+                        RoughnessCode="Normally maintained smooth"
+                        JointDensity="1"
+                        JointDensityDescription="single switch/joint/crossing/100m"
+                        Values="22.4 22.4 22.4 23.8 24.7 24.7 23.4 21.7 20.2 20.4 20.8 20.9 19.8 18 16 13 10 6 1 -4 -11 -16.5 -18.5 -21 -22.5 -24.7 -26.6 -28.6 -30.6 -32.6 -34 -34"
+        />
+    </ImpactNoise>
+
+    <BridgeConstant>
+        <!-- 
+            - ID = unique identification of the record
+            - Default = true or false (informative)
+            - Reference = (informative), examples:
+                            IMAGINE 
+                            European Commission
+                            Member State
+                            Local User
+                            CNOSSOS
+            - Description = (informative)
+            - Value = Overall value for the bridge correction
+        -->
+        <Bridge ID="0"  Default="true"
+                        Reference=""
+                        Description="empty bridge constant"
+                        Value="0"
+        />
+        <Bridge ID="1"  Default="true"
+                        Reference="IMAGINE"
+                        Description="min"
+                        Value="0"
+        />
+        <Bridge ID="2"  Default="true"
+                        Reference="IMAGINE"
+                        Description="max"
+                        Value="9"
+        />
+        <Bridge ID="3"  Default="true"
+                        Reference="CNOSSOS"
+                        Description="Predominantly concrete or masonry bridges with any trackform"
+                        Value="1"
+        />
+        <Bridge ID="4"  Default="true"
+                        Reference="CNOSSOS"
+                        Description="Predominantly steel bridges with ballasted track"
+                        Value="4"
+        />
+    </BridgeConstant>
+</TrackParameters>

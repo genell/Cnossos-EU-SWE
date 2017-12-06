@@ -1,0 +1,861 @@
+<?xml version="1.0" ?>
+<RailParameters version="V1.0">
+    <!-- 
+        CNOSSOS_Rail_Vehicles.XML contains all look-up tables needed for the 
+        calculation of the emission of rail noise.
+    
+        Format:
+        - Decimal separator a point ('.')
+        - Spectral information is given as 
+            - 8 values for octave information (63 Hz .. 8 kHz)
+            - 24 values for 1/3 octave information (50 Hz .. 10 kHz)
+            - values are separated by 1 or more spaces.
+        - Information concerning wavelengths 
+            - is given as 32 values (100 cm .. 0.08 cm)
+            - Wavelengths:
+                100.000   80.000   63.000   50.000   40.000   31.500   25.000
+                 20.000   16.000   12.500   10.000    8.000    6.300    5.000
+                  4.000    3.150    2.500    2.000    1.600    1.250    1.000
+                  0.800    0.630    0.500    0.400    0.315    0.250    0.200
+                  0.160    0.125    0.100    0.080
+        - Values are separated by 1 or more spaces.
+    -->
+    <Date>2014-03-26</Date> <!-- Catalogue date (informative)   -->
+    <r0>1</r0>        <!-- Reference value for roughness in µm -->
+    <h1>0.5</h1>      <!-- Height of source A in m (bogie)      -->
+    <h2>4.0</h2>      <!-- Height of source B in m (pantograph) -->
+
+    <VehicleDefinition>
+        <!-- 
+            This section contains the definitions of the supported train vehicles. 
+            If a vehicle is not defined in this section, it is not calculated.
+
+            - ID = unique identification of the vehicle
+            - Code = Vehicle Code short description (informative)
+            - Description = Vehicle Type long description (informative)
+            - P_mech = Power in kW (informative)
+            - V_max = Max speed in kmh (informative)
+            - Weight = Weight in tonnes (informative)
+            - Length = Length in m
+            - Axles = no of axles
+            - WheelDiameter = in mm (informative)
+            - WheelDiameterCode = diameter in mm (large, medium, small) (informative)
+            - WheelMeasure = Wheel measures (none, wheelDampers, screens, other) (informative)
+            - BrakeCode = Brake type (castIronBlock, compositeBlock, disk) (informative)
+            - Load = load in kN (informative)
+            - RefTransfer = Reference to table "VehicleTransfer"
+            - RefContact = Reference to table "ContactFilter"
+            - RefRoughness = Reference to table "WheelRoughness" 
+            - RefTraction = Reference to table "TractionNoise"
+            - RefAerodynamic = Reference to table "AeroDynamicNoise"
+        -->
+        <Vehicle ID= "3"  Code="SNCF BB66400"
+                          Description="Diesel loc"
+                          P_mech="830"
+                          V_max="120"
+                          Weight="70"
+                          Length="14.97"
+                          Axles="4"
+                          WheelDiameter="1100"
+                          WheelDiameterCode="large"
+                          WheelMeasure="none"
+                          BrakeCode="CastIronBlock"
+                          Load="18"
+                          RefTransfer="6"
+                          RefContact="6"
+                          RefRoughness="3"
+                          RefTraction="3"
+                          RefAerodynamic="3"
+        />
+        <Vehicle ID= "4"  Code="SNCF CC72000"
+                          Description="Diesel loc"
+                          P_mech="2250"
+                          V_max="160"
+                          Weight="114"
+                          Length="20"
+                          Axles="4"
+                          WheelDiameter="1140"
+                          WheelDiameterCode="large"
+                          WheelMeasure="none"
+                          BrakeCode="CastIronBlock"
+                          Load="29"
+                          RefTransfer="6"
+                          RefContact="6"
+                          RefRoughness="3"
+                          RefTraction="4"
+                          RefAerodynamic="3"
+        />
+        <Vehicle ID= "5"  Code="RENFE Dloco"
+                          Description="Diesel loc"
+                          P_mech="1155"
+                          V_max="125"
+                          Weight="80"
+                          Length="19.5"
+                          Axles="4"
+                          WheelDiameter="1000"
+                          WheelDiameterCode="large"
+                          WheelMeasure="none"
+                          BrakeCode="CastIronBlock"
+                          Load="20"
+                          RefTransfer="3"
+                          RefContact="6"
+                          RefRoughness="3"
+                          RefTraction="5"
+                          RefAerodynamic="3"
+        />
+        <Vehicle ID= "6"  Code="NS6400 Dloco"
+                          Description="Diesel loc"
+                          P_mech="1180"
+                          V_max="125"
+                          Weight="82"
+                          Length="14.4"
+                          Axles="4"
+                          WheelDiameter="1000"
+                          WheelDiameterCode="large"
+                          WheelMeasure="none"
+                          BrakeCode="CastIronBlock"
+                          Load="21"
+                          RefTransfer="3"
+                          RefContact="6"
+                          RefRoughness="3"
+                          RefTraction="6"
+                          RefAerodynamic="3"
+        />
+        <Vehicle ID= "7"  Code="TKOJ JT42CWR/Class66"
+                          Description="Diesel loc"
+                          P_mech="2200"
+                          V_max="121"
+                          Weight="126"
+                          Length="20.1"
+                          Axles="6"
+                          WheelDiameter="1120"
+                          WheelDiameterCode="large"
+                          WheelMeasure="none"
+                          BrakeCode="CompositeBlock-k-block"
+                          Load="21"
+                          RefTransfer="6"
+                          RefContact="6"
+                          RefRoughness="4"
+                          RefTraction="7"
+                          RefAerodynamic="3"
+        />
+        <Vehicle ID= "8"  Code="NS DM 90 DMU"
+                          Description="DMU"
+                          P_mech="640"
+                          V_max="140"
+                          Weight="94"
+                          Length="52.3"
+                          Axles="4"
+                          WheelDiameter="920"
+                          WheelDiameterCode="large"
+                          WheelMeasure="none"
+                          BrakeCode="Disc-Non-Tread"
+                          Load="24"
+                          RefTransfer="3"
+                          RefContact="6"
+                          RefRoughness="5"
+                          RefTraction="8"
+                          RefAerodynamic="3"
+        />
+        <Vehicle ID= "9"  Code="NS 1700 Eloco"
+                          Description="ELoco"
+                          P_mech="4560"
+                          V_max="140"
+                          Weight="86"
+                          Length="17.6"
+                          Axles="4"
+                          WheelDiameter="1260"
+                          WheelDiameterCode="large"
+                          WheelMeasure="none"
+                          BrakeCode="CastIronBlock"
+                          Load="22"
+                          RefTransfer="6"
+                          RefContact="6"
+                          RefRoughness="3"
+                          RefTraction="9"
+                          RefAerodynamic="3"
+        />
+        <Vehicle ID= "10"  Code="NS mat 64 EMU"
+                          Description="EMU"
+                          P_mech="508"
+                          V_max="140"
+                          Weight="82"
+                          Length="52.1"
+                          Axles="4"
+                          WheelDiameter="920"
+                          WheelDiameterCode="large"
+                          WheelMeasure="none"
+                          BrakeCode="CastIronBlock"
+                          Load="21"
+                          RefTransfer="3"
+                          RefContact="6"
+                          RefRoughness="3"
+                          RefTraction="10"
+                          RefAerodynamic="3"
+        />
+        <Vehicle ID= "11"  Code="RMR Cat 1"
+                          Description="Block braked passenger"
+                          P_mech=""
+                          V_max=""
+                          Weight=""
+                          Length="26"
+                          Axles="4"
+                          WheelDiameter=""
+                          WheelDiameterCode="large"
+                          WheelMeasure="none"
+                          BrakeCode="CastIronBlock"
+                          Load=""
+                          RefTransfer="3"
+                          RefContact="6"
+                          RefRoughness="3"
+                          RefTraction="10"
+                          RefAerodynamic="3"
+        />
+        <Vehicle ID= "12"  Code="RMR Cat 2 (a)"
+                          Description="ICM-III, ICR trailer, SNCF passenger, TEE"
+                          P_mech=""
+                          V_max=""
+                          Weight=""
+                          Length="26"
+                          Axles="4"
+                          WheelDiameter=""
+                          WheelDiameterCode="large"
+                          WheelMeasure="none"
+                          BrakeCode="CastIronBlock"
+                          Load=""
+                          RefTransfer="3"
+                          RefContact="6"
+                          RefRoughness="3"
+                          RefTraction="10"
+                          RefAerodynamic="3"
+        />
+        <Vehicle ID= "13"  Code="RMR Cat 2 (b)"
+                          Description="ICR 1700, DDM-1 1800 loco, Belgian locos"
+                          P_mech=""
+                          V_max=""
+                          Weight=""
+                          Length="18"
+                          Axles="4"
+                          WheelDiameter=""
+                          WheelDiameterCode="large"
+                          WheelMeasure="none"
+                          BrakeCode="CastIronBlock"
+                          Load=""
+                          RefTransfer="6"
+                          RefContact="6"
+                          RefRoughness="3"
+                          RefTraction="9"
+                          RefAerodynamic="3"
+        />
+        <Vehicle ID= "14"  Code= "RMR Cat 3"
+                          Description="Disc braked passenger trains"
+                          P_mech=""
+                          V_max=""
+                          Weight=""
+                          Length="26"
+                          Axles="4"
+                          WheelDiameter=""
+                          WheelDiameterCode="large"
+                          WheelMeasure="none"
+                          BrakeCode="Disc-Non-Tread"
+                          Load=""
+                          RefTransfer="3"
+                          RefContact="6"
+                          RefRoughness="5"
+                          RefTraction="10"
+                          RefAerodynamic="3"
+        />
+        <Vehicle ID= "15"  Code= "RMR Cat 4"
+                          Description="Block braked freight trains variable l and no. axles"
+                          P_mech=""
+                          V_max=""
+                          Weight=""
+                          Length="n"
+                          Axles="n"
+                          WheelDiameter=""
+                          WheelDiameterCode="large"
+                          WheelMeasure="none"
+                          BrakeCode="CastIronBlock"
+                          Load=""
+                          RefTransfer="3"
+                          RefContact="6"
+                          RefRoughness="3"
+                          RefTraction="0"
+                          RefAerodynamic="3"
+        />
+        <Vehicle ID= "16"  Code= "RMR Cat 5 (a)"
+                          Description="DE1, DE2, DE3"
+                          P_mech=""
+                          V_max=""
+                          Weight=""
+                          Length="25"
+                          Axles="4"
+                          WheelDiameter=""
+                          WheelDiameterCode="large"
+                          WheelMeasure="none"
+                          BrakeCode="CastIronBlock"
+                          Load=""
+                          RefTransfer="3"
+                          RefContact="6"
+                          RefRoughness="3"
+                          RefTraction="8"
+                          RefAerodynamic="3"
+        />
+        <Vehicle ID= "17"  Code= "RMR Cat 5 (b)"
+                          Description="2200, 2300 locos"
+                          P_mech=""
+                          V_max=""
+                          Weight=""
+                          Length="14"
+                          Axles="4"
+                          WheelDiameter=""
+                          WheelDiameterCode="large"
+                          WheelMeasure="none"
+                          BrakeCode="CastIronBlock"
+                          Load=""
+                          RefTransfer="3"
+                          RefContact="6"
+                          RefRoughness="3"
+                          RefTraction="3"
+                          RefAerodynamic="3"
+        />
+        <Vehicle ID= "18"  Code= "RMR Cat 5 (c)"
+                          Description="2400, 2500 locos"
+                          P_mech=""
+                          V_max=""
+                          Weight=""
+                          Length="13"
+                          Axles="4"
+                          WheelDiameter=""
+                          WheelDiameterCode="large"
+                          WheelMeasure="none"
+                          BrakeCode="CastIronBlock"
+                          Load=""
+                          RefTransfer="3"
+                          RefContact="6"
+                          RefRoughness="3"
+                          RefTraction="3"
+                          RefAerodynamic="3"
+        />
+        <Vehicle ID= "19"  Code= "RMR Cat 6"
+                          Description="Diesel trains with disc brakes"
+                          P_mech=""
+                          V_max=""
+                          Weight=""
+                          Length="26"
+                          Axles="4"
+                          WheelDiameter=""
+                          WheelDiameterCode="large"
+                          WheelMeasure="none"
+                          BrakeCode="Disc-Non-Tread"
+                          Load=""
+                          RefTransfer="3"
+                          RefContact="6"
+                          RefRoughness="5"
+                          RefTraction="8"
+                          RefAerodynamic="3"
+        />
+        <Vehicle ID= "20"  Code= "RMR Cat 7"
+                          Description="Disc braked urban subway and rapid tram trains"
+                          P_mech=""
+                          V_max=""
+                          Weight=""
+                          Length="15"
+                          Axles="3"
+                          WheelDiameter=""
+                          WheelDiameterCode="medium"
+                          WheelMeasure="none"
+                          BrakeCode="Disc-Non-Tread"
+                          Load=""
+                          RefTransfer="3"
+                          RefContact="6"
+                          RefRoughness="5"
+                          RefTraction="10"
+                          RefAerodynamic="3"
+        />
+        <Vehicle ID= "21"  Code= "RMR Cat 8 (a)"
+                          Description="ICM IV, IRM"
+                          P_mech=""
+                          V_max=""
+                          Weight=""
+                          Length="26"
+                          Axles="4"
+                          WheelDiameter=""
+                          WheelDiameterCode="large"
+                          WheelMeasure="none"
+                          BrakeCode="Disc-Non-Tread"
+                          Load=""
+                          RefTransfer="3"
+                          RefContact="6"
+                          RefRoughness="5"
+                          RefTraction="10"
+                          RefAerodynamic="3"
+        />
+        <Vehicle ID= "22"  Code= "RMR Cat 8 (b)"
+                          Description="DDM 2/3"
+                          P_mech=""
+                          V_max=""
+                          Weight=""
+                          Length="26"
+                          Axles="4"
+                          WheelDiameter=""
+                          WheelDiameterCode="large"
+                          WheelMeasure="none"
+                          BrakeCode="CastIronBlock"
+                          Load=""
+                          RefTransfer="3"
+                          RefContact="6"
+                          RefRoughness="3"
+                          RefTraction="10"
+                          RefAerodynamic="3"
+        />
+        <Vehicle ID= "23"  Code= "RMR Cat 9 (a)"
+                          Description="TGV PBA type, power car"
+                          P_mech=""
+                          V_max=""
+                          Weight=""
+                          Length="20"
+                          Axles="4"
+                          WheelDiameter=""
+                          WheelDiameterCode="large"
+                          WheelMeasure="none"
+                          BrakeCode="CastIronBlock"
+                          Load=""
+                          RefTransfer="3"
+                          RefContact="6"
+                          RefRoughness="3"
+                          RefTraction="9"
+                          RefAerodynamic="3"
+        />
+        <Vehicle ID= "24"  Code= "RMR Cat 9 (b)"
+                          Description="TGV PBA type, trailer car adjacent to power car"
+                          P_mech=""
+                          V_max=""
+                          Weight=""
+                          Length="20"
+                          Axles="3"
+                          WheelDiameter=""
+                          WheelDiameterCode="large"
+                          WheelMeasure="none"
+                          BrakeCode="Disc-Non-Tread"
+                          Load=""
+                          RefTransfer="3"
+                          RefContact="6"
+                          RefRoughness="5"
+                          RefTraction="0"
+                          RefAerodynamic="3"
+        />
+        <Vehicle ID= "25"  Code= "RMR Cat 9 (c)"
+                          Description="TGV PBA types, other trailer cars"
+                          P_mech=""
+                          V_max=""
+                          Weight=""
+                          Length="20"
+                          Axles="2"
+                          WheelDiameter=""
+                          WheelDiameterCode="large"
+                          WheelMeasure="none"
+                          BrakeCode="Disc-Non-Tread"
+                          Load=""
+                          RefTransfer="3"
+                          RefContact="6"
+                          RefRoughness="5"
+                          RefTraction="0"
+                          RefAerodynamic="3"
+        />
+        <Vehicle ID= "26"  Code= "RMR Cat 10"
+                          Description="ICE-3 type assuming no wheel dampers"
+                          P_mech=""
+                          V_max=""
+                          Weight=""
+                          Length="25"
+                          Axles="4"
+                          WheelDiameter=""
+                          WheelDiameterCode="large"
+                          WheelMeasure="none"
+                          BrakeCode="Disc-Non-Tread"
+                          Load=""
+                          RefTransfer="3"
+                          RefContact="6"
+                          RefRoughness="5"
+                          RefTraction="10"
+                          RefAerodynamic="3"
+        />
+        />
+    </VehicleDefinition>
+ 
+    <VehicleTransfer>
+        <!-- 
+            - ID = unique identification of the vehicle transfer function
+            - Default = true or false (informative)
+            - Reference = (informative), examples:
+                            IMAGINE 
+                            European Commission
+                            Member State
+                            Local User
+                            CNOSSOS
+            - Description = (informative)
+            - WheelDiameter = diameter in mm(informative)
+            - WheelDiameterCode = wheel diameter code (informative), options:
+                            large
+                            medium
+                            small
+            - Values are given per 1/3 octave band  (50 Hz .. 10 kHz)
+        -->
+        <Transfer ID="1" Default="true"
+                         Reference="IMAGINE"
+                         Description="min"
+                         WheelDiameter=""
+                         WheelDiameterCode=""
+                         Values="60 60 60 60 60 60 60 60 60 60 60 60 60 60 60 60 60 60 60 60 60 60 60 60"
+        />
+        <Transfer ID="2" Default="true"
+                         Reference="IMAGINE"
+                         Description="max"
+                         WheelDiameter=""
+                         WheelDiameterCode=""
+                         Values="140 140 140 140 140 140 140 140 140 140 140 140 140 140 140 140 140 140 140 140 140 140 140 140"
+        />
+        <Transfer ID="3" Default="true"
+                         Reference="IMAGINE"
+                         Description="Wheel with diameter 920 mm, no measure"
+                         WheelDiameter="920"
+                         WheelDiameterCode="large"
+                         Values="75.4 77.3 81.1 84.1 83.3 84.3 86.0 90.1 89.8 89.0 88.8 90.4 92.4 94.9 100.4 104.6 109.6 114.9 115.0 115.0 115.5 115.6 116.0 116.7"
+        />
+        <Transfer ID="4" Default="true"
+                         Reference="IMAGINE"
+                         Description="Wheel with diameter 840 mm, no measure"
+                         WheelDiameter="840"
+                         WheelDiameterCode="large"
+                         Values="75.4 77.3 81.1 84.1 82.8 83.3 84.1 86.9 87.9 89.9 90.9 91.5 91.5 93.0 98.7 101.6 107.6 111.9 114.5 114.5 115.0 115.1 115.5 116.2"
+        />
+        <Transfer ID="5" Default="true"
+                         Reference="IMAGINE"
+                         Description="Wheel with diameter 680 mm, no measure"
+                         WheelDiameter="680"
+                         WheelDiameterCode="medium"
+                         Values="75.4 77.3 81.1 84.1 82.8 83.3 83.9 86.3 88.0 92.2 93.9 92.5 90.9 90.4 93.2 93.5 99.6 104.9 108.0 111.0 111.5 111.6 112.0 112.7"
+        />
+        <Transfer ID="6" Default="true"
+                         Reference="IMAGINE"
+                         Description="Wheel with diameter 1200 mm, no measure"
+                         WheelDiameter="1200"
+                         WheelDiameterCode="large"
+                         Values="75.4 77.3 81.1 84.1 82.8 83.3 84.5 90.4 90.4 89.9 90.1 91.3 91.5 93.6 100.5 104.6 115.6 115.9 116.0 116.0 116.5 116.6 117.0 117.7"
+        />
+    </VehicleTransfer>
+
+    <ContactFilter>
+        <!-- 
+            - ID = unique identification of the contact filter
+            - Default = true or false (informative)
+            - Reference = (informative), examples:
+                            IMAGINE 
+                            European Commission
+                            Member State
+                            Local User
+                            CNOSSOS
+            - Description = (informative)
+            - Load = Load in kN (informative)
+            - WheelDiameter = diameter in mm(informative)
+            - WheelDiameterCode = wheel diameter code (informative), options:
+                            large
+                            medium
+                            small
+            - Values are given per 1/3 octave band  (50 Hz .. 10 kHz)
+        -->
+        <Contact ID="1" Default="true"
+                        Reference="IMAGINE"
+                        Description="min"
+                        Load=""
+                        WheelDiameter=""
+                        WheelDiameterCode=""
+                        Values="-30 -30 -30 -30 -30 -30 -30 -30 -30 -30 -30 -30 -30 -30 -30 -30 -30 -30 -30 -30 -30 -30 -30 -30 -30 -30 -30 -30 -30 -30 -30 -30"
+        />
+        <Contact ID="2" Default="true"
+                        Reference="IMAGINE"
+                        Description="max"
+                        Load=""
+                        WheelDiameter=""
+                        WheelDiameterCode=""
+                        Values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0"
+        />
+        <Contact ID="3" Default="true"
+                        Reference="IMAGINE"
+                        Description="Axle load 50kN - wheel diameter 360mm"
+                        Load="50"
+                        WheelDiameter="360"
+                        WheelDiameterCode="small"
+                        Values="0 0 0 0 0 0 0 0 0 0 0 0 0 -0.2 -0.5 -1.2 -2 -3 -4.3 -6 -8.4 -12 -11.5 -12.5 -13.9 -14.7 -15.6 -16.6 -17.6 -18.6 -19.6 -20.6"
+        />
+        <Contact ID="4" Default="true"
+                        Reference="IMAGINE"
+                        Description="Axle load 50kN - wheel diameter 680mm"
+                        Load="50"
+                        WheelDiameter="680"
+                        WheelDiameterCode="medium"
+                        Values="0 0 0 0 0 0 0 0 0 0 0 0 -0.2 -0.4 -0.7 -1.5 -2.8 -4.5 -7 -10.3 -12 -12.5 -13.5 -16 -16 -16.5 -17 -18 -19 -20.2 -21.2 -22.2"
+        />
+        <Contact ID="5" Default="true"
+                        Reference="IMAGINE"
+                        Description="Axle load 50kN - wheel diameter 920mm"
+                        Load="50"
+                        WheelDiameter="920"
+                        WheelDiameterCode="large"
+                        Values="0 0 0 0 0 0 0 0 0 0 0 0 -0.2 -0.5 -0.9 -1.6 -2.5 -3.8 -5.8 -8.5 -12 -12.6 -13.5 -14.5 -16 -16.5 -17.7 -18.6 -19.6 -20.6 -21.6 -22.6"
+        />
+        <Contact ID="6" Default="true"
+                        Reference="IMAGINE"
+                        Description="Axle load 25kN - wheel diameter 920mm"
+                        Load="25"
+                        WheelDiameter="920"
+                        WheelDiameterCode="large"
+                        Values="0 0 0 0 0 0 0 0 0 0 0 -0.2 -0.5 -0.9 -1.6 -2.5 -3.8 -5.8 -8.5 -11.4 -12 -13.5 -14.5 -16 -16.5 -17.7 -18.6 -19.6 -20.6 -21.6 -22.6 -23.6"
+        />
+        <Contact ID="7" Default="true"
+                        Reference="IMAGINE"
+                        Description="Axle load 100kN - wheel diameter 920mm"
+                        Load="100"
+                        WheelDiameter="920"
+                        WheelDiameterCode="large"
+                        Values="0 0 0 0 0 0 0 0 0 0 0 -0.2 -0.6 -1.3 -2.2 -3.7 -5.8 -9 -11.5 -12.5 -12 -14 -15 -17 -18.4 -19.5 -20.5 -21.5 -22.4 -23.5 -24.5 -25.4"
+        />
+    </ContactFilter>
+
+    <WheelRoughness>
+        <!-- 
+            - ID = unique identification of the wheel roughness
+            - Default = true or false (informative)
+            - Reference = (informative), examples:
+                            IMAGINE 
+                            European Commission
+                            Member State
+                            Local User
+                            CNOSSOS
+            - Description = (informative)
+            - Values are given per wave length (100cm .. 0.08cm)
+        -->
+        <Roughness ID="1"  Default="TRUE"
+                           Reference="IMAGINE"
+                           Description="min"
+                           Values="-15.00 -15.00 -15.00 -15.00 -15.00 -15.00 -15.00 -15.00 -15.00 -15.00 -15.00 -15.00 -15.00 -15.00 -15.00 -15.00 -15.00 -15.00 -15.00 -15.00 -15.00 -15.00 -15.00 -15.00 -15.00 -15.00 -15.00 -15.00 -15.00 -15.00 -15.00 -15.00"
+        />
+        <Roughness ID="2"  Default="TRUE"
+                           Reference="IMAGINE"
+                           Description="max"
+                           Values="25.00 25.00 25.00 25.00 25.00 25.00 25.00 25.00 25.00 25.00 25.00 25.00 25.00 25.00 25.00 25.00 25.00 25.00 25.00 25.00 25.00 25.00 25.00 25.00 25.00 25.00 25.00 25.00 25.00 25.00 25.00 25.00"
+        />
+        <Roughness ID="3"  Default="TRUE"
+                           Reference="IMAGINE"
+                           Description="standard freight cast iron tread"
+                           Values="2.17 2.17 2.17 2.17 2.17 2.17 2.17 2.17 2.37 0.61 2.61 5.76 8.78 11.11 10.96 9.79 7.49 5.15 3.02 1.29 0.17 -0.70 -1.17 -1.02 0.27 0.24 1.32 3.10 3.10 3.10 3.10 3.10"
+        />
+        <Roughness ID="4"  Default="TRUE"
+                           Reference="IMAGINE"
+                           Description="freight with k-block composite"
+                           Values="-3.95 -3.95 -3.95 -3.95 -3.95 -3.95 -3.95 -3.95 -3.95 -3.95 -3.95 -4.34 -4.62 -4.90 -5.22 -6.31 -6.80 -7.24 -7.27 -7.27 -7.14 -6.94 -6.68 -5.99 -3.75 -2.38 -2.59 -2.46 -2.46 -2.46 -2.46 -2.46"
+        />
+        <Roughness ID="5"  Default="TRUE"
+                           Reference="IMAGINE"
+                           Description="passenger disc brake"
+                           Values="-5.93 -5.93 -5.93 -5.93 -5.93 -5.93 2.32 2.82 2.56 1.22 2.06 0.92 -0.25 -1.57 -2.85 -4.94 -7.00 -8.58 -9.32 -9.51 -10.12 -10.25 -10.33 -10.81 -10.91 -9.52 -9.52 -9.52 -9.52 -9.52 -9.52 -9.52"
+        />
+    </WheelRoughness>
+
+    <TractionNoise>
+        <!-- 
+            - ID = unique identification of the traction noise
+            - Default = true or false (informative)
+            - Reference = (informative), examples:
+                            IMAGINE 
+                            European Commission
+                            Member State
+                            Local User
+                            CNOSSOS
+            - Description = (informative)
+            - Type = A: values for source located at bogie height (0.5m)
+                     B: values for source located at pantograph height (4.0m)
+            - Constant = Traction noise for constant speed
+            - Accelerating = Traction noise for accelerating vehicles
+            - Decelerating = Traction noise for decelerating vehicles
+            - Idling = Traction noise for idling vehicles
+            - Values are given per 1/3 octave band  (50 Hz .. 10 kHz)
+            - NOTE 1: Values should be Sound Power Level per vehicle for use directly in Equ IV-8
+            - NOTE 2: Values were converted from SPL to SWL using method in IMAGINE
+        -->
+        <Traction ID="1" Default="true"
+                         Reference="IMAGINE"
+                         Description="min">
+            <Source Type="A"
+                    Constant="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0"
+                    Accelerating="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0"
+                    Decelerating="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0"
+                    Idling="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0"
+            />
+            <Source Type="B"
+                    Constant="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0"
+                    Accelerating="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0"
+                    Decelerating="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0"
+                    Idling="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0"
+            />
+        </Traction>
+        <Traction ID="2" Default="true"
+                         Reference="IMAGINE"
+                         Description="max">
+            <Source Type="A"
+                    Constant="140 140 140 140 140 140 140 140 140 140 140 140 140 140 140 140 140 140 140 140 140 140 140 140"
+                    Accelerating="140 140 140 140 140 140 140 140 140 140 140 140 140 140 140 140 140 140 140 140 140 140 140 140"
+                    Decelerating="140 140 140 140 140 140 140 140 140 140 140 140 140 140 140 140 140 140 140 140 140 140 140 140"
+                    Idling="140 140 140 140 140 140 140 140 140 140 140 140 140 140 140 140 140 140 140 140 140 140 140 140"
+            />
+            <Source Type="B"
+                    Constant="140 140 140 140 140 140 140 140 140 140 140 140 140 140 140 140 140 140 140 140 140 140 140 140"
+                    Accelerating="140 140 140 140 140 140 140 140 140 140 140 140 140 140 140 140 140 140 140 140 140 140 140 140"
+                    Decelerating="140 140 140 140 140 140 140 140 140 140 140 140 140 140 140 140 140 140 140 140 140 140 140 140"
+                    Idling="140 140 140 140 140 140 140 140 140 140 140 140 140 140 140 140 140 140 140 140 140 140 140 140"
+            />
+        </Traction>
+        <Traction ID="3" Default="true"
+                         Reference="IMAGINE"
+                         Description="Diesel locomotive (c. 800kW)">
+            <Source Type="A"
+                    Constant="98.86 94.76 92.56 94.56 92.76 92.76 92.96 94.76 94.56 95.66 95.56 98.56 95.16 95.06 95.06 94.06 94.06 99.36 92.46 89.46 86.96 84.06 81.46 79.16"
+                    Accelerating="96.86 102.76 100.56 97.56 95.76 95.76 95.96 97.76 97.56 98.66 98.56 102.56 98.16 98.06 98.06 97.06 97.06 97.36 105.46 97.46 94.96 92.06 89.46 87.16"
+                    Decelerating="87.86 83.76 86.56 88.56 86.76 86.76 86.96 88.76 88.56 89.66 89.56 93.56 89.16 89.06 89.06 88.06 88.06 86.36 83.46 80.46 77.96 75.06 72.46 70.16"
+                    Idling="87.86 83.76 86.56 88.56 86.76 86.76 86.96 88.76 88.56 89.66 89.56 93.56 89.16 89.06 89.06 88.06 88.06 86.36 83.46 80.46 77.96 75.06 72.46 70.16"
+            />
+            <Source Type="B"
+                    Constant="103.16 99.96 95.46 93.96 93.26 93.56 92.86 92.66 92.36 92.76 92.76 96.76 92.66 92.96 92.86 93.06 93.16 98.26 91.46 88.66 85.96 83.36 80.86 78.66"
+                    Accelerating="101.16 107.96 103.46 96.96 96.26 96.56 95.86 95.66 95.36 95.76 95.76 100.76 95.66 95.96 95.86 96.06 96.16 96.26 104.46 96.66 93.96 91.36 88.86 86.66"
+                    Decelerating="92.16 88.96 89.46 87.96 87.26 87.56 86.86 86.66 86.36 86.76 86.76 91.76 86.66 86.96 86.86 87.06 87.16 85.26 82.46 79.66 76.96 74.36 71.86 69.66"
+                    Idling="92.16 88.96 89.46 87.96 87.26 87.56 86.86 86.66 86.36 86.76 86.76 91.76 86.66 86.96 86.86 87.06 87.16 85.26 82.46 79.66 76.96 74.36 71.86 69.66"
+            />
+        </Traction>
+        <Traction ID="4" Default="true"
+                         Reference="IMAGINE"
+                         Description="Diesel locomotive (c. 2200kW)">
+            <Source Type="A"
+                    Constant="99.41 107.31 103.11 102.11 99.31 99.31 99.51 101.31 101.11 102.21 102.11 101.11 101.71 101.61 99.31 96.01 93.71 101.91 89.51 87.11 90.51 31.41 81.21 79.61"
+                    Accelerating="99.41 102.31 113.11 107.11 103.31 102.31 102.51 104.31 104.11 105.21 105.11 104.11 104.71 104.61 102.31 99.01 96.71 94.71 105.01 90.11 88.31 93.61 84.21 82.61"
+                    Decelerating="89.41 90.31 103.11 95.11 93.31 93.31 93.51 95.31 95.11 96.21 96.11 95.11 95.71 95.61 93.31 96.61 87.71 85.71 87.01 81.11 79.31 77.11 75.21 73.61"
+                    Idling="89.41 90.31 103.11 95.11 93.31 93.31 93.51 95.31 95.11 96.21 96.11 95.11 95.71 95.61 93.31 96.61 87.71 85.71 87.01 81.11 79.31 77.11 75.21 73.61"
+            />
+            <Source Type="B"
+                    Constant="103.71 112.51 106.01 101.51 99.81 100.11 99.41 99.21 98.91 99.31 99.31 99.31 99.21 99.51 97.11 95.01 92.81 100.81 88.51 86.31 89.51 30.71 80.61 79.11"
+                    Accelerating="103.71 107.51 116.01 106.51 103.81 103.11 102.41 102.21 101.91 102.31 102.31 102.31 102.21 102.51 100.11 98.01 95.81 93.61 104.01 89.31 87.31 92.91 83.61 82.11"
+                    Decelerating="93.71 95.51 106.01 94.51 93.81 94.11 93.41 93.21 92.91 93.31 93.31 93.31 93.21 93.51 91.11 95.61 86.81 84.61 86.01 80.31 78.31 76.41 74.61 73.11"
+                    Idling="93.71 95.51 106.01 94.51 93.81 94.11 93.41 93.21 92.91 93.31 93.31 93.31 93.21 93.51 91.11 95.61 86.81 84.61 86.01 80.31 78.31 76.41 74.61 73.11"
+            />
+        </Traction>
+        <Traction ID="8" Default="true"
+                         Reference="IMAGINE"
+                         Description="Diesel multiple unit">
+            <Source Type="A"
+                    Constant="82.58 82.48 89.28 90.28 93.48 99.48 98.68 95.48 90.28 91.38 91.28 90.28 90.88 91.78 92.78 92.78 90.78 88.08 85.18 83.18 81.68 78.78 76.18 73.88"
+                    Accelerating="80.58 86.48 88.28 94.28 91.48 96.48 102.68 103.48 98.28 94.38 94.28 93.28 93.88 93.78 94.78 94.78 95.78 94.08 91.18 88.18 86.68 84.78 82.18 79.88"
+                    Decelerating="78.58 79.48 88.28 84.28 82.48 82.48 88.68 84.48 84.28 85.38 85.28 84.28 90.88 84.78 84.78 83.78 83.78 84.08 82.18 79.18 75.68 71.78 68.18 64.88"
+                    Idling="78.58 79.48 88.28 84.28 82.48 82.48 88.68 84.48 84.28 85.38 85.28 84.28 90.88 84.78 84.78 83.78 83.78 84.08 82.18 79.18 75.68 71.78 68.18 64.88"
+            />
+            <Source Type="B"
+                    Constant="86.88 87.68 92.18 89.68 93.98 100.28 98.58 93.38 88.08 88.48 88.48 88.48 88.38 89.68 90.58 91.78 89.88 86.98 84.18 82.38 80.68 78.08 75.58 73.38"
+                    Accelerating="84.88 91.68 91.18 93.68 91.98 97.28 102.58 101.38 96.08 91.48 91.48 91.48 91.38 91.68 92.58 93.78 94.88 92.98 90.18 87.38 85.68 84.08 81.58 79.38"
+                    Decelerating="82.88 84.68 91.18 83.68 82.98 83.28 88.58 82.38 82.08 82.48 82.48 82.48 88.38 82.68 82.58 82.78 82.88 82.98 81.18 78.38 74.68 71.08 67.58 64.38"
+                    Idling="82.88 84.68 91.18 83.68 82.98 83.28 88.58 82.38 82.08 82.48 82.48 82.48 88.38 82.68 82.58 82.78 82.88 82.98 81.18 78.38 74.68 71.08 67.58 64.38"
+            />
+        </Traction>
+        <Traction ID="9" Default="true"
+                         Reference="IMAGINE"
+                         Description="Electric locomotive">
+            <Source Type="A"
+                    Constant="87.86 90.76 91.56 94.56 94.76 96.76 103.96 100.76 99.56 101.66 98.56 95.56 95.16 96.06 92.06 89.06 87.06 85.36 83.46 81.46 79.96 78.06 76.46 75.16"
+                    Accelerating="87.86 94.76 91.56 94.56 94.76 96.76 107.96 100.76 99.56 105.66 98.56 95.56 95.16 100.06 92.06 89.06 87.06 85.36 83.46 81.46 79.96 78.06 76.46 75.16"
+                    Decelerating="78.86 84.76 82.56 85.56 85.76 87.76 97.96 91.76 90.56 95.66 89.56 86.56 86.16 90.06 83.06 80.06 78.06 76.36 74.46 72.46 70.96 69.06 67.46 66.16"
+                    Idling="78.86 84.76 82.56 85.56 85.76 87.76 97.96 91.76 90.56 95.66 89.56 86.56 86.16 90.06 83.06 80.06 78.06 76.36 74.46 72.46 70.96 69.06 67.46 66.16"
+            />
+            <Source Type="B"
+                    Constant="92.16 95.96 94.46 93.96 95.26 97.56 103.86 98.66 97.36 98.76 95.76 93.76 92.66 93.96 89.86 88.06 86.16 84.26 82.46 80.66 78.96 77.36 75.86 74.66"
+                    Accelerating="92.16 99.96 94.46 93.96 95.26 97.56 107.86 98.66 97.36 102.76 95.76 93.76 92.66 97.96 89.86 88.06 86.16 84.26 82.46 80.66 78.96 77.36 75.86 74.66"
+                    Decelerating="83.16 89.96 85.46 84.96 86.26 88.56 97.86 89.66 88.36 92.76 86.76 84.76 83.66 87.96 80.86 79.06 77.16 75.26 73.46 71.66 69.96 68.36 66.86 65.66"
+                    Idling="83.16 89.96 85.46 84.96 86.26 88.56 97.86 89.66 88.36 92.76 86.76 84.76 83.66 87.96 80.86 79.06 77.16 75.26 73.46 71.66 69.96 68.36 66.86 65.66"
+            />
+        </Traction>
+        <Traction ID="10" Default="true"
+                          Reference="IMAGINE"
+                          Description="Electric multiple unit ">
+            <Source Type="A"
+                    Constant="80.55 81.45 80.55 82.25 80.05 79.75 79.65 96.45 80.55 81.35 97.25 79.55 79.85 86.75 81.75 82.75 80.75 78.05 75.15 72.15 69.65 66.75 64.15 61.85"
+                    Accelerating="80.55 81.45 80.55 82.25 94.45 79.75 79.65 96.45 80.55 81.35 80.85 79.55 79.85 86.75 81.75 82.75 80.75 78.05 75.15 72.15 69.65 66.75 64.15 61.85"
+                    Decelerating="80.55 81.45 80.55 82.25 80.05 79.75 79.65 81.05 80.55 81.35 80.85 79.55 79.85 86.75 81.75 82.75 80.75 78.05 75.15 72.15 69.65 66.75 64.15 61.85"
+                    Idling="80.55 81.45 80.55 82.25 80.05 79.75 79.65 81.05 80.55 81.35 80.85 79.55 79.85 86.75 81.75 82.75 80.75 78.05 75.15 72.15 69.65 66.75 64.15 61.85"
+            />
+            <Source Type="B"
+                    Constant="84.85 86.65 83.45 81.65 80.55 80.55 79.55 94.35 78.35 78.45 94.45 77.75 77.35 84.65 79.55 81.75 79.85 76.95 74.15 71.35 68.65 66.05 63.55 61.35"
+                    Accelerating="84.85 86.65 83.45 81.65 94.95 80.55 79.55 94.35 78.35 78.45 78.05 77.75 77.35 84.65 79.55 81.75 79.85 76.95 74.15 71.35 68.65 66.05 63.55 61.35"
+                    Decelerating="84.85 86.65 83.45 81.65 80.55 80.55 79.55 78.95 78.35 78.45 78.05 77.75 77.35 84.65 79.55 81.75 79.85 76.95 74.15 71.35 68.65 66.05 63.55 61.35"
+                    Idling="84.85 86.65 83.45 81.65 80.55 80.55 79.55 78.95 78.35 78.45 78.05 77.75 77.35 84.65 79.55 81.75 79.85 76.95 74.15 71.35 68.65 66.05 63.55 61.35"
+            />
+        </Traction>
+    </TractionNoise>
+
+    <AerodynamicNoise>
+        <!-- 
+            - ID = unique identification of the aerodynamic noise 
+            - Default = true or false (informative)
+            - Reference = (informative), examples:
+                            IMAGINE 
+                            European Commission
+                            Member State
+                            Local User
+                            CNOSSOS
+            - Description = (informative)
+            - Type = A: values for source located at bogie height (0.5m)
+                     B: values for source located at pantograph height (4.0m)
+            - V0 = Speed at which the given values are determined
+            - Alpha = 
+            - Values are given per 1/3 octave band  (50 Hz .. 10 kHz)
+        -->
+        <Aerodynamic ID="1" Default="true"
+                            Reference="IMAGINE"
+                            Description="min">
+            <Source Type="A"
+                    V0="0"
+                    Values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0"
+                    Alpha="0"
+            />
+            <Source Type="B"
+                    V0="0"
+                    Values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0"
+                    Alpha="0"
+            />
+        </Aerodynamic>
+        <Aerodynamic ID="2" Default="true"
+                            Reference="IMAGINE"
+                            Description="max">
+            <Source Type="A"
+                    V0="400"
+                    Values="140 140 140 140 140 140 140 140 140 140 140 140 140 140 140 140 140 140 140 140 140 140 140 140"
+                    Alpha="100"
+            />
+            <Source Type="B"
+                    V0="400"
+                    Values="140 140 140 140 140 140 140 140 140 140 140 140 140 140 140 140 140 140 140 140 140 140 140 140"
+                    Alpha="100"
+            />
+        </Aerodynamic>
+        <Aerodynamic ID="3" Default="true"
+                            Reference="IMAGINE"
+                            Description="Aerodynamic noise given at 300 km/h">
+            <Source Type="A"
+                    V0="300"
+                    Values="112.6 113.2 115.7 117.4 115.3 115.0 114.9 116.4 115.9 116.3 116.2 115.2 115.8 115.7 115.7 114.7 114.7 115.0 114.5 113.1 112.1 110.6 109.6 108.8"
+                    Alpha="50"
+            />
+            <Source Type="B"
+                    V0="300"
+                    Values="36.7 38.5 39.0 37.5 36.8 37.1 36.4 36.2 35.9 36.3 36.3 36.3 36.2 36.5 36.4 105.2 110.3 110.4 105.6 37.2 37.5 37.9 38.4 39.2"
+                    Alpha="50"
+            />
+        </Aerodynamic>
+    </AerodynamicNoise>
+</RailParameters>

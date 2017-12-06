@@ -1,0 +1,20 @@
+﻿<?xml version="1.0"?>
+<CNOSSOS_Industry_Input>
+	<Test>true</Test>				<!-- Create file with intermediate results -->
+	
+	<Source	Ref="95">				<!-- References SourceDefinition ID in CNOSSOS_Industry_Catalogue -->
+		<Height>0.05</Height>		<!-- Source height, in m (optional; if omitted, the referenced source height is used) -->
+		<Period>12</Period>			<!-- T0 = Reference period of time in hours (e.g. day is 12 hours, evening is 4 hours, night is 8 hours) -->
+		<SourceTime>8</SourceTime>	<!-- t = Active source time per period based on a yearly averaged situation, in hours -->
+		<Vehicles moving="true">	<!-- Whether the source consists of moving vehicles -->
+			<Count>1</Count>		<!-- Number of vehicles passages per period -->
+			<Speed>15</Speed>		<!-- Speed of the vehicle [km/h] -->
+			<Length>100</Length>	<!-- Total length of the source [m] -->
+		</Vehicles>
+		<Directivity>				<!-- The direction of the source.
+											This can be specified using either Euler angles or a 
+											vector, where 0° by 0° is equivalent to (1, 0, 0). -->
+			<Angle horz="  0" vert="  0" />
+		</Directivity>
+	</Source>
+</CNOSSOS_Industry_Input>

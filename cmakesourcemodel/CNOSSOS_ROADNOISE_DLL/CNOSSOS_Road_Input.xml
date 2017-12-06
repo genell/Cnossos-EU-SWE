@@ -1,0 +1,56 @@
+<?xml version="1.0" ?>
+<SourceDefinition version="V1.0">
+	<!-- 
+		CNOSSOS_Road_Input.XML contains all user input data needed for 
+		the calculation of the emission of road noise.
+		
+		Format:
+		- Decimal separator a point ('.')
+		- Spectral information is given as 
+		  - 8 values for octave information (63 Hz .. 8 kHz)
+		  - 24 values for 1/3 octave information (50 Hz .. 10 kHz)
+		  - values are separated by 1 or more spaces.
+	-->
+	<RoadSegment>
+		<Test>true</Test>     <!-- Create file with intermediate results (true/false)   -->
+		<Taverage>15</Taverage> <!-- Average temperature (III-10)                         -->
+		<Slope>10</Slope>       <!-- Slope s in % (III-13), (III-14), (III-15), (III-16)  -->
+		<Surface Ref="NL01"/>     <!-- Reference to CNOSSOS_Road_Surfaces.xml               -->
+		<Tstudded>4</Tstudded> <!-- Months per year vehicles equipped with studded tyres -->
+		<SpeedVariations>
+			<Distance>50.0</Distance> <!-- Distance to junction (III-17), (III-18)        -->
+			<Type>1</Type>           <!-- Type of junction (III-17), (III-18)            -->
+		</SpeedVariations>
+	
+		<Category Ref="1">
+			<Q>1000.0</Q>
+			<V>70</V>
+			<Fstud>0.5</Fstud> <!-- Fraction of vehicles equipped with studded tyres (III-8) -->
+		</Category>
+		<Category Ref="2">
+			<Q>1000.0</Q>
+			<V>70</V>
+			<Fstud>0</Fstud> <!-- Fraction of vehicles equipped with studded tyres (III-8) -->
+		</Category>
+		<Category Ref="3">
+			<Q>1000.0</Q>
+			<V>70</V>
+			<Fstud>0</Fstud> <!-- Fraction of vehicles equipped with studded tyres (III-8) -->
+		</Category>
+		<Category Ref="4a">
+			<Q>1000.0</Q>
+			<V>70</V>
+			<Fstud>0</Fstud> <!-- Fraction of vehicles equipped with studded tyres (III-8) -->
+		</Category>
+		<Category Ref="4b">
+			<Q>1000.0</Q>
+			<V>70</V>
+			<Fstud>0</Fstud> <!-- Fraction of vehicles equipped with studded tyres (III-8) -->
+		</Category>
+		<Category Ref="5">
+			<Q>1000.0</Q>
+			<V>70</V>
+			<Fstud>0</Fstud> <!-- Fraction of vehicles equipped with studded tyres (III-8) -->
+		</Category>
+	</RoadSegment>
+</SourceDefinition>
