@@ -10,13 +10,21 @@
  *	18/01/2013	initial version
  * ------------------------------------------------------------------------------------------------- 
  */
+#ifdef WIN32
 #include "stdafx.h"
 #include <conio.h>
+#endif
 
 #include "JRC-2012.h"
 #include "JRC-draft-2010.h"
 #include "ISO_WithMeteo.h"
 #include "PathParseXML.h"
+#ifdef __GNUC__
+#ifndef WIN32
+#include <curses.h>
+#define _getch getch
+#endif
+#endif
 
 using namespace CnossosEU ;
 using namespace System ;

@@ -18,11 +18,20 @@
  *
  * ------------------------------------------------------------------------------------------------- 
  */
+#ifdef WIN32
 #include "stdafx.h"
-#include "CnossosPropagation.h"
-#include <stdio.h>
 #include <conio.h>
+#endif
+#include "../CnossosPropagation/CnossosPropagation.h"
+#include <stdio.h>
 #include <limits>
+#ifdef __GNUC__
+#ifndef WIN32
+#include <curses.h>
+#define _getch getch
+#endif
+#endif
+
 /*
  *  utility function for printing out spectral values
  */

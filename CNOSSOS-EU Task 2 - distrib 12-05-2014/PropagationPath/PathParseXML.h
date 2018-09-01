@@ -11,7 +11,7 @@
  *	18/01/2013	initial version
  * ------------------------------------------------------------------------------------------------- 
  */
-#include "../SimpleXMl/SimpleXML.h"
+#include "../SimpleXML/SimpleXML.h"
 #include "./PropagationPath.h"
 #include "./CalculationMethod.h"
 #include "./ErrorMessage.h"

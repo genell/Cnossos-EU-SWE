@@ -18,8 +18,21 @@
 #include "CalculationMethod.h"
 #include "PathParseXML.h"
 #include "PathResult.h"
+#ifdef WIN32
 #include <direct.h>
+#endif
 #include <string>
+#ifdef __GNUC__
+#ifndef WIN32
+// #include <curses.h>
+#define _getcwd getcwd 
+#define _strdup strdup
+#define _access access
+#define _chdir chdir
+// #define _getch getch
+#endif
+#endif
+
 
 using namespace CnossosEU ;
 using namespace System ;

@@ -20,11 +20,17 @@
  * note that this may be fixed in a future version of the C++ standard which will include generic 
  * support for atomic data types.
  */
+#ifdef WIN32
 #include <windows.h>
-
 namespace System
 {
 	long atomic_increment (volatile long* x) { return ::InterlockedIncrement (x) ; }
 	long atomic_decrement (volatile long* x) { return ::InterlockedDecrement (x) ; }
 }
-
+#else
+namespace System
+{
+	long atomic_increment (volatile long* x) { return __sync_fetch_and_add(x, 1); }
+	long atomic_decrement (volatile long* x) { return __sync_fetch_and_add(x, 1); }
+}
+#endif

@@ -28,11 +28,23 @@
 #ifndef __GNUC__
 #include "stdafx.h"
 #endif
+#ifdef WIN32
 #include <conio.h>
 #include <direct.h>
+#endif
 #include "PathParseXML.h"
 #include "PathResult.h"
 #include "Material.h"
+#ifdef __GNUC__
+#ifndef WIN32
+#include <curses.h>
+#define _getcwd getcwd 
+#define _strdup strdup
+#define _access access
+#define _chdir chdir
+#define _getch getch
+#endif
+#endif
 
 using namespace CnossosEU ;
 using namespace System ;
@@ -97,7 +109,9 @@ extern void show_libraries(unsigned int processID = -1) ;
 static void show_libraries(unsigned int processID = -1) { }
 #endif
 
+#ifdef WIN32
 extern bool CopyToClipboard (CnossosEU::PathResult& result) ;
+#endif
 
 #ifdef __GNUC__
 int  main (int argc, char* argv[])
@@ -126,7 +140,7 @@ int _tmain (int argc, _TCHAR* argv[])
 		/*
 		 * no options specified: print usage message
 		 */
-		printf (usage) ;
+		printf ("%s", usage) ;
 		exit(0) ;
 	}
 	else
@@ -287,7 +301,7 @@ int _tmain (int argc, _TCHAR* argv[])
 		unsigned int nb_calls ;
 		double cpu_time ;
 		method->getPerformanceCounter (nb_calls, cpu_time) ;
-		printf (".%ld calls to P2P calculation in %.6fms \n", nb_calls, cpu_time*1000.) ;
+		printf (".%d calls to P2P calculation in %.6fms \n", nb_calls, cpu_time*1000.) ;
 		printf ("Noise levels\n") ;
 		print_results_to_stdout (result) ;
 		/*
@@ -303,8 +317,12 @@ int _tmain (int argc, _TCHAR* argv[])
 		 */
 		if (copy_to_clipboard)
 		{
+#ifdef WIN32			
 			bool ok = CopyToClipboard (result) ;
 			printf ("Copy results to clipboard : %s \n", ok ? "OK" : "failed") ;
+#else
+			printf ("Clipboard output only supported on Windows builds\n") ;
+#endif
 		}
 	}
 	/*

@@ -25,8 +25,9 @@
 #include <limits>
 #include <complex>
 #include <float.h>
-
-
+#ifdef __GNUC__
+#define _finite finite
+#endif
 namespace CnossosEU
 {
 	extern double negative_inf ;

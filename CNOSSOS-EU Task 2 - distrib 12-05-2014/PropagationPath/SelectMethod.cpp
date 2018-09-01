@@ -15,6 +15,7 @@
 #include "JRC-draft-2010.h"
 #include "JRC-2012.h"
 #include "ISO-9613-2.h"
+#include "../system/environment.h"
 
 using namespace CnossosEU ;
 
