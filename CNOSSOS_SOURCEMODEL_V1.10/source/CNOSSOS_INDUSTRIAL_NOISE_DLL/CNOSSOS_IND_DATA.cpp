@@ -1,4 +1,6 @@
 #include "stdafx.h"
+#include <limits>
+#include <cmath>
 #include <iostream>
 #include <fstream>
 #include "CNOSSOS_IND_DATA.h"
@@ -347,7 +349,7 @@ namespace CNOSSOS_INDUSTRIAL_NOISE
 	bool IndustrySourceSet::writeDebugData( const string fn )
 	{
 		ofstream csv;
-		csv.open(fn, ios_base::out);
+		csv.open(fn.c_str(), ios_base::out);
 		if (!csv)
 		{
 			cerr << "!!! Unable to write to file " << fn << endl;

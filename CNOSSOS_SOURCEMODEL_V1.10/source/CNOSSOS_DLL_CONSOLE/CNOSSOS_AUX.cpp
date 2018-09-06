@@ -63,7 +63,7 @@ namespace CNOSSOS
 	{
 		string token;
 		istringstream iss(s);
-		iss.imbue(locale("C", locale::numeric));
+		iss.imbue(locale("C"));
 		int i = 0;
 		while (iss >> token && i < count)
 		{
@@ -77,7 +77,7 @@ namespace CNOSSOS
 	string stringFromFloats(const double *f, const int count, const char separator)
 	{
 		ostringstream oss;
-		oss.imbue(locale("C", locale::numeric));
+		oss.imbue(locale("C"));
 		for (int i = 0; i < count; i++)
 		{
 			if (i > 0)
@@ -93,7 +93,7 @@ namespace CNOSSOS
 	string stringFromFloat(double n)
 	{
 		ostringstream oss;
-		oss.imbue(locale("C", LC_ALL));
+		oss.imbue(locale("C"));
 		oss << n;
 		return oss.str();
 	}

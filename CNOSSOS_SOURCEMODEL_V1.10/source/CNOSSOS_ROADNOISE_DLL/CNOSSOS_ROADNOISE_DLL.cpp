@@ -85,7 +85,7 @@ namespace CNOSSOS_ROADNOISE
 	/// <summary>
 	/// Set the properties for the temperature correection
 	/// </summary>
-	/// <param name='temperature'>The average yearly air temperature, in °C</param>
+	/// <param name='temperature'>The average yearly air temperature, in ï¿½C</param>
 	// --------------------------------------------------------------------------------------------------------
 	void SetTemperatureProperties(const double temperature)
 	{
@@ -182,6 +182,7 @@ namespace CNOSSOS_ROADNOISE
 	// --------------------------------------------------------------------------------------------------------
 	string getDllPath()
 	{
+#ifdef WIN32
 		char path[MAX_PATH];
 		HMODULE hm = NULL;
 		if (!GetModuleHandleExA(GET_MODULE_HANDLE_EX_FLAG_FROM_ADDRESS | 
@@ -193,6 +194,10 @@ namespace CNOSSOS_ROADNOISE
 		}
 		GetModuleFileNameA(hm, path, sizeof(path));	
 		return path;
+#else
+		// Non-windows just use current directory for now
+		return "./";
+#endif
 	}
 	
 	// --------------------------------------------------------------------------------------------------------

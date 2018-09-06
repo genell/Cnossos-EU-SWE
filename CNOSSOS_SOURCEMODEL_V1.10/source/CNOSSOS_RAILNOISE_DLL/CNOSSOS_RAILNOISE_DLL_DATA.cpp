@@ -1,14 +1,13 @@
 ﻿#pragma once
-#include "stdafx.h"
 
 #include "CNOSSOS_RAILNOISE_DLL_CONST.h"
 #include "CNOSSOS_RAILNOISE_DLL_DATA.h"
 #include "CNOSSOS_RAILNOISE_DLL_AUX.h"
-#include "..\CNOSSOS_DLL_CONSOLE\CNOSSOS_AUX.h"
+#include "../CNOSSOS_DLL_CONSOLE/CNOSSOS_AUX.h"
 #include "../tinyxml/tinyxml.h"
 
 #include <iostream>
-#include <math.h> 
+#include <cmath> 
 
 using namespace std;
 using namespace CNOSSOS;
@@ -36,9 +35,9 @@ namespace CNOSSOS_RAILNOISE
 	/// <param name="v">Speed [km/h]</param>
 	/// <param name="λ">Wavelength [cm]</param>
 	/// <returns>Frequency [Hz]</returns>
-	double frequency(const double v, const double λ)
+	double frequency(const double v, const double lambda)
 	{
-		return v / (0.036 * λ);
+		return v / (0.036 * lambda);
 	}
 
 	/// <summary>
@@ -51,14 +50,14 @@ namespace CNOSSOS_RAILNOISE
 	{
 		for (int i = 0; i < MAX_FREQ_BAND; i++)
 		{
-			double λ = wavelength(v, FreqBands[i]);
+			double lambda = wavelength(v, FreqBands[i]);
 			// find out the boundary wavelengths
 			int l1 = 0;
 			int l2 = -1;
 			for (int l = 0; l < MAX_WAVELENGTH; l++)
 			{ 
 				// The Wavelengths array is sorted in descending order, from long to short
-				if (λ >= Wavelengths[l])
+				if (lambda >= Wavelengths[l])
 				{
 					l2 = l;
 					l1 = l - 1;
@@ -82,9 +81,9 @@ namespace CNOSSOS_RAILNOISE
 			else
 			{
 				// Interpolate the values
-				double λ1 = Wavelengths[l1];
-				double λ2 = Wavelengths[l2];
-				double fraction = (λ - λ1) / (λ2 - λ1);
+				double lambda1 = Wavelengths[l1];
+				double lambda2 = Wavelengths[l2];
+				double fraction = (lambda - lambda1) / (lambda2 - lambda1);
 				freqs[i] = wls[l1] + fraction * (wls[l2] - wls[l1]);
 			}
 		}
@@ -366,8 +365,8 @@ namespace CNOSSOS_RAILNOISE
 	{
 		bool result = true;
 
-		result = calc_Δdirectivity_vertical() && result; // => 3.3.1
-		result = calc_Δdirectivity_horizontal() && result; // => 3.3.2
+		result = calc_ddirectivity_vertical() && result; // => 3.3.1
+		result = calc_ddirectivity_horizontal() && result; // => 3.3.2
 		if (!result)
 			return result;
 
@@ -394,13 +393,13 @@ namespace CNOSSOS_RAILNOISE
 
 			if (sub_result) {
 				for(int i = 0; i < MAX_FREQ_BAND; i++) {
-					double ΔLw0dir;
+					double dLw0dir;
 					if (p == B && source_type != aerodynamic) { // vertical directivity correction at 4.0m only applies to aerodynamic noise
-						ΔLw0dir = vehicle->ΔLw0dirHorz[i];
+						dLw0dir = vehicle->dLw0dirHorz[i];
 					} else {
-						ΔLw0dir = vehicle->ΔLw0dirVert[p][i] + vehicle->ΔLw0dirHorz[i];
+						dLw0dir = vehicle->dLw0dirVert[p][i] + vehicle->dLw0dirHorz[i];
 					}
-					vehicle->Lw0dir_[source_type][p][i] = vehicle->Lw0[source_type][p][i] + ΔLw0dir;	// IV-4
+					vehicle->Lw0dir_[source_type][p][i] = vehicle->Lw0[source_type][p][i] + dLw0dir;	// IV-4
 
 					vehicle->Lw0dir[p][i] += erg(vehicle->Lw0dir_[source_type][p][i]);
 				}
@@ -424,9 +423,9 @@ namespace CNOSSOS_RAILNOISE
 	/// Calculates the Δdirectivity_vertical.
 	/// </summary>
 	/// <returns>true if successful</returns>
-	bool RailSection::calc_Δdirectivity_vertical() // 3.3.1
+	bool RailSection::calc_ddirectivity_vertical() // 3.3.1
 	{
-		double ψ = track->get_angle_vertical() * PI / 180;
+		double psi = track->get_angle_vertical() * PI / 180;
 		for(int i = 0; i < MAX_FREQ_BAND; i++)
 		{
 			double fci;
@@ -437,16 +436,16 @@ namespace CNOSSOS_RAILNOISE
 				case A: // h == 0.5
 					fci = FreqBands[i];
 					t1 = 40.0 / 3.0;
-					t2 = (2.0/3.0) * sin(2.0 * ψ) - sin(ψ);
+					t2 = (2.0/3.0) * sin(2.0 * psi) - sin(psi);
 					t3 = log10((fci+600.0) / 200.0);
 
-					vehicle->ΔLw0dirVert[p][i] = abs( t1 * t2 * t3 ); // IV-15
+					vehicle->dLw0dirVert[p][i] = abs( t1 * t2 * t3 ); // IV-15
 					break; 
 				case B: // h == 4.0
-					if (ψ < 0) {
-						vehicle->ΔLw0dirVert[p][i] = 10 * log10(pow(cos(ψ), 2)); // IV-16
+					if (psi < 0) {
+						vehicle->dLw0dirVert[p][i] = 10 * log10(pow(cos(psi), 2)); // IV-16
 					} else {
-						vehicle->ΔLw0dirVert[p][i] = 0; // IV-17
+						vehicle->dLw0dirVert[p][i] = 0; // IV-17
 					}
 					break; 
 			}
@@ -458,12 +457,12 @@ namespace CNOSSOS_RAILNOISE
 	/// Calculates the Δdirectivity_horizontal.
 	/// </summary>
 	/// <returns>true if successful</returns>
-	bool RailSection::calc_Δdirectivity_horizontal() // 3.3.2
+	bool RailSection::calc_ddirectivity_horizontal() // 3.3.2
 	{
-		double φ = track->get_angle_horizontal() * PI / 180;
+		double phi = track->get_angle_horizontal() * PI / 180;
 		for (int i = 0; i < MAX_FREQ_BAND; i++)
 		{
-			vehicle->ΔLw0dirHorz[i] = dB(0.01 + 0.99 * pow(sin(φ), 2));
+			vehicle->dLw0dirHorz[i] = dB(0.01 + 0.99 * pow(sin(phi), 2));
 		}
 		return true;
 	}
@@ -509,7 +508,7 @@ namespace CNOSSOS_RAILNOISE
 			vehicle->LwVehSup[i] = LrTot + vehicle->LHVehSup[i] + dB(Na);
 			
 			vehicle->Lw0[rolling][p][i] = dBsum(vehicle->LwTr[i], vehicle->LwVeh[i], vehicle->LwVehSup[i])
-											+ vehicle->ΔLsqueal[i] + vehicle->ΔLbridge;
+											+ vehicle->dLsqueal[i] + vehicle->dLbridge;
 		}
 
 		return result;
@@ -589,16 +588,16 @@ namespace CNOSSOS_RAILNOISE
 	bool RailSection::calc_squeal() // 3.4.4
 	{
 		double R = track->get_curve_radius(); // radius of the curve [m]
-		double ΔLsqueal; // [dB]
+		double dLsqueal; // [dB]
 		if (R < 300) {
-			ΔLsqueal = 8;
+			dLsqueal = 8;
 		} else if (R < 500) {
-			ΔLsqueal = 5;
+			dLsqueal = 5;
 		} else {
-			ΔLsqueal = 0;
+			dLsqueal = 0;
 		}
 		for (int i = 0; i < MAX_FREQ_BAND; i++) {
-			vehicle->ΔLsqueal[i] = ΔLsqueal;
+			vehicle->dLsqueal[i] = dLsqueal;
 		}
 		return true;
 	}
@@ -609,7 +608,7 @@ namespace CNOSSOS_RAILNOISE
 	/// <returns>true if successful</returns>
 	bool RailSection::calc_bridge() // 3.4.5
 	{
-		vehicle->ΔLbridge = track->lookup_bridge();
+		vehicle->dLbridge = track->lookup_bridge();
 		return true;
 	}
 
@@ -648,14 +647,14 @@ namespace CNOSSOS_RAILNOISE
 
 		freqs Lw0 = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
 		if (vehicle->v > 200) {
-			double	v0, α;
+			double	v0, alpha;
 			freqs Lw0v0;
-			result = vehicle->lookup_aerodynamic_noise(this->p, Lw0v0, v0, α) && (v0 != 0);
+			result = vehicle->lookup_aerodynamic_noise(this->p, Lw0v0, v0, alpha) && (v0 != 0);
 			if (result)
 			{
 				for (int i = 0; i < MAX_FREQ_BAND; i++)
 				{
-					Lw0[i] = Lw0v0[i] + α * log10(vehicle->v / v0);
+					Lw0[i] = Lw0v0[i] + alpha * log10(vehicle->v / v0);
 				}
 			}
 		}
@@ -750,7 +749,7 @@ namespace CNOSSOS_RAILNOISE
 	
 	bool RailSection::writeDebugData( const string fn ) {
 		ofstream csv;
-		csv.open(fn, ios_base::out);
+		csv.open(fn.c_str(), ios_base::out);
 		if (!csv)
 		{
 			cerr << "!!! Unable to write to file " << fn << endl;
@@ -821,18 +820,18 @@ namespace CNOSSOS_RAILNOISE
 					csv << "Lw0dir\t"+ps+"\t"+st+"\t"; writeFrequencies(csv, vehicle->Lw0dir_[source_type][p]);
 					csv << "Lw0\t"+ps+"\t"+st+"\t"; writeFrequencies(csv, vehicle->Lw0[source_type][p]);
 				}
-				csv << "deltaLw0dirVert\t"+ps+"\t\t"; writeFrequencies(csv, vehicle->ΔLw0dirVert[p]);
+				csv << "deltaLw0dirVert\t"+ps+"\t\t"; writeFrequencies(csv, vehicle->dLw0dirVert[p]);
 				csv << endl;
 			} // for p
-			csv << "deltaLw0dirHorz\t\t\t"; writeFrequencies(csv, vehicle->ΔLw0dirHorz);
+			csv << "deltaLw0dirHorz\t\t\t"; writeFrequencies(csv, vehicle->dLw0dirHorz);
 			csv << endl;
 			
 			// Intermediate results independent of physical source
 			csv << "LwTr\t\t\t"; writeFrequencies(csv, vehicle->LwTr);
 			csv << "LwVeh\t\t\t"; writeFrequencies(csv, vehicle->LwVeh);
 			csv << "LwVehSup\t\t\t"; writeFrequencies(csv, vehicle->LwVehSup);
-			csv << "deltaLsqueal\t\t\t"; writeFrequencies(csv, vehicle->ΔLsqueal);
-			csv << "deltaLbridge\t\t\t" << vehicle->ΔLbridge << endl;
+			csv << "deltaLsqueal\t\t\t"; writeFrequencies(csv, vehicle->dLsqueal);
+			csv << "deltaLbridge\t\t\t" << vehicle->dLbridge << endl;
 			csv << "LRtot\t\t\t"; writeFrequencies(csv, vehicle->LRtot);
 			csv << "LHTr\t\t\t"; writeFrequencies(csv, vehicle->LHTr);
 			csv << "LHVeh\t\t\t"; writeFrequencies(csv, vehicle->LHVeh);
@@ -955,9 +954,9 @@ namespace CNOSSOS_RAILNOISE
 		clear(Lw0dir_[traction][B]);
 		clear(Lw0dir_[aerodynamic][A]);
 		clear(Lw0dir_[aerodynamic][B]);
-		clear(ΔLw0dirVert[A]);
-		clear(ΔLw0dirVert[B]);
-		clear(ΔLw0dirHorz);
+		clear(dLw0dirVert[A]);
+		clear(dLw0dirVert[B]);
+		clear(dLw0dirHorz);
  		clear(Lw0[rolling][A]);
 		clear(Lw0[rolling][B]);
 		clear(Lw0[traction][A]);
@@ -967,8 +966,8 @@ namespace CNOSSOS_RAILNOISE
 		clear(LwTr);
 		clear(LwVeh);
 		clear(LwVehSup);
-		clear(ΔLsqueal);
-		ΔLbridge = 0.0;
+		clear(dLsqueal);
+		dLbridge = 0.0;
 		clear(LRtot);
 		clear(LHTr);
 		clear(LHVeh);
@@ -1030,7 +1029,7 @@ namespace CNOSSOS_RAILNOISE
 		return result;
 	}
 
-	bool RailVehicle::lookup_aerodynamic_noise(const PhysicalSourceEnum p, freqs& Lw0v0, double& v0, double& α) {
+	bool RailVehicle::lookup_aerodynamic_noise(const PhysicalSourceEnum p, freqs& Lw0v0, double& v0, double& alpha) {
 		const string	baseXPath = "/RailParameters/AerodynamicNoise/Aerodynamic";
 		string			id = xmlDefinition->Attribute("RefAerodynamic");
 		TiXmlElement*	xmlVehicle = findElementByAttribute(&catalogue->docVehicles, baseXPath, "ID", id);
@@ -1044,7 +1043,7 @@ namespace CNOSSOS_RAILNOISE
 			return false;
 		}
 		return (xmlSource->QueryDoubleAttribute("V0", &v0) == TIXML_SUCCESS
-				&& xmlSource->QueryDoubleAttribute("Alpha", &α) == TIXML_SUCCESS
+				&& xmlSource->QueryDoubleAttribute("Alpha", &alpha) == TIXML_SUCCESS
 				&& selectFreqs(xmlSource, "Values", Lw0v0));
 	}
 

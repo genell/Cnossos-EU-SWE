@@ -19,6 +19,7 @@
 #include "CNOSSOS_ROADNOISE_DLL_CONST.h"
 #include "CNOSSOS_ROADNOISE_DLL_DATA.h"
 #include "CNOSSOS_ROADNOISE_DLL_AUX.h"
+#include <cmath>
 #include <iostream>
 #include <sstream>
 #include <iomanip>
@@ -169,7 +170,7 @@ namespace CNOSSOS_ROADNOISE
 		{
 			// Formula III-17
 			double Cfactor = cat->speedVariationCoefficient[this->AccProp->K][ngROLLING];
-			DeltaRollingAccCorrection[m][i] = Cfactor * max(1 - (abs(this->AccProp->distance) / 100),0);
+			DeltaRollingAccCorrection[m][i] = Cfactor * max(1 - (abs(this->AccProp->distance) / 100),0.0);
 		}
 		else
 			DeltaRollingAccCorrection[m][i] = 0;			
@@ -224,7 +225,7 @@ namespace CNOSSOS_ROADNOISE
 	{
 		// Formula III-20
 		double Alpha = this->SurfaceProp->coefficientA[m][i];
-		DeltaPropulsionRoadCorrection[m][i] = min(Alpha,0);
+		DeltaPropulsionRoadCorrection[m][i] = min(Alpha,0.0);
 		return DeltaPropulsionRoadCorrection[m][i];
 	}
 
@@ -255,7 +256,7 @@ namespace CNOSSOS_ROADNOISE
 		{
 			// Formula III-18
 			double Cfactor = cat->speedVariationCoefficient[this->AccProp->K][ngPROPULSION];
-			DeltaPropulsionAccCorrection[m][i] = Cfactor * max(1 - (abs(this->AccProp->distance) / 100),0);
+			DeltaPropulsionAccCorrection[m][i] = Cfactor * max(1 - (abs(this->AccProp->distance) / 100),0.0);
 		}
 		else
 			DeltaPropulsionAccCorrection[m][i] = 0;			
@@ -390,7 +391,7 @@ namespace CNOSSOS_ROADNOISE
 	{
 		string token;
 		istringstream iss(s);
-		iss.imbue(locale("C", locale::numeric));
+		iss.imbue(locale("C"));
 		int i = 0;
 		while (iss >> token && i < count)
 		{
@@ -404,7 +405,7 @@ namespace CNOSSOS_ROADNOISE
 	string stringFromFloats(const double *f, const int count, const char separator = ' ')
 	{
 		ostringstream oss;
-		oss.imbue(locale("C", locale::numeric));
+		oss.imbue(locale("C"));
 		for (int i = 0; i < count; i++)
 		{
 			if (i > 0)
@@ -572,7 +573,7 @@ namespace CNOSSOS_ROADNOISE
 	string floatToString(double n)
 	{
 		ostringstream oss;
-		oss.imbue(locale("C", LC_ALL));
+		oss.imbue(locale("C"));
 		oss << n;
 		return oss.str();
 	}
@@ -659,7 +660,7 @@ namespace CNOSSOS_ROADNOISE
 		// DEBUG DATA UITSPUGEN 
 
 		ofstream myfile;
-		myfile.open(debugfile);
+		myfile.open(debugfile.c_str());
 		if (!myfile)
 		{
 			cerr << "Unable to write to file " << debugfile << endl;

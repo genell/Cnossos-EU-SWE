@@ -14,6 +14,7 @@ namespace CNOSSOS_INDUSTRIAL_NOISE
 	// --------------------------------------------------------------------------------------------------------
 	string getDllPath()
 	{
+		#ifdef WIN32
 		char path[MAX_PATH];
 		HMODULE hm = NULL;
 		if (!GetModuleHandleExA(GET_MODULE_HANDLE_EX_FLAG_FROM_ADDRESS | 
@@ -25,6 +26,9 @@ namespace CNOSSOS_INDUSTRIAL_NOISE
 		}
 		GetModuleFileNameA(hm, path, sizeof(path));	
 		return path;
+		#else
+		return "./";
+		#endif
 	}
 
 	// --------------------------------------------------------------------------------------------------------
@@ -52,7 +56,7 @@ namespace CNOSSOS_INDUSTRIAL_NOISE
 
 			// create and load catalogue
 			catalogue = new IndustryCatalogue();
-			if (!catalogue->loadFromXmlFile(dllPath + "cnossos_industry_catalogue.xml"))
+			if (!catalogue->loadFromXmlFile(dllPath + "CNOSSOS_Industry_Catalogue.xml"))
 				return -1;
 
 			// initialize current source set
@@ -96,9 +100,6 @@ namespace CNOSSOS_INDUSTRIAL_NOISE
 	/// <returns>0 = OK, 1 = error while loading, 2 = error while calculating, 3 = error while saving, 4 = internal error</returns>
 	int CalcFromFile(const string infile, const string outfile)
 	{
-		TCHAR buffer[MAX_PATH];
-		GetCurrentDirectory(MAX_PATH, buffer);
-		
 		int result = 0;
 		if (currentSourceSet == NULL)
 		{
@@ -128,5 +129,4 @@ namespace CNOSSOS_INDUSTRIAL_NOISE
 		}
 		return 1;
 	};
-
 }
