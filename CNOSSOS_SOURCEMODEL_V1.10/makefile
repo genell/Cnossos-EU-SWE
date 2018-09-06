@@ -10,7 +10,7 @@ bld_dirs = $(dist_dir) $(build_dir)
 # prefix build/dist dirs to dependencies, based on variable suffix
 deps = $(patsubst %, $(build_dir)/%,$(filter %.o %.a,$(1))) $(patsubst %, $(dist_dir)/%,$(filter %.so,$(1)))
 
-deliverables = CnossosConsole #libIndustrialNoise.so libRailNoise.so libRoadNoise.so
+deliverables = libIndustrialNoise.so libRailNoise.so libRoadNoise.so CnossosConsole
 
 all: $(patsubst %, $(dist_dir)/%,$(deliverables))
 
@@ -35,7 +35,7 @@ $(build_dir)/%.o: %.c | $(bld_dirs)
 
 staticlib = ar rcs $@ $^
 sharedlib = $(CXX) -shared -o $@ $^
-consoleapp = $(CXX) -o $@ $^ -lcurses  -Wl,-rpath=.
+consoleapp = $(CXX) -o $@ $^ -lcurses -L$(dist_dir) -Wl,-R. -lRoadNoise -lRailNoise -lIndustrialNoise
 
 #
 # tinyxml
@@ -50,35 +50,35 @@ $(build_dir)/tinyxml.a: $(call deps,$(TINYXML_DEPS))
 #
 # Road noise
 #
-roadnoise: $(build_dir)/libRoadNoise.a
+roadnoise: $(dist_dir)/libRoadNoise.so
 ROADNOISE_DEPS = CNOSSOS_ROADNOISE_DLL.o CNOSSOS_ROADNOISE_DLL_AUX.o CNOSSOS_ROADNOISE_DLL_CONST.o CNOSSOS_ROADNOISE_DLL_DATA.o
-$(build_dir)/libRoadNoise.a: $(call deps,$(ROADNOISE_DEPS))
-	$(staticlib);
+$(dist_dir)/libRoadNoise.so: $(call deps,$(ROADNOISE_DEPS))
+	$(sharedlib);
 	cp source/CNOSSOS_ROADNOISE_DLL/*.xml $(dist_dir);
 
 #
 # railnoise
 #
-railnoise: $(build_dir)/libRailNoise.a
+railnoise: $(dist_dir)/libRailNoise.so
 RAILNOISE_DEPS = CNOSSOS_RAILNOISE_DLL.o CNOSSOS_RAILNOISE_DLL_AUX.o CNOSSOS_RAILNOISE_DLL_CONST.o CNOSSOS_RAILNOISE_DLL_DATA.o
-$(build_dir)/libRailNoise.a: $(call deps,$(RAILNOISE_DEPS))
-	$(staticlib)
+$(dist_dir)/libRailNoise.so: $(call deps,$(RAILNOISE_DEPS))
+	$(sharedlib)
 	cp source/CNOSSOS_RAILNOISE_DLL/*.xml $(dist_dir);
 
 #
 # industrial noise
 #
-industrialnoise: $(build_dir)/libIndustrialNoise.a
+industrialnoise: $(dist_dir)/libIndustrialNoise.so
 INDNOISE_DEPS = CNOSSOS_INDUSTRIAL_NOISE_DLL.o CNOSSOS_IND_DATA.o
-$(build_dir)/libIndustrialNoise.a: $(call deps,$(INDNOISE_DEPS))
-	$(staticlib)
+$(dist_dir)/libIndustrialNoise.so: $(call deps,$(INDNOISE_DEPS))
+	$(sharedlib)
 	cp source/CNOSSOS_INDUSTRIAL_NOISE_DLL/*.xml $(dist_dir);
 
 #
 # Cnossos console app
 #
-cnossosconsole: $(dist_dir)/CnossosConsole
-CNOSCON_DEPS = CNOSSOS_DLL_CONSOLE.o CNOSSOS_AUX.o tinyxml.a libIndustrialNoise.a libRailNoise.a libRoadNoise.a
+cnossosconsole: $(dist_dir)/CnossosConsole | roadnoise railnoise industrialnoise
+CNOSCON_DEPS = CNOSSOS_DLL_CONSOLE.o CNOSSOS_AUX.o tinyxml.a #libIndustrialNoise.so libRailNoise.so libRoadNoise.so
 $(dist_dir)/CnossosConsole: $(call deps,$(CNOSCON_DEPS))
 	$(consoleapp);
 
