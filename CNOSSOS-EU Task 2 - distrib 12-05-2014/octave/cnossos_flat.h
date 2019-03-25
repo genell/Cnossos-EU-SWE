@@ -3,8 +3,7 @@
 // Cnossos deps
 #include "CalculationMethod.h"
 #include "PropagationPath.h"
-// #include "PathResult.h"
-// #include "Material.h"
+#include "PathResult.h"
 
 struct CnossosFlatArgs {
   std::string method;
@@ -16,4 +15,22 @@ struct CnossosFlatArgs {
   NDArray Lw;
 };
 
-void SetupConfig(CnossosEU::PropagationPathOptions &options, CnossosEU::PropagationPath &path, CnossosEU::CalculationMethod* method, CnossosFlatArgs &args);
+class CnossosFlat {
+private:
+  CnossosFlatArgs &args;
+  System::ref_ptr<CnossosEU::CalculationMethod> method;
+  CnossosEU::PropagationPathOptions options;
+  CnossosEU::PropagationPath path;
+  CnossosEU::PathResult result;
+public:
+  CnossosFlat(CnossosFlatArgs &args) : args(args) {
+    method = CnossosEU::getCalculationMethod(args.method.c_str());
+    if (method == 0)
+    {
+      error("invalid method. Legal values are \"ISO-9613-2\", \"JRC-2012\" or \"JRC-DRAFT-2010\"\n");
+    }
+  };
+  void setupConfig();
+  void eval();
+  void resultToMatrix(Matrix &matrix);
+};

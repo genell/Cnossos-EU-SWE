@@ -4,12 +4,8 @@
 #include "ElementarySource.h"
 #include "Material.h"
 #include "Geometry3D.h"
-#include "PathResult.h"
 
 using namespace CnossosEU ;
-
-//CnossosEU::PropagationPath path;
-//CnossosEU::PathResult result;
 
 /**
  * cnossos_flat("JRC-2012", 0.5, 5, 100, 2, "C", [0 0 0 0 0 0 0 0])
@@ -25,18 +21,14 @@ DEFUN_DLD (cnossos_flat, args, ,
   "Usage: cnossos_flat(M, HS, D1, D, HR, I, [L1..L8])\n\
     M: Calculation method. Legal values are \"ISO-9613-2\", \"JRC-2012\" or \"JRC-DRAFT-2010\"\n\
     HS: Source height\n\
-    D1: ??? \n\
-    D: ??? \n\
-    HR: ??? \n\
-    I: ??? \n\
-    L1..L8: ??? \n\
+    D1: Road distance \n\
+    D: Receiver distance \n\
+    HR: Receiver height \n\
+    I: Receiver material \n\
+    L1..L8: Sound power spectrum \n\
   "
   )
 {
-  // octave_stdout << "Hello World has "
-  //               << args.length () << " input arguments and "
-  //               << 1 << " output arguments.\n";
-
   // Validate arguments
   if (args.length() != 7)
     error("Expected exactly 7 parameters: M, HS, Dl, D, HR, I, [L1..L8]");
@@ -55,17 +47,7 @@ DEFUN_DLD (cnossos_flat, args, ,
   if (args(6).ndims() != 2 || args(6).dims().elem(1) != 8)
     error("Parameter 'L' must be an array of length 8");
 
-  System::ref_ptr<CalculationMethod> method = getCalculationMethod(args(0).string_value().c_str());
-  if (method == 0)
-  {
-      error("invalid method specified on command line, using input file instead\n") ;
-  }
-
-
   CnossosFlatArgs flatArgs;
-  PropagationPathOptions options;
-  PropagationPath path;
-
   flatArgs.method = args(0).string_value();
   flatArgs.sourceHeight = args(1).double_value();
   flatArgs.D1 = args(2).double_value();
@@ -74,20 +56,17 @@ DEFUN_DLD (cnossos_flat, args, ,
   flatArgs.receiverMaterialId = args(5).string_value();
   flatArgs.Lw = args(6).array_value();
 
-  SetupConfig(options, path, method, flatArgs);
+  CnossosFlat cnFlat(flatArgs);
+  cnFlat.setupConfig();
+  cnFlat.eval();
 
-  for (int i=0; i<flatArgs.Lw.numel(); i++) {
-    octave_stdout << "L" << i << "=" << flatArgs.Lw(i) << std::endl;
-  }
+  Matrix m(13,8);
+  cnFlat.resultToMatrix(m);
 
-	PathResult result;
-	method->setOptions (options) ;
-	method->doCalculation (path, result) ;
-
-  return octave_value (Matrix(13,8,123));
+  return octave_value(m);
 }
 
-void SetupConfig(PropagationPathOptions &options, PropagationPath &path, CalculationMethod* method, CnossosFlatArgs &args) {
+void CnossosFlat::setupConfig() {
   /*
   <method>
     <select id="_M_" />
@@ -174,19 +153,34 @@ void SetupConfig(PropagationPathOptions &options, PropagationPath &path, Calcula
   path.add(receiver);
 }
 
-//"JRC-2012",0.5,5,100,2,"C",[0 0 0 0 0 0 0 0]
-int main( int argc, const char* argv[] ) { 
+void CnossosFlat::eval() {
+	method->setOptions(options) ;
+	method->doCalculation(path, result) ;
+}
 
-  System::ref_ptr<CalculationMethod> method = getCalculationMethod("JRC-2012");
-  if (method == 0)
-  {
-      error("invalid method specified on command line, using input file instead\n") ;
+void CnossosFlat::resultToMatrix(Matrix &matrix) {
+  double* pM = matrix.fortran_vec();
+  for (int i=0; i<8; i++) {
+    int mBase = 13*i;
+    pM[0+mBase] = result.Lw.data(i); // sound power of the source
+		pM[1+mBase] =	result.dBA.data(i); // dB(A) weighting 
+		pM[2+mBase]	= result.delta_Lw.data(i); // sound power adapter
+		pM[3+mBase] =	result.AttGeo; // geometrical spread
+		pM[4+mBase] =	result.AttAir.data(i); // air absorption
+		pM[5+mBase] =	result.AttAbsMat.data(i); // attenuation due to absorption by reflecting obstacles
+		pM[6+mBase] =	result.AttLatDif.data(i); // attenuation due to lateral diffraction
+		pM[7+mBase] =	result.AttSize.data(i); // correction for finite size of obstacles
+		pM[8+mBase] =	result.AttF.data(i); // excess attenuation under favorable conditions
+		pM[9+mBase] =	result.AttH.data(i); // excess attenuation under homogeneous conditions
+		pM[10+mBase] = result.LpF.data(i); // sound pressure level under favorable conditions
+		pM[11+mBase] = result.LpH.data(i); // sound pressure level under homogeneous conditions 
+		pM[12+mBase] = result.Leq.data(i); // long-time averaged sound pressure level
   }
+}
 
+// Test stub
+int main( int argc, char** argv ) { 
   CnossosFlatArgs flatArgs;
-  PropagationPathOptions options;
-  PropagationPath path;
-
   flatArgs.method = "JRC-2012";
   flatArgs.sourceHeight = 0.5;
   flatArgs.D1 = 5;
@@ -195,10 +189,7 @@ int main( int argc, const char* argv[] ) {
   flatArgs.receiverMaterialId = "C";
   flatArgs.Lw = Array<double>();
 
-  SetupConfig(options, path, method, flatArgs);
-
-	PathResult result;
-	method->setOptions (options) ;
-	method->doCalculation (path, result) ;
-
+  CnossosFlat cnFlat(flatArgs);
+  cnFlat.setupConfig();
+  cnFlat.eval();
 }
