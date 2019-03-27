@@ -27,7 +27,7 @@ public:
     method = CnossosEU::getCalculationMethod(args.method.c_str());
     if (method == 0)
     {
-      error("invalid method. Legal values are \"ISO-9613-2\", \"JRC-2012\" or \"JRC-DRAFT-2010\"\n");
+      error("invalid method. Legal values are \"CNOSSOS-2018\", \"ISO-9613-2\", \"JRC-2012\" or \"JRC-DRAFT-2010\"\n");
     }
   };
   void setupConfig();

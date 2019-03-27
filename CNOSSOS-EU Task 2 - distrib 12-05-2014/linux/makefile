@@ -58,7 +58,7 @@ $(build_dir)/libHarmonoise.a: $(call deps,$(HARMONOISE_DEPS))
 # PropagationPath
 #
 propagationpath: $(build_dir)/libPropagation.a
-PROPPATH_DEPS = CalculationMethod.o ISO-9613-2.o JRC-2012.o JRC-draft-2010.o Material.o MeanPlane.o MeteoCondition.o PathParseXML.o PathResult.o PropagationPath.o ReferenceObject.o SelectMethod.o SourceGeometry.o Spectrum.o SystemClock.o unixgcc.o
+PROPPATH_DEPS = CalculationMethod.o CNOSSOS-2018.o ISO-9613-2.o JRC-2012.o JRC-draft-2010.o Material.o MeanPlane.o MeteoCondition.o PathParseXML.o PathResult.o PropagationPath.o ReferenceObject.o SelectMethod.o SourceGeometry.o Spectrum.o SystemClock.o unixgcc.o
 $(build_dir)/libPropagation.a: $(call deps,$(PROPPATH_DEPS))
 	$(staticlib)
 

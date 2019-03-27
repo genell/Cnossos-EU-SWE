@@ -19,7 +19,7 @@ using namespace CnossosEU ;
  */
 DEFUN_DLD (cnossos_flat, args, ,
   "Usage: cnossos_flat(M, HS, D1, D, HR, I, [L1..L8])\n\
-    M: Calculation method. Legal values are \"ISO-9613-2\", \"JRC-2012\" or \"JRC-DRAFT-2010\"\n\
+    M: Calculation method. Legal values are \"CNOSSOS-2018\", \"ISO-9613-2\", \"JRC-2012\" or \"JRC-DRAFT-2010\"\n\
     HS: Source height\n\
     D1: Road distance \n\
     D: Receiver distance \n\
