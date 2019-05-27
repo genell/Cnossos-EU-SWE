@@ -1,6 +1,8 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28922.388
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TestCnossos", "Cnossos-EU\Cnossos-EU.vcxproj", "{609B4312-FD66-4349-A332-276984CE0DAE}"
 	ProjectSection(ProjectDependencies) = postProject
 		{6D763543-A057-4244-88C5-9825456534BF} = {6D763543-A057-4244-88C5-9825456534BF}
@@ -35,6 +37,11 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TestCnossosDLL", "TestCnoss
 	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TestCnossosEXT", "TestCnossosEXT\TestCnossosEXT.vcxproj", "{DD5DBD5B-E012-469E-ABD6-CE543A539454}"
+	ProjectSection(ProjectDependencies) = postProject
+		{6D763543-A057-4244-88C5-9825456534BF} = {6D763543-A057-4244-88C5-9825456534BF}
+		{95FEDCA2-062C-4ECC-81C7-670F49BD8DBB} = {95FEDCA2-062C-4ECC-81C7-670F49BD8DBB}
+		{2762EDB0-47EC-4E5D-8D8F-EBD1AC4DBA5D} = {2762EDB0-47EC-4E5D-8D8F-EBD1AC4DBA5D}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -77,5 +84,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F9B008ED-0A3F-470D-9563-DFBBA03F45CD}
 	EndGlobalSection
 EndGlobal

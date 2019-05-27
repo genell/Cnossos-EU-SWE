@@ -22,6 +22,7 @@
 #include "Material.h"
 #include "VerticalExt.h"
 #include <stdio.h>
+#include <algorithm>
 
 using namespace CnossosEU ;
 using namespace Geometry ;

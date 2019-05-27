@@ -16,6 +16,7 @@
 #include "VerticalExt.h"
 #include "Material.h"
 #include "ErrorMessage.h"
+#include <algorithm>
 
 #ifdef __GNUC__
 #define sprintf_s sprintf

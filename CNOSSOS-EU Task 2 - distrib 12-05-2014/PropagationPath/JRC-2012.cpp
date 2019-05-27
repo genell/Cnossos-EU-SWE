@@ -21,6 +21,7 @@
 #include "PropagationPath.h"
 #include "Material.h"
 #include "VerticalExt.h"
+#include <algorithm>
 
 using namespace CnossosEU ;
 using namespace Geometry ;

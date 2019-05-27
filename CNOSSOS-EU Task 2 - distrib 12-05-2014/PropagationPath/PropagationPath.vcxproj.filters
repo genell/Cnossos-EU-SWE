@@ -69,6 +69,9 @@
     <ClInclude Include="ElementarySource.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
+    <ClInclude Include="CNOSSOS-2018.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="PathParseXML.cpp">
@@ -114,6 +117,9 @@
       <Filter>Fichiers sources</Filter>
     </ClCompile>
     <ClCompile Include="ReferenceObject.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="CNOSSOS-2018.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
   </ItemGroup>

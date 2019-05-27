@@ -1,5 +1,8 @@
 #pragma once
 
+#ifdef WIN32
+#include "stdafx.h"
+#endif
 #include "CNOSSOS_RAILNOISE_DLL_DATA.h"
 #include "CNOSSOS_RAILNOISE_DLL.h"
 #include "CNOSSOS_RAILNOISE_DLL_AUX.h"

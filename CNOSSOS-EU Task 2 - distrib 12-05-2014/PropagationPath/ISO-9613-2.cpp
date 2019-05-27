@@ -25,6 +25,7 @@
 #include "ISO-9613-2.h"
 #include "VerticalExt.h"
 #include "Material.h"
+#include <algorithm>
 
 using namespace CnossosEU ;
 using namespace Geometry ;
