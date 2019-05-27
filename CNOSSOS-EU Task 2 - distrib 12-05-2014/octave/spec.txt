@@ -83,6 +83,6 @@ Result =
 
 
 build command:
-  mkoctfile -L../linux/build -lPropagation -lHarmonise -I../PropagationPath cnossos_flat.cpp
+  mkoctfile -L../linux/build -lPropagation -lHarmonoise -I../PropagationPath cnossos_flat.cpp
 
   cnossos_flat("JRC-2012",0.5,5,100,2,"C",[0 0 0 0 0 0 0 0])
