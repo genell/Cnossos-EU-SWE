@@ -2,7 +2,15 @@
 #include "../PropagationPath/VerticalExt.h"
 #include "../PropagationPath/Material.h"
 #include "../system/environment.h"
-using namespace CnossosEU ;
+using namespace CnossosEU;
+
+#ifdef DEBUG
+#include <cstdio>
+#include <iostream>
+#define print_debug std::cout.flush();printf
+#else
+#define print_debug //
+#endif
 
 /*
  Utils
@@ -31,7 +39,7 @@ static bool ParseValue(const std::string &attr, const octave_value &aValue, cons
 		return false;
 	}
 	value = aValue.double_value();
-	print_debug("ParseValue [%s] = %f \n", name, value) ;
+	print_debug("ParseValue [%s] = %.2f \n", name.c_str(), value) ;
 	return true ;
 }
 
@@ -259,8 +267,11 @@ static bool ParseSourceExt (const octave_scalar_map &aSource, SourceExt &source)
 	/*
 	* source height is mandatory
 	*/
-	if (!hVal.isempty()) error("source extension height (h) is mandatory");
-	if (!hVal.is_double_type()) error("source extension height (h) must be numeric");
+	if (!ApplyValue(aSource.getfield("h"), source.h))
+	{
+		error("source extension - h field is mandatory");
+		return false ;
+	}
 	
 	source.h = hVal.double_value();
 
@@ -485,6 +496,7 @@ bool ParsePropagationPath (const octave_scalar_map &optPath, PropagationPath& pa
 	{
 		auto cpKey = optPath.key(iOpt);
 		auto cpDef = optPath.contents(iOpt);
+		print_debug("Parsing point '%s'", cpKey.c_str());
 
 		if (!cpDef.isempty() && !cpDef.isstruct())
 			error("expected path control point definition %s to be a struct", cpKey.c_str());

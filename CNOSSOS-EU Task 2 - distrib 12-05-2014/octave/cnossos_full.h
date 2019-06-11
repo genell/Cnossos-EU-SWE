@@ -29,7 +29,9 @@ public:
       error("invalid method. Legal values are \"CNOSSOS-2018\", \"ISO-9613-2\", \"JRC-2012\" or \"JRC-DRAFT-2010\"\n");
     }
   };
+  ~CnossosFull() { }
   void setupConfig();
   void eval();
   void resultToMatrix(Matrix &matrix);
+  void dumpArgs();
 };

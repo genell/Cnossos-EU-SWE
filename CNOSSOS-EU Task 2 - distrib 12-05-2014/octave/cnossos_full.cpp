@@ -5,8 +5,15 @@
 #include "ElementarySource.h"
 #include "Material.h"
 #include "Geometry3D.h"
+using namespace CnossosEU;
 
-using namespace CnossosEU ;
+#ifdef DEBUG
+#include <cstdio>
+#include <iostream>
+#define print_debug std::cout.flush();printf
+#else
+#define print_debug //
+#endif
 
 void
 my_err_handler (const char *fmt, ...)
@@ -20,16 +27,6 @@ my_err_with_id_handler (const char *id, const char *fmt, ...)
   // Do nothing!!
 }
 
-/**
- * cnossos_flat("JRC-2012", 0.5, 5, 100, 2, "C", [0 0 0 0 0 0 0 0])
- * _M_ = "JRC-2012"
- * _HS_ = 0.5
- * _D1_ = 5
- * _D_ = 100
- * _HR_ = 2
- * _I_ = "C"
- * _L1..L8_ = [0 0 0 0 0 0 0 0] (NDArray)
- */
 DEFUN_DLD (cnossos_full, args, ,
   "Usage: cnossos_full(M, path, [options], [meteo], [materials])\n\
     M: Calculation method. Legal values are \"CNOSSOS-2018\", \"ISO-9613-2\", \"JRC-2012\" or \"JRC-DRAFT-2010\"\n\
@@ -49,33 +46,39 @@ DEFUN_DLD (cnossos_full, args, ,
   // Method
   if (!args(0).is_string())
     error("Parameter 'M' must be a string");
-
-  fullArgs.method = args(0).string_value();
+  else
+    fullArgs.method = args(0).string_value();
 
   // Path structure
   if (!args(1).isstruct())
     error("Parameter 'path' must be a struct");
-
-  fullArgs.path =  args(1).scalar_map_value();
+  else
+    fullArgs.path =  args(1).scalar_map_value();
 
   // Options structure
-  if (args.length() > 2 && !args(2).isnull() && !args(2).isstruct())
-    error("If present, parameter 'options' must be a struct");
-
-  fullArgs.options =  args(2).scalar_map_value();
+  if (args.length() > 2) {
+    if (!args(2).isnull() && !args(2).isstruct())
+      error("If present, parameter 'options' must be a struct");
+    else
+      fullArgs.options =  args(2).scalar_map_value();
+  }
 
   // Meteo structure
-  if (args.length() > 3 && !args(3).isnull() && !args(3).isstruct())
-    error("If present, parameter 'meteo' must be a struct");
-
-  fullArgs.meteo =  args(3).scalar_map_value();
-
+  if (args.length() > 3) {
+    if (!args(3).isnull() && !args(3).isstruct())
+      error("If present, parameter 'meteo' must be a struct");
+    else
+      fullArgs.meteo =  args(3).scalar_map_value();
+  }
+  
   // Materials structure
-  if (args.length() > 4 && !args(4).isnull() && !args(4).isstruct())
-    error("If present, parameter 'materials' must be a struct");
-
-  fullArgs.materials  =  args(4).scalar_map_value();
-
+  if (args.length() > 4) {
+    if (!args(4).isnull() && !args(4).isstruct())
+      error("If present, parameter 'materials' must be a struct");
+    else
+      fullArgs.materials  =  args(4).scalar_map_value();
+  }
+  
   // Declare unwind_protect frame which lasts as long as
   // the variable frame has scope.
   octave::unwind_protect frame;
@@ -89,58 +92,49 @@ DEFUN_DLD (cnossos_full, args, ,
   set_liboctave_warning_with_id_handler (my_err_with_id_handler);
 
   CnossosFull cnosFull(fullArgs);
+  print_debug("CnossosFull::ctor OK\n");
+
+#if REDIRECTDEBUG
+ 	freopen("output.txt","w",stdout);
+  std::cout << "redirecting cout..." << std::endl;
+	freopen("error.txt","w",stderr);
+  std::cerr << "redirecting cerr..." << std::endl;
+#endif
+
   cnosFull.setupConfig();
-  // cnFlat.eval();
+  cnosFull.eval();
 
   Matrix m(13,8);
-  // cnFlat.resultToMatrix(m);
+  cnosFull.resultToMatrix(m);
 
   return octave_value(m);
 }
 
-// bool ParseOctaveParameters (CnossosFullArgs, PropagationPath& path, PropagationPathOptions& options) 
-// {
-//   path.clear() ;
-
-//   static const char* root = "CNOSSOS-EU" ;
-//   if (!checkTagName (node, root)) 
-//   {
-//     signal_error (XMLMissingTag (root, node)) ;
-//     return false ;
-//   }
-
-//   node = node->GetFirstChild() ;
-
-//   if (ParseParameters (node, options)) node = node->GetNextEntity() ;
-
-//   if (ParseMaterials (node)) node = node->GetNextEntity() ;
-
-//   if (ParsePropagationPath (node, path)) node = node->GetNextEntity() ; 
-
-//   if (node != 0)
-//   {
-//     signal_error (XMLUnexpectedTag (node)) ;
-//     return false ;
-//   }
-//   return true ;
-// }
-
 
 void CnossosFull::setupConfig() {
+  print_debug("CnossosFull::setupConfig() begin\n");
 
   if (!ParseParameters(args.options, args.meteo, options))
     error("error parsing parameters");
 
-  // if (!ParseMaterials(args.materials))
-  //   error("error parsing materials");
+  options.method = method; // Attach method to options object (probably not used)
 
-  // if (!ParsePropagationPath(args.path, path))
-  //   error("error parsing propagation path");
+  if (!ParseMaterials(args.materials))
+    error("error parsing materials");
+
+  if (!ParsePropagationPath(args.path, path))
+    error("error parsing propagation path");
+  
+  print_debug("CnossosFull::setupConfig() end\n");
 }
 
 void CnossosFull::eval() {
+  print_debug("CnossosFull::eval() begin\n");
 	method->setOptions(options) ;
-	method->doCalculation(path, result) ;
+  print_debug("method->setoptions(..) ok\n");
+  dumpArgs();
+	method->doCalculation(path, result);
+  print_debug("CnossosFull::eval() end\n");
 }
 
 void CnossosFull::resultToMatrix(Matrix &matrix) {
@@ -163,12 +157,26 @@ void CnossosFull::resultToMatrix(Matrix &matrix) {
   }
 }
 
-// Test stub
-int main( int argc, char** argv ) { 
-  CnossosFullArgs fullArgs;
-  fullArgs.method = "JRC-2012";
-
-  CnossosFull cnFlat(fullArgs);
-  cnFlat.setupConfig();
-  cnFlat.eval();
+void CnossosFull::dumpArgs() {
+  print_debug("options.CheckHeightLowerBound=%d\n",options.CheckHeightLowerBound);
+  print_debug("options.CheckHeightUpperBound=%d\n", options.CheckHeightUpperBound);
+  print_debug("options.CheckHorizontalAlignment=%d\n", options.CheckHorizontalAlignment);
+  print_debug("options.CheckLateralDiffraction=%d\n", options.CheckLateralDiffraction);
+  print_debug("options.CheckSoundPowerUnits=%d\n", options.CheckSoundPowerUnits);
+  print_debug("options.CheckSourceSegment=%d\n", options.CheckSourceSegment);
+  print_debug("options.DisableLateralDiffractions=%d\n", options.DisableLateralDiffractions);
+  print_debug("options.DisableReflections=%d\n", options.DisableReflections);
+  print_debug("options.ExcludeAirAbsorption=%d\n", options.ExcludeAirAbsorption);
+  print_debug("options.ExcludeGeometricalSpread=%d\n", options.ExcludeGeometricalSpread);
+  print_debug("options.ExcludeSoundPower=%d\n", options.ExcludeSoundPower);
+  print_debug("options.ForceSourceToReceiver=%d\n", options.ForceSourceToReceiver);
+  print_debug("options.IgnoreComplexPaths=%d\n", options.IgnoreComplexPaths);
+  print_debug("options.SimplifyPathGeometry=%d\n", options.SimplifyPathGeometry);
+  print_debug("method=%s\n", options.method->name());
+  print_debug("meteo=%x\n", &options.meteo);
+  print_debug("path.cp[%d]\n", path.cp.size());
+  print_debug("path.info.nbDiffractions=%d\n", path.info.nbDiffractions);
+  print_debug("path.info.nbLateralDiffractions=%d\n", path.info.nbLateralDiffractions);
+  print_debug("path.info.nbReflections=%d\n", path.info.nbReflections);
+  print_debug("path.info.pathType=%d\n", path.info.pathType);
 }
