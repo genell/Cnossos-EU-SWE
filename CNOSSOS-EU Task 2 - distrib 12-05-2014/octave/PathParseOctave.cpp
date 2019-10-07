@@ -35,7 +35,7 @@ static bool ParseValue(const std::string &attr, const octave_value &aValue, cons
 
 	if (!aValue.is_double_type())
 	{
-		error("%s does not have a numeric value");
+		error("%s does not have a numeric value", aValue.string_value().c_str());
 		return false;
 	}
 	value = aValue.double_value();

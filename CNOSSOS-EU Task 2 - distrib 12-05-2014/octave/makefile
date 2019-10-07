@@ -14,7 +14,7 @@ octave_root = /mingw64
 octave_include = $(octave_root)/include/octave-5.1.0
 else
 cnos_lib_dir = ../$(env)/build
-octave_root = /var/lib/flatpak/app/org.octave.Octave/x86_64/stable/a7d9267c2f66925be4f741eeb9dff7b771eea95849223205ebca7ffbc6b2adb2/files
+octave_root = /var/lib/flatpak/app/org.octave.Octave/x86_64/stable/246709717fa2b00015a79d2c14306d05f544e1c01c2ab91b09fdc800df84fb35/files
 octave_include = $(octave_root)/include/octave-5.1.0
 endif
 
