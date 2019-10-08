@@ -14,8 +14,6 @@ meteo.humidity = 70.0
 meteo.pFav = 0.50
 meteo.C0 = 3.00
 
-materials.dummy.G = 0;
-
 % sourcer
 path.p0_source.pos.x = 0
 path.p0_source.pos.y = 0
@@ -44,24 +42,24 @@ path.p2_receiver.receiver.h = 2.5
 
 % flat ground 10m
 path.p2_receiver.pos.x = 10.00
-flatground10m = cnossos_full(method, path, options, meteo, materials);
+flatground10m = cnossos_full(method, path, options, meteo);
 
 % flat ground 20m
 path.p2_receiver.pos.x = 20.00
-flatground20m = cnossos_full(method, path, options, meteo, materials);
+flatground20m = cnossos_full(method, path, options, meteo);
 
 % flat ground 50m
 path.p2_receiver.pos.x = 50.00
-flatground50m = cnossos_full(method, path, options, meteo, materials);
+flatground50m = cnossos_full(method, path, options, meteo);
 
 % flat ground 100m
 path.p2_receiver.pos.x = 100.00
-flatground100m = cnossos_full(method, path, options, meteo, materials);
+flatground100m = cnossos_full(method, path, options, meteo);
 
 % flat ground 200m
 path.p2_receiver.pos.x = 200.00
-flatground200m = cnossos_full(method, path, options, meteo, materials);
+flatground200m = cnossos_full(method, path, options, meteo);
 
 % flat ground 500m
 path.p2_receiver.pos.x = 500.00
-flatground500m = cnossos_full(method, path, options, meteo, materials);
+flatground500m = cnossos_full(method, path, options, meteo);

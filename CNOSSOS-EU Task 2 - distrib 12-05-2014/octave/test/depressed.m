@@ -12,8 +12,6 @@ meteo.humidity = 70.0
 meteo.pFav = 0.50
 meteo.C0 = 3.00
 
-materials.dummy.G = 0;
-
 % sourcer
 path.p0_source.pos.x = 0
 path.p0_source.pos.y = 0
@@ -47,24 +45,24 @@ path.p3_receiver.receiver.h = 2.5
 
 % depressed 10m
 path.p3_receiver.pos.x = 10.00
-depressed10m = cnossos_full(method, path, options, meteo, materials);
+depressed10m = cnossos_full(method, path, options, meteo);
 
 % depressed 20m
 path.p3_receiver.pos.x = 20.00
-depressed20m = cnossos_full(method, path, options, meteo, materials);
+depressed20m = cnossos_full(method, path, options, meteo);
 
 % depressed 50m
 path.p3_receiver.pos.x = 50.00
-depressed50m = cnossos_full(method, path, options, meteo, materials);
+depressed50m = cnossos_full(method, path, options, meteo);
 
 % depressed 100m
 path.p3_receiver.pos.x = 100.00
-depressed100m = cnossos_full(method, path, options, meteo, materials);
+depressed100m = cnossos_full(method, path, options, meteo);
 
 % depressed 200m
 path.p3_receiver.pos.x = 200.00
-depressed200m = cnossos_full(method, path, options, meteo, materials);
+depressed200m = cnossos_full(method, path, options, meteo);
 
 % depressed 500m
 path.p3_receiver.pos.x = 500.00
-depressed500m = cnossos_full(method, path, options, meteo, materials);
+depressed500m = cnossos_full(method, path, options, meteo);

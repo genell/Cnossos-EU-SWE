@@ -47,74 +47,74 @@ path.p2_receiver.receiver.h = 2.5
 % barrier 1m - 20m
 path.p1_barrier.barrier.h = 1.00
 path.p2_receiver.pos.x = 20.00
-barrier1m20m = cnossos_full(method, path, options, meteo, materials);
+barrier1m20m = cnossos_full(method, path, options, meteo);
 
 % barrier 1m - 50m
 path.p1_barrier.barrier.h = 1.00
 path.p2_receiver.pos.x = 50.00
-barrier1m50m = cnossos_full(method, path, options, meteo, materials);
+barrier1m50m = cnossos_full(method, path, options, meteo);
 
 % barrier 1m - 100m
 path.p1_barrier.barrier.h = 1.00
 path.p2_receiver.pos.x = 100.00
-barrier1m100m = cnossos_full(method, path, options, meteo, materials);
+barrier1m100m = cnossos_full(method, path, options, meteo);
 
 % barrier 1m - 200m
 path.p1_barrier.barrier.h = 1.00
 path.p2_receiver.pos.x = 200.00
-barrier1m200m = cnossos_full(method, path, options, meteo, materials);
+barrier1m200m = cnossos_full(method, path, options, meteo);
 
 % barrier 1m - 500m
 path.p1_barrier.barrier.h = 1.00
 path.p2_receiver.pos.x = 500.00
-barrier1m500m = cnossos_full(method, path, options, meteo, materials);
+barrier1m500m = cnossos_full(method, path, options, meteo);
 
 % barrier 2m - 20m
 path.p1_barrier.barrier.h = 2.00
 path.p2_receiver.pos.x = 20.00
-barrier2m20m = cnossos_full(method, path, options, meteo, materials);
+barrier2m20m = cnossos_full(method, path, options, meteo);
 
 % barrier 2m - 50m
 path.p1_barrier.barrier.h = 2.00
 path.p2_receiver.pos.x = 50.00
-barrier2m50m = cnossos_full(method, path, options, meteo, materials);
+barrier2m50m = cnossos_full(method, path, options, meteo);
 
 % barrier 2m - 100m
 path.p1_barrier.barrier.h = 2.00
 path.p2_receiver.pos.x = 100.00
-barrier2m100m = cnossos_full(method, path, options, meteo, materials);
+barrier2m100m = cnossos_full(method, path, options, meteo);
 
 % barrier 2m - 200m
 path.p1_barrier.barrier.h = 2.00
 path.p2_receiver.pos.x = 200.00
-barrier2m200m = cnossos_full(method, path, options, meteo, materials);
+barrier2m200m = cnossos_full(method, path, options, meteo);
 
 % barrier 2m - 500m
 path.p1_barrier.barrier.h = 2.00
 path.p2_receiver.pos.x = 500.00
-barrier2m500m = cnossos_full(method, path, options, meteo, materials);
+barrier2m500m = cnossos_full(method, path, options, meteo);
 
 % barrier 4m - 20m
 path.p1_barrier.barrier.h = 4.00
 path.p2_receiver.pos.x = 20.00
-barrier4m20m = cnossos_full(method, path, options, meteo, materials);
+barrier4m20m = cnossos_full(method, path, options, meteo);
 
 % barrier 4m - 50m
 path.p1_barrier.barrier.h = 4.00
 path.p2_receiver.pos.x = 50.00
-barrier4m50m = cnossos_full(method, path, options, meteo, materials);
+barrier4m50m = cnossos_full(method, path, options, meteo);
 
 % barrier 4m - 100m
 path.p1_barrier.barrier.h = 4.00
 path.p2_receiver.pos.x = 100.00
-barrier4m100m = cnossos_full(method, path, options, meteo, materials);
+barrier4m100m = cnossos_full(method, path, options, meteo);
 
 % barrier 4m - 200m
 path.p1_barrier.barrier.h = 4.00
 path.p2_receiver.pos.x = 200.00
-barrier4m200m = cnossos_full(method, path, options, meteo, materials);
+barrier4m200m = cnossos_full(method, path, options, meteo);
 
 % barrier 4m - 500m
 path.p1_barrier.barrier.h = 4.00
 path.p2_receiver.pos.x = 500.00
-barrier4m500m = cnossos_full(method, path, options, meteo, materials);
+barrier4m500m = cnossos_full(method, path, options, meteo);

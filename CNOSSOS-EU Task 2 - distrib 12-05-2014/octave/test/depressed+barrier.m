@@ -14,8 +14,6 @@ meteo.humidity = 70.0
 meteo.pFav = 0.50
 meteo.C0 = 3.00
 
-materials.dummy.G = 0;
-
 % sourcer
 path.p0_source.pos.x = 0
 path.p0_source.pos.y = 0
@@ -51,24 +49,24 @@ path.p3_receiver.receiver.h = 2.5
 
 % depressed+barrier 10m
 path.p3_receiver.pos.x = 10.00
-deprbarr10m = cnossos_full(method, path, options, meteo, materials);
+deprbarr10m = cnossos_full(method, path, options, meteo);
 
 % depressed+barrier 20m
 path.p3_receiver.pos.x = 20.00
-deprbarr20m = cnossos_full(method, path, options, meteo, materials);
+deprbarr20m = cnossos_full(method, path, options, meteo);
 
 % depressed+barrier 50m
 path.p3_receiver.pos.x = 50.00
-deprbarr50m = cnossos_full(method, path, options, meteo, materials);
+deprbarr50m = cnossos_full(method, path, options, meteo);
 
 % depressed+barrier 100m
 path.p3_receiver.pos.x = 100.00
-deprbarr100m = cnossos_full(method, path, options, meteo, materials);
+deprbarr100m = cnossos_full(method, path, options, meteo);
 
 % depressed+barrier 200m
 path.p3_receiver.pos.x = 200.00
-deprbarr200m = cnossos_full(method, path, options, meteo, materials);
+deprbarr200m = cnossos_full(method, path, options, meteo);
 
 % depressed+barrier 500m
 path.p3_receiver.pos.x = 500.00
-deprbarr500m = cnossos_full(method, path, options, meteo, materials);
+deprbarr500m = cnossos_full(method, path, options, meteo);
