@@ -2,6 +2,8 @@
 % all lateral diffraction tests
 %
 
+clear
+
 method = "ISO-9613-2"
 
 options.CheckHeightUpperBound = false
@@ -26,52 +28,52 @@ materials.A3.G = 1.0
 materials.A3.alpha = [0.35 0.50 0.75 0.85 0.95 0.99 0.99 0.95]
 
 % sourcer
-path.source.pos.x = 0
-path.source.pos.y = 0
-path.source.pos.z = 0
-path.source.mat = "H"
-path.source.source.h = 0.50
-path.source.source.Lw.spectrum = [80.0 90.0 95.0 100.0 100.0 100.0 95.0 90.0]
-path.source.source.Lw.sourceType = "PointSource"
-path.source.source.Lw.measurementType = "HemiSpherical"
-path.source.source.Lw.frequencyWeighting = "LIN"
+path.p0_source.pos.x = 0
+path.p0_source.pos.y = 0
+path.p0_source.pos.z = 0
+path.p0_source.mat = "H"
+path.p0_source.source.h = 0.50
+path.p0_source.source.Lw.spectrum = [80.0 90.0 95.0 100.0 100.0 100.0 95.0 90.0]
+path.p0_source.source.Lw.sourceType = "PointSource"
+path.p0_source.source.Lw.measurementType = "HemiSpherical"
+path.p0_source.source.Lw.frequencyWeighting = "LIN"
 
 % diffracting edge #1
-path.edge1.pos.x = 10.00
-path.edge1.pos.y = 2.00
-path.edge1.pos.z = 0.00
-path.edge1.mat = "H"
-path.edge1.edge.h = 3.00
+path.p1_edge1.pos.x = 10.00
+path.p1_edge1.pos.y = 2.00
+path.p1_edge1.pos.z = 0.00
+path.p1_edge1.mat = "H"
+path.p1_edge1.edge.h = 3.00
 
 % diffracting edge #2
-path.edge2.pos.x = 20.00
-path.edge2.pos.y = 2.00
-path.edge2.pos.z = 0.00
-path.edge2.mat = "H"
-path.edge2.edge.h = 3.00
+path.p2_edge2.pos.x = 20.00
+path.p2_edge2.pos.y = 2.00
+path.p2_edge2.pos.z = 0.00
+path.p2_edge2.mat = "H"
+path.p2_edge2.edge.h = 3.00
 
 % receiver, groundType = D
-path.receiver.pos.x = 50.00
-path.receiver.pos.y = 0.00
-path.receiver.pos.z = 0.00
-path.receiver.mat = "H"
-path.receiver.receiver.h = 8.5
+path.p3_receiver.pos.x = 50.00
+path.p3_receiver.pos.y = 0.00
+path.p3_receiver.pos.z = 0.00
+path.p3_receiver.mat = "H"
+path.p3_receiver.receiver.h = 8.5
 
 %
 % Tests
 %
 
 % lateral diffraction
-path.receiver.pos.y = 0.00
-path.receiver.receiver.h = 2.5
+path.p3_receiver.pos.y = 0.00
+path.p3_receiver.receiver.h = 2.5
 latdiff = cnossos_full(method, path, options, meteo, materials);
 
 % lateral diffraction too-high
-path.receiver.pos.y = 0.00
-path.receiver.receiver.h = 8.5
+path.p3_receiver.pos.y = 0.00
+path.p3_receiver.receiver.h = 8.5
 latdifftoohigh = cnossos_full(method, path, options, meteo, materials);
 
 % lateral diffraction non-convex
-path.receiver.pos.y = 5.00
-path.receiver.receiver.h = 2.5
+path.p3_receiver.pos.y = 5.00
+path.p3_receiver.receiver.h = 2.5
 latdiffnonconvex = cnossos_full(method, path, options, meteo, materials);

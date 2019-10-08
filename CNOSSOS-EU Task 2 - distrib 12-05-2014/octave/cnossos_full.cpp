@@ -133,7 +133,12 @@ void CnossosFull::eval() {
 	method->setOptions(options) ;
   print_debug("method->setoptions(..) ok\n");
   dumpArgs();
+  try {
 	method->doCalculation(path, result);
+  } catch (ErrorMessage &err)
+	{
+    printf("CNOSSOS error: %s", err.what());
+  }
   print_debug("CnossosFull::eval() end\n");
 }
 
