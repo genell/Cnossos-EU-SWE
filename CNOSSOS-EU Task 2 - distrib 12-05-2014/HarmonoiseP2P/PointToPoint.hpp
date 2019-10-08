@@ -142,7 +142,11 @@
 
 // modifiers required in order to generate standard windows calling conventions
 
+#ifdef WIN32
 #define  __EXPORTTYPE   extern "C" __declspec(dllexport)
+#else
+#define  __EXPORTTYPE   extern "C"
+#endif
 #define  __CALLTYPE    
 
 // -------------------------------------------------------------------------------------------------------------

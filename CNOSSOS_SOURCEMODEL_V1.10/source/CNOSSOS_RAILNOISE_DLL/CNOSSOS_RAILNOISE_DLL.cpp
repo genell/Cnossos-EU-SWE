@@ -1,5 +1,8 @@
 #pragma once
+
+#ifdef WIN32
 #include "stdafx.h"
+#endif
 #include "CNOSSOS_RAILNOISE_DLL_DATA.h"
 #include "CNOSSOS_RAILNOISE_DLL.h"
 #include "CNOSSOS_RAILNOISE_DLL_AUX.h"
@@ -18,6 +21,7 @@ namespace CNOSSOS_RAILNOISE
 	// --------------------------------------------------------------------------------------------------------
 	string getDllPath()
 	{
+		#ifdef WIN32
 		char path[MAX_PATH];
 		HMODULE hm = NULL;
 		if (!GetModuleHandleExA(GET_MODULE_HANDLE_EX_FLAG_FROM_ADDRESS | 
@@ -29,6 +33,9 @@ namespace CNOSSOS_RAILNOISE
 		}
 		GetModuleFileNameA(hm, path, sizeof(path));	
 		return path;
+		#else
+		return "./";
+		#endif
 	}
 
 	RailCatalogue *catalogue;
@@ -99,9 +106,6 @@ namespace CNOSSOS_RAILNOISE
 	/// <returns>0 = OK, 1 = error while loading, 2 = error while calculating, 3 = error while saving, 4 = internal error</returns>
 	int CalcFromFile(const string infile, const string outfile)
 	{
-		TCHAR buffer[MAX_PATH];
-		GetCurrentDirectory(MAX_PATH, buffer);
-		
 		int result = 0;
 		if (currentSection == NULL)
 		{

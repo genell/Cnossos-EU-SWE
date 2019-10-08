@@ -23,6 +23,7 @@
 #include "PathResult.h"
 #include "ErrorMessage.h"
 #include "SystemClock.h"
+#include <algorithm>
 
 static const double PI = 3.1415926 ;
 

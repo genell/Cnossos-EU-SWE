@@ -1,6 +1,5 @@
 ﻿#pragma once
 
-#include "stdafx.h"
 #include "CNOSSOS_RAILNOISE_DLL_CONST.h"
 #include "CNOSSOS_RAILNOISE_DLL_AUX.h"
 #include "../tinyxml/tinyxml.h"
@@ -93,14 +92,14 @@ namespace CNOSSOS_RAILNOISE
 			freqs	LwEqLine[NUM_PHYSICAL_SOURCES];
 			freqs	Lw0dir[NUM_PHYSICAL_SOURCES];
 			freqs	Lw0dir_[NUM_SOURCE_TYPES][NUM_PHYSICAL_SOURCES];
-			freqs	ΔLw0dirVert[NUM_PHYSICAL_SOURCES];
-			freqs	ΔLw0dirHorz;
+			freqs	dLw0dirVert[NUM_PHYSICAL_SOURCES];
+			freqs	dLw0dirHorz;
 			freqs	Lw0[NUM_SOURCE_TYPES][NUM_PHYSICAL_SOURCES];
 			freqs	LwTr;
 			freqs	LwVeh;
 			freqs	LwVehSup;
-			freqs	ΔLsqueal;
-			double	ΔLbridge;
+			freqs	dLsqueal;
+			double	dLbridge;
 			freqs	LRtot;
 			freqs	LHTr;
 			freqs	LHVeh;
@@ -118,7 +117,7 @@ namespace CNOSSOS_RAILNOISE
 			bool	lookup_wheel_roughness(const double v, freqs& f);			//	/RailParameters/WheelRoughness/Roughness/@Values
 			bool	lookup_contact_filter(const double v, freqs& f);			//	/RailParameters/ContactFilter/Contact/@Values
 			bool	lookup_aerodynamic_noise(const PhysicalSourceEnum p,		// /RailParameters/AerodynamicNoise/Aerodynamic/Source[@Type={p}]/<@V0|@Values|@Alpha>
-											freqs& Lw0v0, double& v0, double& α);
+											freqs& Lw0v0, double& v0, double& alpha);
 
 			// constructor / destructor
 			RailVehicle(RailCatalogue *catalog, TiXmlElement *input_node);
@@ -147,8 +146,8 @@ namespace CNOSSOS_RAILNOISE
 			bool	calc_flow_moving(); // 3.2.1
 			bool	calc_flow_idling(); // 3.2.2
 			bool	calc_directional_sound_power(); // 3.3
-			bool	calc_Δdirectivity_vertical(); // 3.3.1
-			bool	calc_Δdirectivity_horizontal(); // 3.3.2
+			bool	calc_ddirectivity_vertical(); // 3.3.1
+			bool	calc_ddirectivity_horizontal(); // 3.3.2
 			bool	calc_rolling_noise(); // 3.4, 3.4.1, 3.4.2 -- h==0.5
 			bool	calc_rolling_noise(const double v, freqs& Lw0v);
 			bool	calc_roughness_impact(const double v); // 3.4.3
@@ -177,7 +176,6 @@ namespace CNOSSOS_RAILNOISE
 
 			bool	calculate(); // 3.1
 	};
-
 }
 
 

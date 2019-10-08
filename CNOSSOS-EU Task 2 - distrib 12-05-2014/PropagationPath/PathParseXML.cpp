@@ -26,8 +26,9 @@
 #include "./VerticalExt.h"
 #include "./Material.h"
 #include "./CalculationMethod.h"
-
+#include "../system/environment.h"
 using namespace CnossosEU ;
+
 /*
  * check for matching tag name, note that XML tags are case sensitive
  */
@@ -373,7 +374,7 @@ static bool ParseAreaSource (XMLNode* node, System::ref_ptr<SourceGeometry> &geo
 	print_debug ("Parse AreaSource \n") ;
 	node = node->GetFirstChild() ;
 	/*
-	 * parse area, default = 1m²
+	 * parse area, default = 1mï¿½
 	 */
 	double area  = 1.0 ;
 	if (ParseValue(node, "area", area)) node = node->GetNextEntity() ;

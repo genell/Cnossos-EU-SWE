@@ -4,7 +4,9 @@
 
 #include "stdafx.h"
 #include <iostream>
+#ifdef WIN32
 #include <tchar.h>
+#endif
 #include <string>
 #include <sstream>
 

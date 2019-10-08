@@ -7,12 +7,21 @@
  * description: demonstration program using C++ API defined in PropagationPath.lib
  * ------------------------------------------------------------------------------------------------- 
  */
+#ifdef WIN32
 #include "stdafx.h"
+#endif
 #include "PropagationPath.h"
 #include "Material.h"
 #include "VerticalExt.h"
 #include "CalculationMethod.h"
 #include "PathResult.h"
+#ifdef __GNUC__
+#ifndef WIN32
+#include <curses.h>
+#define _getch getch
+#endif
+#endif
+
 
 using namespace CnossosEU ;
 using namespace Geometry ;

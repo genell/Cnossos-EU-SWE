@@ -1,4 +1,3 @@
-#include "stdafx.h"
 #include <string>
 #include "../tinyxml/tinyxml.h"
 #include "../tinyxml/tinystr.h"

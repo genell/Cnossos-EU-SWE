@@ -1,4 +1,3 @@
-#include "stdafx.h"
 #include "CNOSSOS_RAILNOISE_DLL_CONST.h"
 #include <iostream>
 #include <fstream>

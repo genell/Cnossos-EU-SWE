@@ -14,7 +14,9 @@
 #include "PathResult.h"
 #include "Spectrum.h"
 #include <stdio.h>
-
+#ifdef __GNUC__
+#define _finite finite
+#endif
 using namespace CnossosEU ;
 
 static void print_value (double x)

@@ -19,6 +19,9 @@
 #ifdef __GNUC__
 #define strcat_s strcat
 #define strncpy_s strncpy
+#define _access access
+#define _read read
+#define _open open
 #endif
 // ------------------------------------------------------------------------------------------------
 // interface avec EXPAT
@@ -47,7 +50,7 @@ static void text_handler (void *userData, const XML_Char *text, int len_text)
 }
 
 // ------------------------------------------------------------------------------------------------
-// lecture du fichier et interprétation par EXPAT
+// lecture du fichier et interprï¿½tation par EXPAT
 //
 // A FAIRE: gestion des erreurs
 // ------------------------------------------------------------------------------------------------
@@ -115,7 +118,7 @@ bool XMLFileParser::ParseFile (const char* fileName)
 }
 
 // ------------------------------------------------------------------------------------------------
-// affichage à l'écran du contenu d'un fichier XML 
+// affichage ï¿½ l'ï¿½cran du contenu d'un fichier XML 
 // ------------------------------------------------------------------------------------------------
 
 void XMLDumpFile::startEntity (const char *el, const char **attr) 
@@ -148,7 +151,7 @@ void XMLDumpFile::addText(const XML_Char *s, int len)
 }
 
 // ------------------------------------------------------------------------------------------------
-// utilitaires pour manipuler des chaînes de caractères
+// utilitaires pour manipuler des chaï¿½nes de caractï¿½res
 // ------------------------------------------------------------------------------------------------
 
 static char* copy_text (const char* text, int len = -1)
@@ -190,8 +193,8 @@ static char** copy_attrib (const char** attrib)
 }
 
 // ------------------------------------------------------------------------------------------------
-// représentation d'un document XML sous la forme d'une arborescence
-// chaque noeud correspond à une entité du fichier XML
+// reprï¿½sentation d'un document XML sous la forme d'une arborescence
+// chaque noeud correspond ï¿½ une entitï¿½ du fichier XML
 // ------------------------------------------------------------------------------------------------
 
 void XMLNode::addText (const char* new_text, int len_text)
@@ -343,7 +346,7 @@ void XMLFileLoader::addText (const XML_Char* text, int len_text)
 }
 
 // ------------------------------------------------------------------------------------------------
-// transformation d'un code d'erreur numérique en une chaîne de caractères correspondante
+// transformation d'un code d'erreur numï¿½rique en une chaï¿½ne de caractï¿½res correspondante
 // ------------------------------------------------------------------------------------------------
 
 #define _ERROR_TEXT_(x) {x, #x }

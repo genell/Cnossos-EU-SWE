@@ -15,8 +15,8 @@
  * calls to the high-performance clock are specific to the Windows operating system
  * replace as appropriate for other operating systems...
  */
+#ifdef WIN32
 #include <windows.h>
-
 SystemClock::COUNTER SystemClock::counter (void)
 {
 	LARGE_INTEGER counter ;
@@ -29,3 +29,17 @@ SystemClock::COUNTER SystemClock::units_per_sec (void)
 	QueryPerformanceFrequency (&counter) ;
 	return counter.QuadPart ;
 }
+#else
+// POSIX impl. using clock_gettime
+#include <time.h>
+SystemClock::COUNTER SystemClock::counter (void)
+{
+	timespec counter ;
+	clock_gettime(CLOCK_PROCESS_CPUTIME_ID, &counter) ;
+	return (SystemClock::COUNTER)counter.tv_sec * 1000000000 + (SystemClock::COUNTER)counter.tv_nsec ;
+}
+SystemClock::COUNTER SystemClock::units_per_sec (void)
+{
+	return 1000000000; // nanoseconds
+}
+#endif

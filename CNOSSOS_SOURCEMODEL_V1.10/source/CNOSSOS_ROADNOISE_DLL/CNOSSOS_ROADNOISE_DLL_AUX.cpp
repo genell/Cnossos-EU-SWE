@@ -15,6 +15,7 @@
 // ----------------------------------------------------------------------------------------------------- 
 #include "CNOSSOS_ROADNOISE_DLL_AUX.h"
 #include <iostream>
+#include <cmath>
 
 using namespace std;
 
@@ -83,7 +84,7 @@ namespace CNOSSOS_ROADNOISE
 	{
 		if (this->calc)
 		{
-			double firstFac = (min(12,s) + this->a1) / this->a2;
+			double firstFac = (min(12.0,s) + this->a1) / this->a2;
 
 			double speedFactor = 1.0;
 			if (this->calcSpeedFactor)
