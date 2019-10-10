@@ -1,10 +1,15 @@
 AC_INIT([cnossos], [1.0], [carl@casalom.se])
-AM_INIT_AUTOMAKE([foreign -Wall -Werror subdir-objects])
+AM_INIT_AUTOMAKE([foreign -Wall -Wno-extra-portability -Werror subdir-objects])
+
 # global deps
 AC_PROG_CXX
-# harmonoise deps
-AC_PROG_RANLIB
-AM_PROG_AR
+
+# libtool for shared libraries
+AC_CONFIG_MACRO_DIR([m4])
+LT_INIT
+
+AC_CONFIG_LIBOBJ_DIR([lib])
+
 # AC_ARG_WITH([octave],AS_HELP_STRING([--without-octave],[skip gnu octave plugin]))
 # AS_IF([test "x$with_octave" != "xno"],
 #       [CHECK_FOR_OCTAVE([have_octave=yes], [have_octave=no])],
@@ -17,8 +22,31 @@ AM_PROG_AR
 # )
 #AC_SUBST(CPPFLAGS, "$CPPFLAGS -I<path>")
 # AC_CHECK_HEADERS([octave/oct.h oct.h],,AC_MSG_ERROR([requires octave header files]))
+
+AC_ARG_WITH(octave,
+      [AC_HELP_STRING([--with-octave=DIR],
+      [the directory where Octave header files are installed])],
+      octave_dir=${withval},octave_dir="no")
+
+AC_MSG_CHECKING([whether to check for GNU Octave])
+
+AM_CONDITIONAL([WANT_OCTAVE], [test x$octave_dir != xno])
+
+if test "x${octave_dir}" = "xno"; then
+      AC_MSG_RESULT([no])
+else
+      AC_MSG_RESULT([yes])
+      # Octave root
+      AX_CHECK_DIR([${octave_dir}],[],
+      [AC_MSG_ERROR([Please supply a valid path to a GNU Octave headers directory or run configure without the option --with-octave.])])
+      OCTAVE_CPPFLAGS="-I${octave_dir}"
+      AC_SUBST(OCTAVE_CPPFLAGS)
+      # octave_mexext=".mex"
+fi
+
+
 AC_CONFIG_HEADERS([config.h])
-# AC_CONFIG_FILES([Makefile octave/Makefile])
+
 AC_CONFIG_FILES([Makefile])
 AC_OUTPUT
 
