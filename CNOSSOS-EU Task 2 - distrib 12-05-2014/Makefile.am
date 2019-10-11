@@ -9,6 +9,8 @@ libSimpleXML_la_SOURCES = \
   SimpleXML/SimpleXML.h \
   SimpleXML/ascii.h \
   SimpleXML/asciitab.h \
+  SimpleXML/expat.h \
+  SimpleXML/expat_external.h \
   SimpleXML/iasciitab.h \
   SimpleXML/internal.h \
   SimpleXML/latin1tab.h \
@@ -75,8 +77,11 @@ if WANT_OCTAVE
   bin_PROGRAMS = cnossos_flat cnossos_full
   cnossos_flat_SOURCES = octave/cnossos_flat.cpp
   cnossos_flat_CPPFLAGS = $(OCTAVE_CPPFLAGS) -I$(top_srcdir)/PropagationPath
-  cnossos_flat_LDADD = libHarmonoise.la libSimpleXML.la libPropagation.la
+  # cnossos_flat_LDADD = libHarmonoise.la libPropagation.la
+  cnossos_flat_LINK = $(MKOCTPATH) -g -v $(OCTAVE_CPPFLAGS) -o $@ -L.libs -lPropagation -lHarmonoise
+  
   cnossos_full_SOURCES = octave/cnossos_full.cpp
   cnossos_full_CPPFLAGS = $(OCTAVE_CPPFLAGS) -I$(top_srcdir)/PropagationPath
-  cnossos_full_LDADD = libHarmonoise.la libSimpleXML.la libPropagation.la
+  # cnossos_full_LDADD = libHarmonoise.la libPropagation.la
+  cnossos_full_LINK = $(MKOCTPATH) -g -v $(OCTAVE_CPPFLAGS) -o $@ -L.libs -lPropagation -lHarmonoise
 endif

@@ -39,9 +39,10 @@ else
       # Octave root
       AX_CHECK_DIR([${octave_dir}],[],
       [AC_MSG_ERROR([Please supply a valid path to a GNU Octave headers directory or run configure without the option --with-octave.])])
-      OCTAVE_CPPFLAGS="-I${octave_dir}"
+      OCTAVE_CPPFLAGS="-I${octave_dir} -fPIC"
       AC_SUBST(OCTAVE_CPPFLAGS)
       # octave_mexext=".mex"
+      AC_PATH_PROG([MKOCTPATH],[mkoctfile])
 fi
 
 
