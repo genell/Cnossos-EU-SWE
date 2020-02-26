@@ -50,14 +50,14 @@ DEFUN_DLD (cnossos_full, args, ,
     fullArgs.method = args(0).string_value();
 
   // Path structure
-  if (!args(1).isstruct())
+  if (!args(1).is_map())
     error("Parameter 'path' must be a struct");
   else
     fullArgs.path =  args(1).scalar_map_value();
 
   // Options structure
   if (args.length() > 2) {
-    if (!args(2).isnull() && !args(2).isstruct())
+    if (args(2).is_defined() && !args(2).is_map())
       error("If present, parameter 'options' must be a struct");
     else
       fullArgs.options =  args(2).scalar_map_value();
@@ -65,7 +65,7 @@ DEFUN_DLD (cnossos_full, args, ,
 
   // Meteo structure
   if (args.length() > 3) {
-    if (!args(3).isnull() && !args(3).isstruct())
+    if (args(3).is_defined() && !args(3).is_map())
       error("If present, parameter 'meteo' must be a struct");
     else
       fullArgs.meteo =  args(3).scalar_map_value();
@@ -73,7 +73,7 @@ DEFUN_DLD (cnossos_full, args, ,
   
   // Materials structure
   if (args.length() > 4) {
-    if (!args(4).isnull() && !args(4).isstruct())
+    if (args(4).is_defined() && !args(4).is_map())
       error("If present, parameter 'materials' must be a struct");
     else
       fullArgs.materials  =  args(4).scalar_map_value();

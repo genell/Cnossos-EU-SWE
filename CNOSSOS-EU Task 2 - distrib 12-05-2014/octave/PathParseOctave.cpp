@@ -82,7 +82,7 @@ static bool ParseSpectrum (const std::string &attr, const octave_value &aValue, 
  */
 static bool ParsePosition (const octave_value &aVal, Position& pos)
 {
-	if (!aVal.isstruct())
+	if (!aVal.is_map())
 		return false;
 
 	auto aMap = aVal.scalar_map_value();
@@ -120,12 +120,12 @@ static bool ParseMaterialRef (const std::string &matRef, System::ref_ptr<Materia
  */
 static bool ParseElementarySource (const octave_value &aVal, ElementarySource &source)
 {
-	if (!aVal.isstruct())
+	if (!aVal.is_map())
 		return false;
 	auto aMap = aVal.scalar_map_value();
 
 	auto vSpec = aMap.getfield("spectrum");
-	if (vSpec.isempty() || !ParseSpectrum("spectrum", vSpec, "Lw", source.soundPower)) return false ;
+	if (vSpec.is_empty() || !ParseSpectrum("spectrum", vSpec, "Lw", source.soundPower)) return false ;
 
 	auto vMType = aMap.contents("measurementType").string_value();
 	if (iequals(vMType, "FreeField")) source.measurementType = MeasurementType::FreeField;
@@ -147,7 +147,7 @@ static bool ParseElementarySource (const octave_value &aVal, ElementarySource &s
  */
 static bool ParsePointSource (const octave_value &aVal, System::ref_ptr<SourceGeometry> &geo) 
 {
-	if (!aVal.isstruct())
+	if (!aVal.is_map())
 		return false;
 
 	auto aMap = aVal.scalar_map_value();
@@ -170,7 +170,7 @@ static bool ParsePointSource (const octave_value &aVal, System::ref_ptr<SourceGe
  */
 static bool ParseLineSource (const octave_value &aVal, System::ref_ptr<SourceGeometry> &geo) 
 {
-	if (!aVal.isstruct())
+	if (!aVal.is_map())
 		return false;
 
 	auto aMap = aVal.scalar_map_value();
@@ -198,7 +198,7 @@ static bool ParseLineSource (const octave_value &aVal, System::ref_ptr<SourceGeo
  */
 static bool ParseAreaSource (const octave_value &aVal, System::ref_ptr<SourceGeometry> &geo) 
 {
-	if (!aVal.isstruct())
+	if (!aVal.is_map())
 		return false;
 
 	auto aMap = aVal.scalar_map_value();
@@ -229,7 +229,7 @@ static Geometry::Point3D current_cp ;
  */
 static bool ParseSegmentSource (const octave_value &aVal, System::ref_ptr<SourceGeometry> &geo) 
 {
-	if (!aVal.isstruct())
+	if (!aVal.is_map())
 		return false;
 
 	auto aMap = aVal.scalar_map_value();
@@ -449,7 +449,7 @@ bool ParseControlPoint (const octave_scalar_map &optCp, ControlPoint& cp)
 		auto cpProp = optCp.contents(iOpt);
 
 		if (iequals(cpKey,"pos")) {
-			if (!cpProp.isstruct())
+			if (!cpProp.is_map())
 				error("control point pos property must be a struct");
 
 			if (!ParsePosition (cpProp.scalar_map_value(), cp.pos)) return false ;
@@ -463,7 +463,7 @@ bool ParseControlPoint (const octave_scalar_map &optCp, ControlPoint& cp)
 		else {
 			// Neither pos nor mat means ext type - try to parse
 			cp.ext = 0 ;
-			if (!cpProp.isstruct())
+			if (!cpProp.is_map())
 				error("control point ext property must be a struct");
 			if (ParseVerticalExtType(cpKey, cpProp.scalar_map_value(), cp.ext)) 
 			{
@@ -498,7 +498,7 @@ bool ParsePropagationPath (const octave_scalar_map &optPath, PropagationPath& pa
 		auto cpDef = optPath.contents(iOpt);
 		print_debug("Parsing point '%s'", cpKey.c_str());
 
-		if (!cpDef.isempty() && !cpDef.isstruct())
+		if (!cpDef.is_empty() && !cpDef.is_map())
 			error("expected path control point definition %s to be a struct", cpKey.c_str());
 
 		ControlPoint cp ;
@@ -621,7 +621,7 @@ bool ParseMaterials(const octave_scalar_map& materials)
 		auto matKey = materials.key(iOpt);
 		auto matDef = materials.contents(iOpt);
 
-		if (!matDef.isempty() && !matDef.isstruct())
+		if (!matDef.is_empty() && !matDef.is_map())
 			error("expected material definition %s to be a struct", matKey.c_str());
 
 		ParseMaterialProperties(matKey, matDef.scalar_map_value());

@@ -1,4 +1,6 @@
 #pragma once
+// include config first just to be compatible with older octaves
+#include <octave/octave-config.h>
 #include <octave/oct.h>
 
 // Cnossos deps
