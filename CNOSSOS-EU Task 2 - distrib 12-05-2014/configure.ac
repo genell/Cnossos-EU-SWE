@@ -32,6 +32,8 @@ AC_MSG_CHECKING([whether to check for GNU Octave])
 
 AM_CONDITIONAL([WANT_OCTAVE], [test x$octave_dir != xno])
 
+AM_CONDITIONAL([GCC], [test "$CC" = "gcc"])
+
 if test "x${octave_dir}" = "xno"; then
       AC_MSG_RESULT([no])
 else
