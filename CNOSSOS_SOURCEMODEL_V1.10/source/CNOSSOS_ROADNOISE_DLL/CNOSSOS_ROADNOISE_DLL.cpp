@@ -210,12 +210,13 @@ namespace CNOSSOS_ROADNOISE
     {
 		try
 		{
+			cout << "Initializing road noise calculation DLL" << endl;
 			catalog = new RoadNoiseCatalog();
 			
 			string dllPath = getDllPath();
 			dllPath = dllPath.substr(0, dllPath.find_last_of("\\/") + 1);
-			catalog->LoadRoadParamsFromFile(dllPath + "cnossos_road_params.xml");
-			catalog->LoadRoadSurfacesFromFile(dllPath + "cnossos_road_surfaces.xml");
+			catalog->LoadRoadParamsFromFile(dllPath + "CNOSSOS_Road_Params.xml");
+			catalog->LoadRoadSurfacesFromFile(dllPath + "CNOSSOS_Road_Surfaces.xml");
 
 			currentSegment = new RoadSegment(catalog);
 		}

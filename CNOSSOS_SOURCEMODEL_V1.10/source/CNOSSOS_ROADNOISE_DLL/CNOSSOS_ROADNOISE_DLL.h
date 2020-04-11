@@ -15,8 +15,8 @@
 //
 // ----------------------------------------------------------------------------------------------------- 
 
-#ifndef WIN32
-#define CNOSSOS_DLL_API extern "C"
+#ifdef __GNUC__
+#define CNOSSOS_DLL_API __attribute__((visibility("default")))
 #elif CNOSSOS_DLL_EXPORTS
 #define CNOSSOS_DLL_API __declspec(dllexport) 
 #else
