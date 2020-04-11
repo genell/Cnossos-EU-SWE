@@ -6,8 +6,8 @@
 // that uses this DLL. This way any other project whose source files include this file see 
 // CNOSSOS_DLL_EXPORTS functions as being imported from a DLL, whereas this DLL sees symbols
 // defined with this macro as being exported.
-#ifndef WIN32
-#define CNOSSOS_DLL_API extern "C"
+#ifdef __GNUC__
+#define CNOSSOS_DLL_API __attribute__((visibility("default")))
 #elif CNOSSOS_DLL_EXPORTS
 #define CNOSSOS_DLL_API __declspec(dllexport)
 #else

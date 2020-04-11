@@ -2,9 +2,9 @@
 #include <string>
 using namespace std;
 
-#ifndef WIN32
-#define CNOSSOS_DLL_API extern "C"
-#elif CNOSSOS_DLL_EXPORTS
+#ifdef __GNUC__
+#define CNOSSOS_DLL_API __attribute__((visibility("default")))
+#elif defined(CNOSSOS_DLL_EXPORTS)
 #define CNOSSOS_DLL_API __declspec(dllexport) 
 #else
 #define CNOSSOS_DLL_API __declspec(dllimport) 
